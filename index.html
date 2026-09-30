@@ -4,10 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pemesanan Paket Kathina Sanghadana 2568</title>
+  
+  <!-- Supabase JS Client v2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -48,7 +53,6 @@
       
       <!-- Brand Logo Container -->
       <a href="#heroSection" id="brandLogoContainer" class="flex items-center gap-3 shrink-0 group">
-        <!-- Rendered dynamically by renderSiteConfig() -->
         <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -70,6 +74,12 @@
 
       <!-- Action Buttons -->
       <div class="flex items-center gap-3">
+        <!-- Database Connection Status Indicator -->
+        <div id="dbStatusBadge" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          <span id="dbStatusText">Menghubungkan DB...</span>
+        </div>
+
         <button onclick="scrollToCatalog()" class="relative p-2.5 rounded-full bg-amber-50 text-brand-700 hover:bg-amber-100 transition-all flex items-center justify-center" title="Keranjang Pemesanan">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -87,6 +97,7 @@
     </div>
   </header>
 
+  <!-- PUBLIC WEBSITE CONTENT WRAPPER -->
   <div id="publicContent">
 
     <!-- Main Hero Section -->
@@ -125,13 +136,13 @@
                 <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <span class="text-xs font-semibold text-slate-700">Tepat Sasaran Monastik</span>
+                <span class="text-xs font-semibold text-slate-700">Tepat Sasaran Sangha</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <span class="text-xs font-semibold text-slate-700">Kuota Real-Time</span>
+                <span class="text-xs font-semibold text-slate-700">Kuota Real-Time Cloud</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
@@ -174,13 +185,13 @@
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Daftar Paket Persembahan</h2>
           </div>
           <p class="text-xs sm:text-sm text-slate-500 max-w-md">
-            Pilih paket di bawah ini untuk dipersembahkan kepada Sangha Monastik. Kuota ketersediaan terkelola secara otomatis.
+            Pilih paket di bawah ini untuk dipersembahkan kepada Sangha Monastik. Kuota ketersediaan terkelola otomatis secara langsung di database cloud.
           </p>
         </div>
 
         <!-- Packages Grid Container -->
         <div id="packageGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <!-- Rendered dynamically by renderPublicPackages() -->
+          <!-- Rendered dynamically -->
         </div>
 
       </div>
@@ -191,9 +202,8 @@
       <div class="bg-gradient-to-r from-amber-700 via-brand-600 to-amber-500 rounded-3xl p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-brand-900/10">
         
         <div class="flex items-center gap-6">
-          <!-- Dynamic Circular Badge -->
           <div id="promoBadgeContainer" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white text-brand-900 font-extrabold flex flex-col items-center justify-center text-center p-1 shrink-0 shadow-md overflow-hidden border-2 border-white/80">
-            <!-- Populated dynamically via renderSiteConfig() -->
+            <!-- Populated dynamically -->
           </div>
 
           <div>
@@ -227,7 +237,7 @@
 
         <!-- Bank Accounts Container (Centered) -->
         <div id="publicBankAccountsContainer" class="flex flex-wrap justify-center items-center gap-6 max-w-xl mx-auto">
-          <!-- Rendered dynamically by renderBankAccounts() -->
+          <!-- Rendered dynamically -->
         </div>
 
       </div>
@@ -283,7 +293,7 @@
 
   </div> <!-- End of #publicContent -->
 
-  <!-- Admin View Dashboard (Directly at top when activated) -->
+  <!-- ADMIN VIEW DASHBOARD (Directly at top of screen when active) -->
   <main id="adminView" class="hidden flex-1 bg-slate-100 py-8 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -292,7 +302,7 @@
         <div>
           <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-brand-800 text-[11px] font-bold uppercase tracking-wider mb-1">Panel Administrasi</span>
           <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Dasbor Manajemen Kathina 2568</h2>
-          <p class="text-xs text-slate-500 mt-0.5">Kelola foto hero, paket persembahan, verifikasi mutasi transfer, dan branding situs.</p>
+          <p class="text-xs text-slate-500 mt-0.5">Kelola foto hero, paket persembahan, verifikasi mutasi transfer, dan basis data Supabase.</p>
         </div>
         <div class="flex items-center gap-3">
           <button onclick="exitAdminView()" class="px-5 py-2.5 rounded-full bg-brand-50 text-brand-700 hover:bg-brand-100 font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm">
@@ -321,10 +331,16 @@
       <div id="panelOrders" class="space-y-4">
         <div class="flex justify-between items-center">
           <h3 class="font-extrabold text-slate-800 text-base">Daftar Transaksi Pesanan Umat</h3>
-          <button onclick="exportOrdersToCSV()" class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            Ekspor ke CSV/Excel
-          </button>
+          <div class="flex items-center gap-2">
+            <button onclick="fetchOrdersFromDB()" class="px-3.5 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              Segarkan Data
+            </button>
+            <button onclick="exportOrdersToCSV()" class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              Ekspor CSV/Excel
+            </button>
+          </div>
         </div>
         <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-x-auto">
           <table class="w-full text-left text-xs">
@@ -347,7 +363,7 @@
       <!-- TAB 2: PACKAGES -->
       <div id="panelPackages" class="hidden space-y-4">
         <div class="flex justify-between items-center">
-          <h3 class="font-extrabold text-slate-800 text-base">Manajemen Katalog Paket & Kuota</h3>
+          <h3 class="font-extrabold text-slate-800 text-base">Manajemen Katalog Paket & Kuota Cloud</h3>
           <button onclick="openModalAddPackage()" class="px-4 py-2 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm">
             + Tambah Paket Baru
           </button>
@@ -380,7 +396,7 @@
         <div id="adminBanksContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>
 
-      <!-- TAB 4: HERO PHOTO & CONTENT (DEDICATED) -->
+      <!-- TAB 4: HERO PHOTO & CONTENT -->
       <div id="panelHero" class="hidden space-y-6">
         <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
           <div class="max-w-3xl">
@@ -396,7 +412,6 @@
               
               <!-- Photo Upload & Preview Section -->
               <div class="p-5 rounded-2xl bg-amber-50/60 border border-amber-200 flex flex-col md:flex-row items-center gap-6">
-                <!-- Circular Preview Box -->
                 <div class="relative w-40 h-40 rounded-full bg-gradient-to-tr from-amber-300 via-brand-200 to-amber-100 p-2 shadow-lg shrink-0">
                   <img id="cmsHeroImagePreview" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80" alt="Pratinjau Foto Hero" class="w-full h-full object-cover rounded-full border-2 border-white shadow-inner bg-slate-100" onerror="window.handleDriveImageError(this)">
                 </div>
@@ -412,7 +427,7 @@
                   </div>
                   <!-- Quick Presets -->
                   <div class="pt-1 flex flex-wrap items-center gap-2">
-                    <span class="text-[11px] text-slate-500 font-semibold">Pilihan Foto Cepat:</span>
+                    <span class="text-[11px] text-slate-500 font-semibold">Pilihan Cepat:</span>
                     <button type="button" onclick="setHeroPreset('https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-brand-500 text-[11px] font-bold text-slate-700">Jubah Civara</button>
                     <button type="button" onclick="setHeroPreset('https://images.unsplash.com/photo-1609605988071-0d1bc7190013?w=900&auto=format&fit=crop&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-brand-500 text-[11px] font-bold text-slate-700">Bhikkhu Sangha</button>
                     <button type="button" onclick="setHeroPreset('https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=900&auto=format&fit=crop&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-brand-500 text-[11px] font-bold text-slate-700">Lilin & Bunga Puja</button>
@@ -578,9 +593,7 @@
         </div>
 
         <!-- Bank Transfer Instructions in Checkout -->
-        <div id="checkoutBankGuide" class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 text-xs">
-          <!-- Filled by JavaScript -->
-        </div>
+        <div id="checkoutBankGuide" class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 text-xs"></div>
 
         <div>
           <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap Donatur / Pemesan *</label>
@@ -603,7 +616,7 @@
         </div>
 
         <button type="submit" id="btnSubmitOrder" class="w-full py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-brand-600/20 transition-all flex items-center justify-center gap-2">
-          <span>Kirimkan Pesanan & Bukti Transfer</span>
+          <span id="submitOrderBtnText">Kirimkan Pesanan & Bukti Transfer</span>
         </button>
 
       </form>
@@ -617,7 +630,7 @@
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
       </div>
       <h3 class="text-xl font-extrabold text-slate-900">Anumodana! Pesanan Terkirim</h3>
-      <p class="text-xs text-slate-500 mt-1">Pesanan Anda telah dicatat dengan status "Menunggu Verifikasi" oleh panitia.</p>
+      <p class="text-xs text-slate-500 mt-1">Pesanan Anda telah berhasil tersimpan di sistem dengan status "Menunggu Verifikasi" oleh panitia.</p>
 
       <div class="my-5 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-left text-xs space-y-1.5">
         <div class="flex justify-between"><span class="text-slate-500">Kode Transaksi:</span><span id="receiptOrderCode" class="font-mono font-bold text-brand-700"></span></div>
@@ -647,7 +660,7 @@
           <label class="block font-bold text-slate-700 mb-1">Password</label>
           <input type="password" id="adminPass" required value="kathina2024" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
         </div>
-        <p class="text-[11px] text-slate-400 italic">Kredensial demo: admin / kathina2024</p>
+        <p class="text-[11px] text-slate-400 italic">Kredensial bawaan: admin / kathina2024</p>
         <button type="submit" class="w-full py-2.5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800">Masuk</button>
       </form>
     </div>
@@ -690,7 +703,7 @@
           <input type="checkbox" id="pkgActive" checked class="rounded text-brand-600">
           <label for="pkgActive" class="text-xs text-slate-700 font-semibold">Tampilkan paket di katalog publik</label>
         </div>
-        <button type="submit" class="w-full py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold mt-2">Simpan Paket</button>
+        <button type="submit" id="btnSavePkgSubmit" class="w-full py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold mt-2">Simpan Paket</button>
       </form>
     </div>
   </div>
@@ -726,7 +739,7 @@
             <button type="button" onclick="clearBankLogoInput()" class="text-rose-600 hover:underline">Hapus Logo</button>
           </div>
         </div>
-        <button type="submit" class="w-full py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold mt-2">Simpan Rekening</button>
+        <button type="submit" id="btnSaveBankSubmit" class="w-full py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold mt-2">Simpan Rekening</button>
       </form>
     </div>
   </div>
@@ -739,7 +752,7 @@
     </div>
   </div>
 
-  <!-- Custom Confirmation Modal (No browser confirm) -->
+  <!-- Custom Confirmation Modal -->
   <div id="modalConfirm" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-200">
       <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 flex items-center justify-center mx-auto mb-3">
@@ -757,8 +770,9 @@
   <!-- Toast Notification Container -->
   <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
 
+  <!-- APPLICATION LOGIC & SUPABASE INTEGRATION -->
   <script>
-    // Expose Google Drive helpers globally to window immediately
+    // Global Google Drive URL Normalizer
     window.convertGoogleDriveUrl = function(url) {
       if (!url || typeof url !== 'string') return '';
       const cleanUrl = url.trim();
@@ -773,7 +787,7 @@
 
     window.handleDriveImageError = function(imgEl, originalUrl) {
       if (!imgEl) return;
-      imgEl.onerror = null; // Prevent infinite error loop
+      imgEl.onerror = null;
 
       const target = (originalUrl || imgEl.src || '').toString();
       const driveMatch = target.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || 
@@ -785,12 +799,14 @@
         imgEl.src = `https://lh3.googleusercontent.com/d/${driveMatch[1]}`;
         return;
       }
-
-      // Elegant Buddhist-themed fallback image (reliable Unsplash) instead of gray "Foto"
       imgEl.src = 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80';
     };
 
-    // Site Branding & CMS Configuration
+    // Client Supabase Instance
+    let supabaseClient = null;
+    let isConnectedToSupabase = false;
+
+    // Site Branding & CMS Configuration (Default Fallback)
     let siteConfig = {
       logoType: 'icon',
       logoImageUrl: '',
@@ -811,14 +827,14 @@
       promoDescription: 'Pahala berdana pada masa Kathina merupakan kebajikan luar biasa bagi kemajuan batin Anda dan keluarga tercinta.'
     };
 
-    // Initial Packages
+    // Packages Data
     let packages = [
       {
         id: 'pkg-1',
         nama_paket: 'Paket Jubah Civara Utama',
         harga: 500000,
         kuota_awal: 50,
-        kuota_tersisa: 38,
+        kuota_tersisa: 50,
         status_aktif: true,
         gambar_url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80'
       },
@@ -827,7 +843,7 @@
         nama_paket: 'Paket Perlengkapan Medis Sangha',
         harga: 350000,
         kuota_awal: 40,
-        kuota_tersisa: 22,
+        kuota_tersisa: 40,
         status_aktif: true,
         gambar_url: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80'
       },
@@ -836,7 +852,7 @@
         nama_paket: 'Paket Kebutuhan Harian Vihara',
         harga: 250000,
         kuota_awal: 60,
-        kuota_tersisa: 45,
+        kuota_tersisa: 60,
         status_aktif: true,
         gambar_url: 'https://images.unsplash.com/photo-1577937927133-66ef06acdf18?w=600&auto=format&fit=crop&q=80'
       },
@@ -845,7 +861,7 @@
         nama_paket: 'Paket Sanghadana Khusus Masa Vassa',
         harga: 1000000,
         kuota_awal: 15,
-        kuota_tersisa: 0,
+        kuota_tersisa: 15,
         status_aktif: true,
         gambar_url: 'https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=600&auto=format&fit=crop&q=80'
       }
@@ -862,7 +878,7 @@
       }
     ];
 
-    // Orders Data Store
+    // State Variables
     let orders = [];
     let cart = {};
     let isAdminLoggedIn = false;
@@ -890,7 +906,7 @@
       }, 3500);
     }
 
-    // Modal Confirmation Dialog (Replaces browser confirm)
+    // Modal Confirmation Dialog
     function openConfirmModal(title, message, onConfirm) {
       const modal = document.getElementById('modalConfirm');
       const t = document.getElementById('confirmModalTitle');
@@ -922,6 +938,155 @@
       return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
     }
 
+    // =========================================================================
+    // SUPABASE INITIALIZATION & LIVE DATA FETCHING
+    // =========================================================================
+    async function initSupabase() {
+      const statusBadge = document.getElementById('dbStatusBadge');
+      const statusText = document.getElementById('dbStatusText');
+
+      try {
+        const res = await fetch('/api/config');
+        if (!res.ok) throw new Error('API config tidak merespon');
+        const config = await res.json();
+
+        if (config.supabaseUrl && config.supabaseAnonKey && window.supabase) {
+          supabaseClient = window.supabase.createClient(config.supabaseUrl, config.supabaseAnonKey);
+          isConnectedToSupabase = true;
+
+          if (statusBadge && statusText) {
+            statusBadge.className = 'hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200';
+            statusText.innerText = 'Supabase Cloud Aktif';
+          }
+          console.log('✅ Terhubung secara aman ke Supabase Cloud!');
+
+          // Load data from live Supabase tables
+          await Promise.all([
+            fetchSiteConfigFromDB(),
+            fetchPackagesFromDB(),
+            fetchBanksFromDB(),
+            fetchOrdersFromDB()
+          ]);
+        } else {
+          fallbackToLocalMode('Mode Demo Lokal (Kunci belum aktif)');
+        }
+      } catch (err) {
+        console.warn('Menjalankan dalam mode demo lokal:', err.message);
+        fallbackToLocalMode('Mode Demo Offline');
+      }
+    }
+
+    function fallbackToLocalMode(msg) {
+      const statusBadge = document.getElementById('dbStatusBadge');
+      const statusText = document.getElementById('dbStatusText');
+      if (statusBadge && statusText) {
+        statusBadge.className = 'hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-slate-100 text-slate-600 border border-slate-200';
+        statusText.innerText = msg;
+      }
+    }
+
+    async function fetchSiteConfigFromDB() {
+      if (!supabaseClient) return;
+      try {
+        const { data, error } = await supabaseClient.from('site_config').select('*').limit(1).single();
+        if (data && !error) {
+          siteConfig = {
+            id: data.id,
+            logoType: data.logo_type || 'icon',
+            logoImageUrl: data.logo_image_url || '',
+            logoTitle: data.logo_title || 'KATHINA',
+            logoSubtitle: data.logo_subtitle || 'Sanghadana 2568',
+            showHero: data.show_hero ?? true,
+            heroBadge: data.hero_badge,
+            heroTitle: data.hero_title,
+            heroDescription: data.hero_description,
+            heroImageUrl: data.hero_image_url,
+            heroCircleBadgeYear: data.hero_circle_badge_year || '2568',
+            heroCircleBadgeTop: data.hero_circle_badge_top,
+            heroCircleBadgeBot: data.hero_circle_badge_bot,
+            showPromoBanner: data.show_promo_banner ?? true,
+            promoBadgeImageUrl: data.promo_badge_image_url || '',
+            promoBadge: data.promo_badge || 'AGUNG',
+            promoTitle: data.promo_title,
+            promoDescription: data.promo_description
+          };
+          renderSiteConfig();
+        }
+      } catch (e) {
+        console.error('Error fetching site_config:', e);
+      }
+    }
+
+    async function fetchPackagesFromDB() {
+      if (!supabaseClient) return;
+      try {
+        const { data, error } = await supabaseClient
+          .from('packages')
+          .select('*')
+          .order('created_at', { ascending: true });
+        
+        if (data && !error && data.length > 0) {
+          packages = data;
+          renderPublicPackages();
+          renderAdminPackages();
+        }
+      } catch (e) {
+        console.error('Error fetching packages:', e);
+      }
+    }
+
+    async function fetchBanksFromDB() {
+      if (!supabaseClient) return;
+      try {
+        const { data, error } = await supabaseClient
+          .from('bank_accounts')
+          .select('*')
+          .eq('is_active', true)
+          .order('created_at', { ascending: true });
+        
+        if (data && !error && data.length > 0) {
+          bankAccounts = data;
+          renderBankAccounts();
+        }
+      } catch (e) {
+        console.error('Error fetching bank_accounts:', e);
+      }
+    }
+
+    async function fetchOrdersFromDB() {
+      if (!supabaseClient) return;
+      try {
+        const { data, error } = await supabaseClient
+          .from('orders')
+          .select(`
+            *,
+            items:order_items(*)
+          `)
+          .order('created_at', { ascending: false });
+
+        if (data && !error) {
+          orders = data.map(o => ({
+            id: o.id,
+            kode_transaksi: o.kode_transaksi,
+            nama_pemesan: o.nama_pemesan,
+            nomor_kontak: o.nomor_kontak,
+            total_dana: o.total_dana,
+            bukti_transaksi_url: o.bukti_transaksi_url,
+            bukti_file_name: o.bukti_file_name,
+            status_pesanan: o.status_pesanan,
+            items: o.items || [],
+            created_at: o.created_at
+          }));
+          renderAdminOrders();
+        }
+      } catch (e) {
+        console.error('Error fetching orders:', e);
+      }
+    }
+
+    // =========================================================================
+    // CATALOG & CART RENDERING
+    // =========================================================================
     function renderPublicPackages() {
       const container = document.getElementById('packageGrid');
       if (!container) return;
@@ -1045,6 +1210,9 @@
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
 
+    // =========================================================================
+    // BANK ACCOUNTS RENDERING
+    // =========================================================================
     function renderBankAccounts() {
       const container = document.getElementById('publicBankAccountsContainer');
       const guide = document.getElementById('checkoutBankGuide');
@@ -1154,6 +1322,9 @@
       document.body.removeChild(textarea);
     }
 
+    // =========================================================================
+    // CHECKOUT & CLOUD ORDER CREATION
+    // =========================================================================
     function openCheckoutModal() {
       const { totalQty, totalAmount } = calculateCartSummary();
       if (totalQty === 0) {
@@ -1203,13 +1374,15 @@
         return;
       }
 
+      selectedFileBuffer = {
+        file: file,
+        name: file.name,
+        type: file.type
+      };
+
       const reader = new FileReader();
       reader.onload = function(e) {
-        selectedFileBuffer = {
-          name: file.name,
-          type: file.type,
-          dataUrl: e.target.result
-        };
+        selectedFileBuffer.dataUrl = e.target.result;
         if (previewBox && nameEl) {
           nameEl.innerText = file.name;
           if (file.type.startsWith('image/')) {
@@ -1226,10 +1399,12 @@
       reader.readAsDataURL(file);
     }
 
-    function handleCheckoutSubmit(event) {
+    async function handleCheckoutSubmit(event) {
       event.preventDefault();
       const buyerName = document.getElementById('orderBuyerName').value.trim();
       const buyerPhone = document.getElementById('orderBuyerPhone').value.trim();
+      const btnSubmit = document.getElementById('btnSubmitOrder');
+      const btnText = document.getElementById('submitOrderBtnText');
 
       if (!buyerName || !buyerPhone) {
         showToast('Harap melengkapi nama dan nomor telepon Anda.', 'error');
@@ -1248,7 +1423,7 @@
         const pkg = packages.find(p => p.id === id);
         if (pkg) {
           if (qty > pkg.kuota_tersisa) {
-            showToast(`Maaf, kuota untuk ${pkg.nama_paket} tidak mencukupi.`, 'error');
+            showToast(`Maaf, kuota untuk ${pkg.nama_paket} sudah tidak mencukupi.`, 'error');
             return;
           }
           items.push({
@@ -1261,50 +1436,129 @@
         }
       }
 
-      // Deduct quotas
-      items.forEach(it => {
-        const pkg = packages.find(p => p.id === it.paket_id);
-        if (pkg) pkg.kuota_tersisa -= it.jumlah;
-      });
-
       const orderCode = 'KTN-' + Math.floor(100000 + Math.random() * 900000);
-      const newOrder = {
-        id: 'ord-' + Date.now(),
-        kode_transaksi: orderCode,
-        nama_pemesan: buyerName,
-        nomor_kontak: buyerPhone,
-        total_dana: totalAmount,
-        bukti_transaksi_url: selectedFileBuffer.dataUrl,
-        bukti_file_name: selectedFileBuffer.name,
-        bukti_file_type: selectedFileBuffer.type,
-        status_pesanan: 'Menunggu Verifikasi',
-        items: items,
-        created_at: new Date()
-      };
+      let proofPublicUrl = selectedFileBuffer.dataUrl;
 
-      orders.unshift(newOrder);
+      // Disable button during submit
+      if (btnSubmit) btnSubmit.disabled = true;
+      if (btnText) btnText.innerText = 'Mengunggah & Menyimpan ke Cloud...';
 
-      // Reset cart and fields
-      cart = {};
-      selectedFileBuffer = null;
-      document.getElementById('formCheckout').reset();
-      document.getElementById('proofPreviewBox').classList.add('hidden');
-      closeCheckoutModal();
+      try {
+        // 1. If connected to Supabase: Upload proof to Supabase Storage
+        if (isConnectedToSupabase && supabaseClient && selectedFileBuffer.file) {
+          const fileExt = selectedFileBuffer.name.split('.').pop();
+          const cleanFileName = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
+          const filePath = `transaksi/${cleanFileName}`;
 
-      renderPublicPackages();
-      updateStickyBar();
+          const { error: uploadError } = await supabaseClient.storage
+            .from('bukti-transfer')
+            .upload(filePath, selectedFileBuffer.file, {
+              cacheControl: '3600',
+              upsert: false
+            });
 
-      // Show Success Modal
-      document.getElementById('receiptOrderCode').innerText = newOrder.kode_transaksi;
-      document.getElementById('receiptBuyerName').innerText = newOrder.nama_pemesan;
-      document.getElementById('receiptTotalAmount').innerText = formatRupiah(newOrder.total_dana);
-      document.getElementById('modalSuccessReceipt').classList.remove('hidden');
+          if (uploadError) {
+            console.warn('Gagal upload ke storage Supabase, menyimpan sebagai base64:', uploadError.message);
+          } else {
+            const { data: urlData } = supabaseClient.storage
+              .from('bukti-transfer')
+              .getPublicUrl(filePath);
+            if (urlData && urlData.publicUrl) {
+              proofPublicUrl = urlData.publicUrl;
+            }
+          }
+
+          // 2. Insert into orders table
+          const { data: orderData, error: orderError } = await supabaseClient
+            .from('orders')
+            .insert([{
+              kode_transaksi: orderCode,
+              nama_pemesan: buyerName,
+              nomor_kontak: buyerPhone,
+              total_dana: totalAmount,
+              bukti_transaksi_url: proofPublicUrl,
+              bukti_file_name: selectedFileBuffer.name,
+              status_pesanan: 'Menunggu Verifikasi'
+            }])
+            .select()
+            .single();
+
+          if (orderError) throw orderError;
+
+          // 3. Insert into order_items (automatically triggers kurangi_kuota_paket() in database)
+          const orderItemsPayload = items.map(it => ({
+            order_id: orderData.id,
+            paket_id: it.paket_id.startsWith('pkg-') ? null : it.paket_id,
+            nama_paket: it.nama_paket,
+            jumlah: it.jumlah,
+            harga_satuan: it.harga_satuan,
+            subtotal: it.subtotal
+          }));
+
+          const { error: itemsError } = await supabaseClient
+            .from('order_items')
+            .insert(orderItemsPayload);
+
+          if (itemsError) throw itemsError;
+
+          // Refresh live packages and orders from Supabase
+          await fetchPackagesFromDB();
+          await fetchOrdersFromDB();
+        } else {
+          // Local fallback mode
+          items.forEach(it => {
+            const pkg = packages.find(p => p.id === it.paket_id);
+            if (pkg) pkg.kuota_tersisa -= it.jumlah;
+          });
+
+          const localOrder = {
+            id: 'ord-' + Date.now(),
+            kode_transaksi: orderCode,
+            nama_pemesan: buyerName,
+            nomor_kontak: buyerPhone,
+            total_dana: totalAmount,
+            bukti_transaksi_url: proofPublicUrl,
+            bukti_file_name: selectedFileBuffer.name,
+            bukti_file_type: selectedFileBuffer.type,
+            status_pesanan: 'Menunggu Verifikasi',
+            items: items,
+            created_at: new Date().toISOString()
+          };
+          orders.unshift(localOrder);
+          renderPublicPackages();
+          renderAdminOrders();
+        }
+
+        // Reset cart and UI
+        cart = {};
+        selectedFileBuffer = null;
+        document.getElementById('formCheckout').reset();
+        document.getElementById('proofPreviewBox').classList.add('hidden');
+        closeCheckoutModal();
+        updateStickyBar();
+
+        // Show Success Receipt Modal
+        document.getElementById('receiptOrderCode').innerText = orderCode;
+        document.getElementById('receiptBuyerName').innerText = buyerName;
+        document.getElementById('receiptTotalAmount').innerText = formatRupiah(totalAmount);
+        document.getElementById('modalSuccessReceipt').classList.remove('hidden');
+
+      } catch (err) {
+        console.error('Error saat membuat pesanan:', err);
+        showToast('Gagal memproses pesanan: ' + (err.message || 'Terjadi kesalahan sistem.'), 'error');
+      } finally {
+        if (btnSubmit) btnSubmit.disabled = false;
+        if (btnText) btnText.innerText = 'Kirimkan Pesanan & Bukti Transfer';
+      }
     }
 
     function closeSuccessReceiptModal() {
       document.getElementById('modalSuccessReceipt').classList.add('hidden');
     }
 
+    // =========================================================================
+    // SITE CONFIG & BRANDING CMS
+    // =========================================================================
     function renderSiteConfig() {
       // Brand Logo
       const logoTitleEl = document.getElementById('siteLogoTitle');
@@ -1501,7 +1755,7 @@
       }
     }
 
-    function handleSaveCMSHero(event) {
+    async function handleSaveCMSHero(event) {
       event.preventDefault();
       const inputVal = (document.getElementById('cmsHeroImageUrl')?.value || '').trim();
       if (inputVal) {
@@ -1514,7 +1768,8 @@
       siteConfig.heroCircleBadgeBot = document.getElementById('cmsHeroBadgeBot').value.trim();
       
       renderSiteConfig();
-      showToast('Hero Banner berhasil diperbarui!', 'success');
+      await syncSiteConfigToDB();
+      showToast('Hero Banner berhasil disimpan!', 'success');
     }
 
     function toggleLogoTypeInput(val) {
@@ -1552,13 +1807,14 @@
       }
     }
 
-    function handleSaveCMSBranding(event) {
+    async function handleSaveCMSBranding(event) {
       event.preventDefault();
       siteConfig.logoType = document.getElementById('cmsLogoType').value;
       siteConfig.logoImageUrl = (document.getElementById('cmsLogoImageUrl').value || '').trim();
       siteConfig.logoTitle = document.getElementById('cmsLogoTitle').value.trim();
       siteConfig.logoSubtitle = document.getElementById('cmsLogoSubtitle').value.trim();
       renderSiteConfig();
+      await syncSiteConfigToDB();
       showToast('Pengaturan branding logo disimpan!', 'success');
     }
 
@@ -1591,22 +1847,61 @@
       showToast('Gambar lencana banner dibersihkan.', 'info');
     }
 
-    function handleSaveCMSPromo(event) {
+    async function handleSaveCMSPromo(event) {
       event.preventDefault();
       siteConfig.promoBadgeImageUrl = (document.getElementById('cmsPromoImageUrl').value || '').trim();
       siteConfig.promoBadge = document.getElementById('cmsPromoBadge').value.trim() || 'AGUNG';
       siteConfig.promoTitle = document.getElementById('cmsPromoTitle').value.trim();
       siteConfig.promoDescription = document.getElementById('cmsPromoDesc').value.trim();
       renderSiteConfig();
+      await syncSiteConfigToDB();
       showToast('Banner penawaran berhasil diperbarui!', 'success');
     }
 
-    function togglePromoBannerVisibility() {
+    async function togglePromoBannerVisibility() {
       siteConfig.showPromoBanner = !siteConfig.showPromoBanner;
       renderSiteConfig();
+      await syncSiteConfigToDB();
       showToast(siteConfig.showPromoBanner ? 'Banner penawaran ditampilkan.' : 'Banner penawaran disembunyikan.', 'info');
     }
 
+    async function syncSiteConfigToDB() {
+      if (!isConnectedToSupabase || !supabaseClient) return;
+      try {
+        const payload = {
+          logo_type: siteConfig.logoType,
+          logo_image_url: siteConfig.logoImageUrl,
+          logo_title: siteConfig.logoTitle,
+          logo_subtitle: siteConfig.logoSubtitle,
+          show_hero: siteConfig.showHero,
+          hero_badge: siteConfig.heroBadge,
+          hero_title: siteConfig.heroTitle,
+          hero_description: siteConfig.heroDescription,
+          hero_image_url: siteConfig.heroImageUrl,
+          hero_circle_badge_year: siteConfig.heroCircleBadgeYear,
+          hero_circle_badge_top: siteConfig.heroCircleBadgeTop,
+          hero_circle_badge_bot: siteConfig.heroCircleBadgeBot,
+          show_promo_banner: siteConfig.showPromoBanner,
+          promo_badge_image_url: siteConfig.promoBadgeImageUrl,
+          promo_badge: siteConfig.promoBadge,
+          promo_title: siteConfig.promoTitle,
+          promo_description: siteConfig.promoDescription,
+          updated_at: new Date().toISOString()
+        };
+
+        if (siteConfig.id) {
+          await supabaseClient.from('site_config').update(payload).eq('id', siteConfig.id);
+        } else {
+          await supabaseClient.from('site_config').upsert(payload);
+        }
+      } catch (err) {
+        console.warn('Gagal sync site_config ke Supabase:', err.message);
+      }
+    }
+
+    // =========================================================================
+    // ADMIN PANEL & CONTROLS
+    // =========================================================================
     function handleAdminBtnClick() {
       if (isAdminLoggedIn) {
         document.getElementById('publicContent')?.classList.add('hidden');
@@ -1630,7 +1925,6 @@
         isAdminLoggedIn = true;
         closeAdminAuthModal();
         document.getElementById('adminBtnText').innerText = 'Dasbor Admin';
-        // Hide public content completely so admin panel is directly at the top of the viewport
         document.getElementById('publicContent')?.classList.add('hidden');
         document.getElementById('adminView')?.classList.remove('hidden');
         renderAdminOrders();
@@ -1706,7 +2000,7 @@
             <div class="font-bold text-slate-900">${ord.nama_pemesan}</div>
             <div class="text-slate-500">${ord.nomor_kontak}</div>
           </td>
-          <td class="py-3 px-4 max-w-xs truncate">${itemsSummary}</td>
+          <td class="py-3 px-4 max-w-xs truncate">${itemsSummary || '-'}</td>
           <td class="py-3 px-4 font-bold text-brand-700">${formatRupiah(ord.total_dana)}</td>
           <td class="py-3 px-4">
             <button onclick="openLightbox('${ord.bukti_transaksi_url}', '${ord.bukti_file_type || ''}')" class="px-2.5 py-1 rounded bg-amber-100 text-brand-800 hover:bg-amber-200 font-bold text-[11px]">
@@ -1737,17 +2031,43 @@
       });
     }
 
-    function updateOrderStatus(orderId, newStatus) {
+    async function updateOrderStatus(orderId, newStatus) {
+      if (isConnectedToSupabase && supabaseClient) {
+        try {
+          const { error } = await supabaseClient
+            .from('orders')
+            .update({ status_pesanan: newStatus, updated_at: new Date().toISOString() })
+            .eq('id', orderId);
+          if (error) throw error;
+        } catch (e) {
+          showToast('Gagal update status di database: ' + e.message, 'error');
+          return;
+        }
+      }
+
       const ord = orders.find(o => o.id === orderId);
       if (ord) {
         ord.status_pesanan = newStatus;
         renderAdminOrders();
-        showToast(`Status transaksi ${ord.kode_transaksi} diperbarui menjadi: ${newStatus}`, 'success');
+        showToast(`Status transaksi diperbarui menjadi: ${newStatus}`, 'success');
       }
     }
 
-    function deleteOrder(orderId) {
-      openConfirmModal('Hapus Pesanan', 'Apakah Anda yakin ingin menghapus catatan pesanan ini?', () => {
+    async function deleteOrder(orderId) {
+      openConfirmModal('Hapus Pesanan', 'Apakah Anda yakin ingin menghapus catatan pesanan ini?', async () => {
+        if (isConnectedToSupabase && supabaseClient) {
+          try {
+            const { error } = await supabaseClient
+              .from('orders')
+              .delete()
+              .eq('id', orderId);
+            if (error) throw error;
+          } catch (e) {
+            showToast('Gagal menghapus dari database: ' + e.message, 'error');
+            return;
+          }
+        }
+
         orders = orders.filter(o => o.id !== orderId);
         renderAdminOrders();
         showToast('Pesanan berhasil dihapus.', 'info');
@@ -1756,7 +2076,7 @@
 
     function openLightbox(url, type) {
       const content = document.getElementById('lightboxContent');
-      if (type === 'application/pdf') {
+      if (type === 'application/pdf' || url.endsWith('.pdf')) {
         content.innerHTML = `<iframe src="${url}" class="w-[80vw] max-w-2xl h-[70vh] rounded-xl border-0"></iframe>`;
       } else {
         content.innerHTML = `<img src="${url}" alt="Bukti Transfer" class="max-w-full max-h-[80vh] object-contain rounded-xl">`;
@@ -1790,6 +2110,9 @@
       showToast('Rekap pesanan berhasil diunduh (CSV).', 'success');
     }
 
+    // =========================================================================
+    // PACKAGES CRUD (DATABASE INTEGRATED)
+    // =========================================================================
     function renderAdminPackages() {
       const tbody = document.getElementById('adminPackagesTbody');
       if (!tbody) return;
@@ -1872,7 +2195,7 @@
       }
     }
 
-    function handleSavePackage(event) {
+    async function handleSavePackage(event) {
       event.preventDefault();
       const editId = document.getElementById('pkgEditId').value;
       const name = document.getElementById('pkgName').value.trim();
@@ -1880,47 +2203,90 @@
       const price = parseInt(document.getElementById('pkgPrice').value, 10);
       const quota = parseInt(document.getElementById('pkgQuota').value, 10);
       const active = document.getElementById('pkgActive').checked;
+      const submitBtn = document.getElementById('btnSavePkgSubmit');
 
-      if (editId) {
-        const pkg = packages.find(p => p.id === editId);
-        if (pkg) {
-          pkg.nama_paket = name;
-          pkg.gambar_url = imgUrl || pkg.gambar_url;
-          pkg.harga = price;
-          pkg.kuota_tersisa = quota;
-          pkg.status_aktif = active;
-          showToast('Data paket berhasil diperbarui.', 'success');
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        if (isConnectedToSupabase && supabaseClient) {
+          const payload = {
+            nama_paket: name,
+            harga: price,
+            kuota_awal: quota,
+            kuota_tersisa: quota,
+            status_aktif: active,
+            gambar_url: imgUrl || 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80',
+            updated_at: new Date().toISOString()
+          };
+
+          if (editId && !editId.startsWith('pkg-')) {
+            const { error } = await supabaseClient.from('packages').update(payload).eq('id', editId);
+            if (error) throw error;
+          } else {
+            const { error } = await supabaseClient.from('packages').insert([payload]);
+            if (error) throw error;
+          }
+          await fetchPackagesFromDB();
+        } else {
+          // Local mode
+          if (editId) {
+            const pkg = packages.find(p => p.id === editId);
+            if (pkg) {
+              pkg.nama_paket = name;
+              pkg.gambar_url = imgUrl || pkg.gambar_url;
+              pkg.harga = price;
+              pkg.kuota_tersisa = quota;
+              pkg.status_aktif = active;
+            }
+          } else {
+            packages.push({
+              id: 'pkg-' + Date.now(),
+              nama_paket: name,
+              gambar_url: imgUrl || 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80',
+              harga: price,
+              kuota_awal: quota,
+              kuota_tersisa: quota,
+              status_aktif: active
+            });
+          }
+          renderPublicPackages();
+          renderAdminPackages();
         }
-      } else {
-        const newPkg = {
-          id: 'pkg-' + Date.now(),
-          nama_paket: name,
-          gambar_url: imgUrl || 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80',
-          harga: price,
-          kuota_awal: quota,
-          kuota_tersisa: quota,
-          status_aktif: active
-        };
-        packages.push(newPkg);
-        showToast('Paket baru berhasil ditambahkan.', 'success');
-      }
 
-      closeModalPackageEditor();
-      renderPublicPackages();
-      renderAdminPackages();
+        showToast('Data paket berhasil disimpan!', 'success');
+        closeModalPackageEditor();
+      } catch (err) {
+        showToast('Gagal menyimpan paket: ' + err.message, 'error');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     }
 
-    function deletePackage(id) {
-      openConfirmModal('Hapus Paket', 'Apakah Anda yakin ingin menghapus paket persembahan ini dari katalog?', () => {
-        packages = packages.filter(p => p.id !== id);
+    async function deletePackage(id) {
+      openConfirmModal('Hapus Paket', 'Apakah Anda yakin ingin menghapus paket persembahan ini?', async () => {
+        if (isConnectedToSupabase && supabaseClient && !id.startsWith('pkg-')) {
+          try {
+            const { error } = await supabaseClient.from('packages').delete().eq('id', id);
+            if (error) throw error;
+            await fetchPackagesFromDB();
+          } catch (e) {
+            showToast('Gagal menghapus paket dari database: ' + e.message, 'error');
+            return;
+          }
+        } else {
+          packages = packages.filter(p => p.id !== id);
+          renderPublicPackages();
+          renderAdminPackages();
+        }
         delete cart[id];
-        renderPublicPackages();
-        renderAdminPackages();
         updateStickyBar();
         showToast('Paket berhasil dihapus.', 'info');
       });
     }
 
+    // =========================================================================
+    // BANK ACCOUNTS CRUD (DATABASE INTEGRATED)
+    // =========================================================================
     function openModalAddBank() {
       document.getElementById('modalBankTitle').innerText = 'Tambah Rekening Bank';
       document.getElementById('bankEditId').value = '';
@@ -1974,55 +2340,98 @@
       showToast('Logo rekening dibersihkan.', 'info');
     }
 
-    function handleSaveBank(event) {
+    async function handleSaveBank(event) {
       event.preventDefault();
       const editId = document.getElementById('bankEditId').value;
       const name = document.getElementById('bankName').value.trim();
       const number = document.getElementById('bankNumber').value.trim();
       const holder = document.getElementById('bankHolder').value.trim();
       const logo = (document.getElementById('bankLogoUrl').value || '').trim();
+      const submitBtn = document.getElementById('btnSaveBankSubmit');
 
-      if (editId) {
-        const b = bankAccounts.find(x => x.id === editId);
-        if (b) {
-          b.bank_name = name;
-          b.account_number = number;
-          b.account_holder = holder;
-          b.logo_url = logo;
-          showToast('Data rekening berhasil diperbarui.', 'success');
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        if (isConnectedToSupabase && supabaseClient) {
+          const payload = {
+            bank_name: name,
+            account_number: number,
+            account_holder: holder,
+            logo_url: logo,
+            updated_at: new Date().toISOString()
+          };
+
+          if (editId && !editId.startsWith('bank-')) {
+            const { error } = await supabaseClient.from('bank_accounts').update(payload).eq('id', editId);
+            if (error) throw error;
+          } else {
+            const { error } = await supabaseClient.from('bank_accounts').insert([payload]);
+            if (error) throw error;
+          }
+          await fetchBanksFromDB();
+        } else {
+          // Local mode
+          if (editId) {
+            const b = bankAccounts.find(x => x.id === editId);
+            if (b) {
+              b.bank_name = name;
+              b.account_number = number;
+              b.account_holder = holder;
+              b.logo_url = logo;
+            }
+          } else {
+            bankAccounts.push({
+              id: 'bank-' + Date.now(),
+              bank_name: name,
+              account_number: number,
+              account_holder: holder,
+              logo_url: logo
+            });
+          }
+          renderBankAccounts();
         }
-      } else {
-        const newBank = {
-          id: 'bank-' + Date.now(),
-          bank_name: name,
-          account_number: number,
-          account_holder: holder,
-          logo_url: logo
-        };
-        bankAccounts.push(newBank);
-        showToast('Rekening bank baru berhasil ditambahkan.', 'success');
-      }
 
-      closeModalBankEditor();
-      renderBankAccounts();
+        showToast('Data rekening berhasil disimpan!', 'success');
+        closeModalBankEditor();
+      } catch (err) {
+        showToast('Gagal menyimpan rekening: ' + err.message, 'error');
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     }
 
-    function deleteBank(id) {
-      openConfirmModal('Hapus Rekening', 'Apakah Anda yakin ingin menghapus rekening tujuan transfer ini?', () => {
-        bankAccounts = bankAccounts.filter(x => x.id !== id);
-        renderBankAccounts();
+    async function deleteBank(id) {
+      openConfirmModal('Hapus Rekening', 'Apakah Anda yakin ingin menghapus rekening tujuan transfer ini?', async () => {
+        if (isConnectedToSupabase && supabaseClient && !id.startsWith('bank-')) {
+          try {
+            const { error } = await supabaseClient.from('bank_accounts').delete().eq('id', id);
+            if (error) throw error;
+            await fetchBanksFromDB();
+          } catch (e) {
+            showToast('Gagal menghapus rekening dari database: ' + e.message, 'error');
+            return;
+          }
+        } else {
+          bankAccounts = bankAccounts.filter(x => x.id !== id);
+          renderBankAccounts();
+        }
         showToast('Rekening bank berhasil dihapus.', 'info');
       });
     }
 
-    // Application Lifecycle Initialization
-    function initializeApplication() {
+    // =========================================================================
+    // APPLICATION INITIALIZATION LIFECYCLE
+    // =========================================================================
+    async function initializeApplication() {
       renderSiteConfig();
       renderPublicPackages();
       renderBankAccounts();
       renderAdminOrders();
       renderAdminPackages();
       updateStickyBar();
+
+      // Connect to Supabase Cloud
+      await initSupabase();
     }
 
     if (document.readyState === 'loading') {
