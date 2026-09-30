@@ -1890,12 +1890,26 @@
         };
 
         if (siteConfig.id) {
-          await supabaseClient.from('site_config').update(payload).eq('id', siteConfig.id);
+          const { error } = await supabaseClient.from('site_config').update(payload).eq('id', siteConfig.id);
+          if (error) throw error;
         } else {
-          await supabaseClient.from('site_config').upsert(payload);
+          // Cari baris konfigurasi yang sudah ada jika ID belum tersimpan di memori
+          const { data: existing } = await supabaseClient.from('site_config').select('id').limit(1).maybeSingle();
+          if (existing && existing.id) {
+            siteConfig.id = existing.id;
+            const { error } = await supabaseClient.from('site_config').update(payload).eq('id', existing.id);
+            if (error) throw error;
+          } else {
+            const { data: newRow, error } = await supabaseClient.from('site_config').insert([payload]).select().single();
+            if (error) throw error;
+            if (newRow) siteConfig.id = newRow.id;
+          }
         }
+        console.log('✅ Berhasil menyinkronkan data konfigurasi ke database Supabase');
       } catch (err) {
-        console.warn('Gagal sync site_config ke Supabase:', err.message);
+        console.error('Gagal sync site_config ke Supabase:', err);
+        showToast('Gagal menyimpan ke database: ' + (err.message || 'Cek izin RLS di Supabase'), 'error');
+        throw err;
       }
     }
 
