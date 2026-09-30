@@ -1011,7 +1011,7 @@
       let targetKey = localKey || '';
       let sourceInfo = localUrl ? 'Penyimpanan Langsung Browser' : 'Vercel Serverless (/api/config)';
 
-      // 2. Jika tidak ada di localStorage, ambil dari endpoint Vercel /api/config
+      // 2. Ambil dari endpoint Vercel /api/config agar otomatis aktif di semua perangkat
       if (!targetUrl || !targetKey) {
         try {
           const res = await fetch('/api/config');
@@ -1020,7 +1020,9 @@
             if (config.supabaseUrl && config.supabaseAnonKey) {
               targetUrl = config.supabaseUrl;
               targetKey = config.supabaseAnonKey;
-              sourceInfo = 'Environment Variables Vercel';
+              sourceInfo = 'Environment Variables Vercel (Otomatis Semua Perangkat)';
+            } else {
+              console.warn('/api/config aktif tetapi variabel SUPABASE_URL atau SUPABASE_ANON_KEY masih kosong di Vercel.');
             }
           }
         } catch (err) {
@@ -1080,7 +1082,7 @@
       // Jika kunci belum ada
       fallbackToLocalMode('Mode Demo Lokal (Belum Terhubung)');
       if (diagDetail) {
-        diagDetail.innerText = 'Kunci Supabase belum terbaca dari Vercel maupun browser. Silakan lakukan Redeploy di Vercel atau masukkan Project URL dan Anon Key pada form di bawah ini.';
+        diagDetail.innerText = 'Kunci Supabase belum terbaca otomatis dari Vercel. Pastikan Anda telah melakukan Redeploy di Vercel agar Environment Variables aktif di semua perangkat.';
       }
     }
 
