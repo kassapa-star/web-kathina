@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan Paket Kathina Sanghadana 2568</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              900: '#78350f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-[#faf9f6] text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo Container -->
+      <a href="#heroSection" id="brandLogoContainer" class="flex items-center gap-3 shrink-0 group">
+        <!-- Rendered dynamically by renderSiteConfig() -->
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span id="siteLogoTitle" class="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">KATHINA</span>
+          <span id="siteLogoSubtitle" class="text-[11px] font-semibold text-brand-600 tracking-wider uppercase">Sanghadana 2568</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#heroSection" class="hover:text-brand-600 transition-colors">Beranda</a>
+        <a href="#katalog" class="hover:text-brand-600 transition-colors">Pilihan Paket</a>
+        <a href="#rekening" class="hover:text-brand-600 transition-colors">Rekening Donasi</a>
+        <a href="#panduan" class="hover:text-brand-600 transition-colors">Panduan</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <button onclick="scrollToCatalog()" class="relative p-2.5 rounded-full bg-amber-50 text-brand-700 hover:bg-amber-100 transition-all flex items-center justify-center" title="Keranjang Pemesanan">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span id="headerCartBadge" class="hidden absolute -top-1 -right-1 w-5 h-5 rounded-full bg-brand-600 text-white text-[11px] font-bold flex items-center justify-center shadow-sm">0</span>
+        </button>
+
+        <button onclick="handleAdminBtnClick()" id="btnAdminAccess" class="text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-all shadow-sm flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          <span id="adminBtnText">Panel Panitia</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="publicContent">
+
+    <!-- Main Hero Section -->
+    <section id="heroSection" class="relative overflow-hidden pt-8 pb-14 lg:pt-14 lg:pb-20 bg-gradient-to-b from-amber-50/70 via-white to-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          
+          <!-- Left Hero Copy -->
+          <div class="lg:col-span-7 flex flex-col items-start">
+            <div id="heroBadgeEl" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-brand-800 text-xs font-semibold uppercase tracking-wider mb-5">
+              Perayaan Masa Vassa &bull; Kathina Sanghadana 2568 TB
+            </div>
+            <h1 id="heroTitleEl" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-5">
+              Sempurnakan Vassa.<br>
+              <span class="text-brand-600 font-extrabold">Berdana</span> Penuh Sukacita.
+            </h1>
+            <p id="heroDescEl" class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mb-8">
+              Wadah resmi pemesanan paket persembahan Jubah Civara, Kebutuhan Medis, dan Keperluan Pokok Sangha Monastik dengan kuota terkelola secara langsung.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 mb-10 w-full sm:w-auto">
+              <button onclick="scrollToCatalog()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg shadow-brand-600/25 transition-all flex items-center justify-center gap-2 group">
+                <span>Pesan Paket Sekarang</span>
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+              <a href="#panduan" class="w-full sm:w-auto px-6 py-4 rounded-full bg-white hover:bg-amber-50 text-slate-700 font-bold text-sm border border-slate-200 transition-all text-center">
+                Tata Cara Berdana
+              </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-amber-200/60 w-full max-w-lg">
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <span class="text-xs font-semibold text-slate-700">Tepat Sasaran Monastik</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <span class="text-xs font-semibold text-slate-700">Kuota Real-Time</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <span class="text-xs font-semibold text-slate-700">Verifikasi Panitia</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Hero Visual -->
+          <div class="lg:col-span-5 relative flex justify-center">
+            <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-amber-300 via-brand-200 to-amber-100 p-3 shadow-2xl">
+              <img id="heroImageEl" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80" alt="Foto Hero Kathina" class="w-full h-full object-cover rounded-full shadow-inner border-4 border-white transition-all duration-300" onerror="window.handleDriveImageError(this)">
+              
+              <!-- Circular Floating Badge -->
+              <div class="absolute -bottom-2 -left-2 sm:bottom-4 sm:left-0 bg-white text-slate-800 rounded-2xl p-3.5 shadow-xl border border-amber-100 flex items-center gap-3">
+                <div id="heroBadgeYearText" class="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center font-extrabold text-base">
+                  2568
+                </div>
+                <div>
+                  <p id="heroBadgeMidText" class="text-xs font-bold text-slate-900 leading-tight">Perayaan Masa</p>
+                  <p id="heroBadgeBotText" class="text-[11px] font-semibold text-brand-600">Kathina Agung</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog Packages Section -->
+    <section id="katalog" class="py-14 sm:py-18 bg-white border-t border-amber-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">PILIHAN DANA KATHINA</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Daftar Paket Persembahan</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500 max-w-md">
+            Pilih paket di bawah ini untuk dipersembahkan kepada Sangha Monastik. Kuota ketersediaan terkelola secara otomatis.
+          </p>
+        </div>
+
+        <!-- Packages Grid Container -->
+        <div id="packageGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Rendered dynamically by renderPublicPackages() -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Promo Offer Banner -->
+    <section id="promoBannerSection" class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-amber-700 via-brand-600 to-amber-500 rounded-3xl p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-brand-900/10">
+        
+        <div class="flex items-center gap-6">
+          <!-- Dynamic Circular Badge -->
+          <div id="promoBadgeContainer" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white text-brand-900 font-extrabold flex flex-col items-center justify-center text-center p-1 shrink-0 shadow-md overflow-hidden border-2 border-white/80">
+            <!-- Populated dynamically via renderSiteConfig() -->
+          </div>
+
+          <div>
+            <h3 id="promoTitleText" class="text-xl sm:text-2xl font-extrabold tracking-tight">Sanghadana Kathina. Berkah Berlimpah.</h3>
+            <p id="promoDescText" class="text-amber-100 text-xs sm:text-sm mt-1 max-w-xl">
+              Pahala berdana pada masa Kathina merupakan kebajikan luar biasa bagi kemajuan batin Anda dan keluarga tercinta.
+            </p>
+          </div>
+        </div>
+
+        <button onclick="scrollToCatalog()" class="px-6 py-3 rounded-full bg-white text-slate-900 hover:bg-amber-50 font-bold text-xs sm:text-sm shrink-0 transition-all shadow-md">
+          Pilih Paket Sekarang
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Official Bank Accounts Section (Centered Layout) -->
+    <section id="rekening" class="py-14 sm:py-18 bg-amber-50/50 border-t border-b border-amber-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-brand-800 text-xs font-bold uppercase tracking-wider mb-2">
+            Rekening Resmi Panitia
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Nomor Rekening Tujuan Transfer</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-2">
+            Harap transfer dana persembahan hanya ke rekening resmi di bawah ini demi keamanan dan keteraturan pencatatan.
+          </p>
+        </div>
+
+        <!-- Bank Accounts Container (Centered) -->
+        <div id="publicBankAccountsContainer" class="flex flex-wrap justify-center items-center gap-6 max-w-xl mx-auto">
+          <!-- Rendered dynamically by renderBankAccounts() -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Panduan Berdana -->
+    <section id="panduan" class="py-14 sm:py-18 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600">ALUR MUDAH</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">4 Langkah Berdana Kathina</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-[#faf9f6] border border-amber-100 text-center">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 font-black text-lg flex items-center justify-center mx-auto mb-4">1</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Pilih Paket</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">Tentukan jumlah paket Civara atau kebutuhan monastik yang hendak didanakan.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#faf9f6] border border-amber-100 text-center">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 font-black text-lg flex items-center justify-center mx-auto mb-4">2</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Isi Data Pemesan</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">Lengkapi nama lengkap dan nomor WhatsApp aktif Anda untuk konfirmasi tanda terima.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#faf9f6] border border-amber-100 text-center">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 font-black text-lg flex items-center justify-center mx-auto mb-4">3</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Transfer Dana & Unggah</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">Lakukan transfer ke rekening resmi panitia dan unggah foto bukti transfer (JPG, PNG, PDF).</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-[#faf9f6] border border-amber-100 text-center">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 font-black text-lg flex items-center justify-center mx-auto mb-4">4</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Verifikasi & Resi</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">Panitia memverifikasi mutasi dan Anda mendapatkan nomor kode transaksi resmi.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-slate-900 text-slate-400 py-10 border-t border-slate-800 text-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-white tracking-wider">KATHINA SANGHADANA 2568</span>
+          <span>&bull; Sabbe Satta Bhavantu Sukhitatta</span>
+        </div>
+        <div>
+          &copy; 2024 Panitia Perayaan Kathina. Terkelola Mandiri & Transparan.
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- End of #publicContent -->
+
+  <!-- Admin View Dashboard (Directly at top when activated) -->
+  <main id="adminView" class="hidden flex-1 bg-slate-100 py-8 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Admin Bar Header -->
+      <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-brand-800 text-[11px] font-bold uppercase tracking-wider mb-1">Panel Administrasi</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Dasbor Manajemen Kathina 2568</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Kelola foto hero, paket persembahan, verifikasi mutasi transfer, dan branding situs.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="exitAdminView()" class="px-5 py-2.5 rounded-full bg-brand-50 text-brand-700 hover:bg-brand-100 font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            <span>Lihat Halaman Publik</span>
+          </button>
+          <button onclick="handleAdminLogout()" class="px-5 py-2.5 rounded-full bg-rose-50 text-rose-600 hover:bg-rose-100 font-bold text-xs transition-all">
+            Keluar
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="flex border-b border-slate-200 mb-6 space-x-2 text-xs font-bold overflow-x-auto no-scrollbar bg-white p-2 rounded-2xl shadow-sm">
+        <button onclick="switchAdminTab('tabOrders')" id="btnTabOrders" class="px-4 py-2.5 border-b-2 border-brand-600 text-brand-600 whitespace-nowrap">Transaksi Masuk</button>
+        <button onclick="switchAdminTab('tabPackages')" id="btnTabPackages" class="px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">Kelola Paket & Kuota</button>
+        <button onclick="switchAdminTab('tabBanks')" id="btnTabBanks" class="px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">Rekening Bank Panitia</button>
+        <button onclick="switchAdminTab('tabHero')" id="btnTabHero" class="px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+          <span>Foto & Konten Hero</span>
+        </button>
+        <button onclick="switchAdminTab('tabCMS')" id="btnTabCMS" class="px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap">Logo & Banner Promo</button>
+      </div>
+
+      <!-- TAB 1: ORDERS -->
+      <div id="panelOrders" class="space-y-4">
+        <div class="flex justify-between items-center">
+          <h3 class="font-extrabold text-slate-800 text-base">Daftar Transaksi Pesanan Umat</h3>
+          <button onclick="exportOrdersToCSV()" class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Ekspor ke CSV/Excel
+          </button>
+        </div>
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider">
+              <tr>
+                <th class="py-3.5 px-4">Kode / Waktu</th>
+                <th class="py-3.5 px-4">Donatur</th>
+                <th class="py-3.5 px-4">Paket Dipesan</th>
+                <th class="py-3.5 px-4">Total</th>
+                <th class="py-3.5 px-4">Bukti Transfer</th>
+                <th class="py-3.5 px-4">Status</th>
+                <th class="py-3.5 px-4 text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTbody" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 2: PACKAGES -->
+      <div id="panelPackages" class="hidden space-y-4">
+        <div class="flex justify-between items-center">
+          <h3 class="font-extrabold text-slate-800 text-base">Manajemen Katalog Paket & Kuota</h3>
+          <button onclick="openModalAddPackage()" class="px-4 py-2 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm">
+            + Tambah Paket Baru
+          </button>
+        </div>
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider">
+              <tr>
+                <th class="py-3.5 px-4">Foto</th>
+                <th class="py-3.5 px-4">Nama Paket</th>
+                <th class="py-3.5 px-4">Harga Unit</th>
+                <th class="py-3.5 px-4">Sisa Kuota</th>
+                <th class="py-3.5 px-4">Status</th>
+                <th class="py-3.5 px-4 text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="adminPackagesTbody" class="divide-y divide-slate-100"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 3: BANKS -->
+      <div id="panelBanks" class="hidden space-y-4">
+        <div class="flex justify-between items-center">
+          <h3 class="font-extrabold text-slate-800 text-base">Daftar Rekening Bank Tujuan Transfer</h3>
+          <button onclick="openModalAddBank()" class="px-4 py-2 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm">
+            + Tambah Rekening
+          </button>
+        </div>
+        <div id="adminBanksContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- TAB 4: HERO PHOTO & CONTENT (DEDICATED) -->
+      <div id="panelHero" class="hidden space-y-6">
+        <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
+          <div class="max-w-3xl">
+            <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-brand-800 text-[11px] font-bold uppercase tracking-wider mb-2">
+              Kustomisasi Visual Utama
+            </span>
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mb-1">Pengaturan Foto Lingkaran & Teks Hero Banner</h3>
+            <p class="text-xs text-slate-500 mb-6">
+              Ganti foto lingkaran besar pada bagian depan dengan mengunggah foto langsung dari perangkat Anda atau menggunakan tautan Google Drive / Web.
+            </p>
+
+            <form id="formHeroCMS" onsubmit="handleSaveCMSHero(event)" class="space-y-6 text-xs">
+              
+              <!-- Photo Upload & Preview Section -->
+              <div class="p-5 rounded-2xl bg-amber-50/60 border border-amber-200 flex flex-col md:flex-row items-center gap-6">
+                <!-- Circular Preview Box -->
+                <div class="relative w-40 h-40 rounded-full bg-gradient-to-tr from-amber-300 via-brand-200 to-amber-100 p-2 shadow-lg shrink-0">
+                  <img id="cmsHeroImagePreview" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80" alt="Pratinjau Foto Hero" class="w-full h-full object-cover rounded-full border-2 border-white shadow-inner bg-slate-100" onerror="window.handleDriveImageError(this)">
+                </div>
+
+                <div class="flex-1 space-y-3 w-full">
+                  <div>
+                    <label class="block font-bold text-slate-800 mb-1.5">1. Upload Foto Langsung dari HP / Laptop</label>
+                    <input type="file" id="cmsHeroImageFileInput" accept="image/*" onchange="handleHeroImageFileUpload(event)" class="w-full file:mr-3 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-brand-600 file:text-white hover:file:bg-brand-700 cursor-pointer text-slate-600">
+                  </div>
+                  <div>
+                    <label class="block font-bold text-slate-800 mb-1">2. Atau Masukkan Tautan URL / Link Google Drive</label>
+                    <input type="url" id="cmsHeroImageUrl" placeholder="https://drive.google.com/file/d/... atau https://..." oninput="previewHeroImageInput(this.value)" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-brand-500">
+                  </div>
+                  <!-- Quick Presets -->
+                  <div class="pt-1 flex flex-wrap items-center gap-2">
+                    <span class="text-[11px] text-slate-500 font-semibold">Pilihan Foto Cepat:</span>
+                    <button type="button" onclick="setHeroPreset('https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-brand-500 text-[11px] font-bold text-slate-700">Jubah Civara</button>
+                    <button type="button" onclick="setHeroPreset('https://images.unsplash.com/photo-1609605988071-0d1bc7190013?w=900&auto=format&fit=crop&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-brand-500 text-[11px] font-bold text-slate-700">Bhikkhu Sangha</button>
+                    <button type="button" onclick="setHeroPreset('https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=900&auto=format&fit=crop&q=80')" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:border-brand-500 text-[11px] font-bold text-slate-700">Lilin & Bunga Puja</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hero Texts -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="md:col-span-2">
+                  <label class="block font-bold text-slate-700 mb-1">Teks Lencana Atas (Pill Badge)</label>
+                  <input type="text" id="cmsHeroBadge" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200">
+                </div>
+                <div class="md:col-span-2">
+                  <label class="block font-bold text-slate-700 mb-1">Judul Utama Hero (Mendukung HTML &lt;br&gt; / &lt;span&gt;)</label>
+                  <input type="text" id="cmsHeroTitle" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200">
+                </div>
+                <div class="md:col-span-2">
+                  <label class="block font-bold text-slate-700 mb-1">Deskripsi Hero</label>
+                  <textarea id="cmsHeroDesc" rows="3" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200"></textarea>
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Teks Lencana Melingkar (Baris Atas)</label>
+                  <input type="text" id="cmsHeroBadgeMid" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">Teks Lencana Melingkar (Baris Bawah)</label>
+                  <input type="text" id="cmsHeroBadgeBot" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200">
+                </div>
+              </div>
+
+              <div class="pt-2 flex items-center gap-3">
+                <button type="submit" class="px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold shadow-md shadow-brand-600/20">
+                  Simpan Perubahan Hero Banner
+                </button>
+                <button type="button" onclick="resetHeroImageToDefault()" class="px-4 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold">
+                  Kembalikan ke Foto Default
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: CMS CONTENT (LOGO & PROMO BANNER) -->
+      <div id="panelCMS" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Logo Branding CMS -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-sm mb-4">Pengaturan Logo & Branding Website</h4>
+          <form onsubmit="handleSaveCMSBranding(event)" class="space-y-4 text-xs">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Tipe Logo</label>
+              <select id="cmsLogoType" onchange="toggleLogoTypeInput(this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+                <option value="icon">Ikon Simbol Monogram Bawaan</option>
+                <option value="image">Gambar Logo Kustom</option>
+              </select>
+            </div>
+            <div id="cmsLogoImageWrapper" class="hidden space-y-2">
+              <label class="block font-bold text-slate-700 mb-1">Upload Berkas Logo (PNG/JPG/SVG)</label>
+              <input type="file" id="cmsLogoFileInput" accept="image/*" onchange="handleLogoFileUpload(event)" class="w-full file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-amber-100 file:text-brand-800 cursor-pointer">
+              <label class="block font-bold text-slate-700 mt-2 mb-1">Atau Masukkan Tautan URL / Link Google Drive</label>
+              <input type="url" id="cmsLogoImageUrl" placeholder="https://..." oninput="previewLogoInput(this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+              <div class="flex items-center gap-3 pt-1">
+                <img id="cmsLogoPreview" referrerpolicy="no-referrer" src="" class="w-12 h-12 object-contain rounded-xl border border-slate-200 bg-slate-50" onerror="window.handleDriveImageError(this)">
+                <button type="button" onclick="clearCMSLogoImage()" class="text-rose-600 hover:underline">Hapus Gambar Logo</button>
+              </div>
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Teks Judul Logo</label>
+              <input type="text" id="cmsLogoTitle" value="KATHINA" required class="w-full px-3 py-2 rounded-xl border border-slate-200">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Teks Subtitle Logo</label>
+              <input type="text" id="cmsLogoSubtitle" value="Sanghadana 2568" required class="w-full px-3 py-2 rounded-xl border border-slate-200">
+            </div>
+            <button type="submit" class="px-5 py-2.5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800">Simpan Branding Logo</button>
+          </form>
+        </div>
+
+        <!-- Promo Banner CMS Form -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+          <h4 class="font-bold text-slate-900 text-sm mb-4">Pengaturan Banner Penawaran (Bawah)</h4>
+          <form id="formCMSPromo" onsubmit="handleSaveCMSPromo(event)" class="space-y-4 text-xs">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Upload Gambar Lencana Lingkaran (PNG/JPG)</label>
+              <input type="file" id="cmsPromoImageFileInput" accept="image/*" onchange="handlePromoImageFileUpload(event)" class="w-full file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-amber-100 file:text-brand-800 cursor-pointer">
+              <label class="block font-bold text-slate-700 mt-2 mb-1">Atau URL Gambar / Link Google Drive Lencana</label>
+              <input type="url" id="cmsPromoImageUrl" placeholder="https://..." oninput="previewPromoImageInput(this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+              <div class="flex items-center gap-3 pt-1">
+                <img id="cmsPromoImagePreview" referrerpolicy="no-referrer" src="" class="w-12 h-12 object-cover rounded-full border border-slate-200 bg-slate-50" onerror="window.handleDriveImageError(this)">
+                <button type="button" onclick="clearCMSPromoImage()" class="text-rose-600 hover:underline">Hapus Gambar Lencana</button>
+              </div>
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Teks Lencana Cadangan (Jika Tanpa Gambar)</label>
+              <input type="text" id="cmsPromoBadge" value="AGUNG" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Judul Banner</label>
+              <input type="text" id="cmsPromoTitle" required class="w-full px-3 py-2 rounded-xl border border-slate-200">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Deskripsi Banner</label>
+              <textarea id="cmsPromoDesc" rows="2" class="w-full px-3 py-2 rounded-xl border border-slate-200"></textarea>
+            </div>
+            <div class="flex items-center gap-3">
+              <button type="submit" class="px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold">Simpan Banner Penawaran</button>
+              <button type="button" onclick="togglePromoBannerVisibility()" id="btnTogglePromoVis" class="px-4 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold">Sembunyikan Banner</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Sticky Bottom Cart Bar -->
+  <div id="stickyCartBar" class="hidden fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-md border-t border-amber-200 shadow-2xl py-3 px-4 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500"><span id="cartCountTotal">0</span> paket dipilih</p>
+          <p id="cartPriceTotal" class="text-sm sm:text-base font-extrabold text-slate-900">Rp 0</p>
+        </div>
+      </div>
+      <button onclick="openCheckoutModal()" class="px-6 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2">
+        <span>Lanjutkan Pemesanan</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Checkout / Pemesanan Umat -->
+  <div id="modalCheckout" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-amber-100 my-8">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div>
+          <h3 class="text-lg font-extrabold text-slate-900">Formulir Pemesanan Paket</h3>
+          <p class="text-xs text-slate-500">Lengkapi data diri dan unggah bukti transfer</p>
+        </div>
+        <button onclick="closeCheckoutModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <form id="formCheckout" onsubmit="handleCheckoutSubmit(event)" class="mt-4 space-y-4">
+        
+        <!-- Order Summary Box -->
+        <div class="bg-amber-50/60 p-4 rounded-2xl border border-amber-100 text-xs space-y-2">
+          <p class="font-bold text-slate-700">Rincian Paket Terpilih:</p>
+          <div id="checkoutSummaryList" class="space-y-1 text-slate-600 max-h-36 overflow-y-auto"></div>
+          <div class="pt-2 border-t border-amber-200 flex justify-between font-bold text-sm text-slate-900">
+            <span>Total Dana Persembahan:</span>
+            <span id="checkoutTotalAmount" class="text-brand-700">Rp 0</span>
+          </div>
+        </div>
+
+        <!-- Bank Transfer Instructions in Checkout -->
+        <div id="checkoutBankGuide" class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 text-xs">
+          <!-- Filled by JavaScript -->
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap Donatur / Pemesan *</label>
+          <input type="text" id="orderBuyerName" required placeholder="Contoh: Budi Santoso" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Aktif *</label>
+          <input type="tel" id="orderBuyerPhone" required placeholder="Contoh: 081234567890" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
+        </div>
+
+        <!-- Proof Upload -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Unggah Bukti Transfer (JPG, PNG, PDF maks 5MB) *</label>
+          <input type="file" id="orderProofFile" required accept="image/jpeg,image/png,image/webp,application/pdf" onchange="handleFileSelect(event)" class="w-full text-xs file:mr-3 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-amber-100 file:text-brand-800 hover:file:bg-amber-200 cursor-pointer">
+          <div id="proofPreviewBox" class="hidden mt-2 p-2 border border-slate-200 rounded-xl flex items-center gap-3 bg-slate-50">
+            <img id="proofPreviewImg" class="w-12 h-12 object-cover rounded-lg border border-slate-200" src="" alt="Pratinjau Bukti">
+            <span id="proofFileName" class="text-xs text-slate-600 truncate"></span>
+          </div>
+        </div>
+
+        <button type="submit" id="btnSubmitOrder" class="w-full py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-brand-600/20 transition-all flex items-center justify-center gap-2">
+          <span>Kirimkan Pesanan & Bukti Transfer</span>
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Tanda Terima Berhasil -->
+  <div id="modalSuccessReceipt" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-amber-100">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h3 class="text-xl font-extrabold text-slate-900">Anumodana! Pesanan Terkirim</h3>
+      <p class="text-xs text-slate-500 mt-1">Pesanan Anda telah dicatat dengan status "Menunggu Verifikasi" oleh panitia.</p>
+
+      <div class="my-5 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-left text-xs space-y-1.5">
+        <div class="flex justify-between"><span class="text-slate-500">Kode Transaksi:</span><span id="receiptOrderCode" class="font-mono font-bold text-brand-700"></span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Nama Donatur:</span><span id="receiptBuyerName" class="font-bold text-slate-800"></span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Total Nominal:</span><span id="receiptTotalAmount" class="font-bold text-slate-900"></span></div>
+      </div>
+
+      <button onclick="closeSuccessReceiptModal()" class="w-full py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs">
+        Tutup & Selesai
+      </button>
+    </div>
+  </div>
+
+  <!-- Admin Auth Modal -->
+  <div id="modalAdminAuth" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="font-extrabold text-slate-900 text-base">Masuk Panel Panitia</h3>
+        <button onclick="closeAdminAuthModal()" class="text-slate-400 hover:text-slate-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <form onsubmit="handleAdminLogin(event)" class="mt-4 space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Username</label>
+          <input type="text" id="adminUser" required value="admin" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Password</label>
+          <input type="password" id="adminPass" required value="kathina2024" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
+        </div>
+        <p class="text-[11px] text-slate-400 italic">Kredensial demo: admin / kathina2024</p>
+        <button type="submit" class="w-full py-2.5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800">Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Package Editor -->
+  <div id="modalPackageEditor" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 id="modalPackageTitle" class="font-extrabold text-slate-900 text-base">Tambah Paket Kathina</h3>
+        <button onclick="closeModalPackageEditor()" class="text-slate-400 hover:text-slate-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <form id="formPackageEditor" onsubmit="handleSavePackage(event)" class="mt-4 space-y-3 text-xs">
+        <input type="hidden" id="pkgEditId">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Nama Paket *</label>
+          <input type="text" id="pkgName" required class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Upload Foto Paket dari Galeri / Laptop</label>
+          <input type="file" id="pkgImageFileInput" accept="image/*" onchange="handlePackageFileUpload(event)" class="w-full file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-amber-100 file:text-brand-800 cursor-pointer">
+          <label class="block font-bold text-slate-700 mt-2 mb-1">Atau Masukkan Tautan URL / Link Google Drive</label>
+          <input type="url" id="pkgImageUrl" placeholder="https://..." oninput="previewPkgImageInput(this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+          <div class="mt-2 flex items-center gap-3">
+            <img id="pkgImagePreview" referrerpolicy="no-referrer" src="" class="w-14 h-14 object-cover rounded-xl border border-slate-200 bg-slate-50" onerror="window.handleDriveImageError(this)">
+            <span class="text-[11px] text-slate-400">Pratinjau Foto Paket</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Harga (Rp) *</label>
+            <input type="number" id="pkgPrice" required min="1000" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Alokasi Kuota *</label>
+            <input type="number" id="pkgQuota" required min="0" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+          </div>
+        </div>
+        <div class="flex items-center gap-2 pt-2">
+          <input type="checkbox" id="pkgActive" checked class="rounded text-brand-600">
+          <label for="pkgActive" class="text-xs text-slate-700 font-semibold">Tampilkan paket di katalog publik</label>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold mt-2">Simpan Paket</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Bank Editor -->
+  <div id="modalBankEditor" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 id="modalBankTitle" class="font-extrabold text-slate-900 text-base">Tambah Rekening Bank</h3>
+        <button onclick="closeModalBankEditor()" class="text-slate-400 hover:text-slate-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <form id="formBankEditor" onsubmit="handleSaveBank(event)" class="mt-4 space-y-3 text-xs">
+        <input type="hidden" id="bankEditId">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Nama Bank *</label>
+          <input type="text" id="bankName" required placeholder="Contoh: BANK MANDIRI" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Nomor Rekening *</label>
+          <input type="text" id="bankNumber" required placeholder="Contoh: 108-00-9821733-1" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Nama Pemilik Rekening (a.n.) *</label>
+          <input type="text" id="bankHolder" required placeholder="Contoh: YAYASAN SASANA DHARMA" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Upload Berkas Logo Bank (PNG/JPG)</label>
+          <input type="file" id="bankLogoFileInput" accept="image/*" onchange="handleBankLogoFileUpload(event)" class="w-full file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-amber-100 file:text-brand-800 cursor-pointer">
+          <label class="block font-bold text-slate-700 mt-2 mb-1">Atau Tautan URL Logo / Link Google Drive</label>
+          <input type="url" id="bankLogoUrl" placeholder="https://..." oninput="previewBankLogoInput(this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-200">
+          <div class="mt-2 flex items-center gap-3">
+            <img id="bankLogoPreview" referrerpolicy="no-referrer" src="" class="w-16 h-10 object-contain p-1 border border-slate-200 rounded-lg bg-slate-50" onerror="window.handleDriveImageError(this)">
+            <button type="button" onclick="clearBankLogoInput()" class="text-rose-600 hover:underline">Hapus Logo</button>
+          </div>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-bold mt-2">Simpan Rekening</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal Bukti Transfer -->
+  <div id="modalLightbox" class="hidden fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeLightbox()">
+    <div class="max-w-2xl max-h-[85vh] bg-white p-3 rounded-2xl overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" class="absolute top-4 right-4 bg-slate-900 text-white p-2 rounded-full hover:bg-slate-700"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      <div id="lightboxContent" class="flex justify-center items-center"></div>
+    </div>
+  </div>
+
+  <!-- Custom Confirmation Modal (No browser confirm) -->
+  <div id="modalConfirm" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-200">
+      <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 flex items-center justify-center mx-auto mb-3">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      </div>
+      <h4 id="confirmModalTitle" class="font-extrabold text-slate-900 text-base mb-1">Konfirmasi Tindakan</h4>
+      <p id="confirmModalMessage" class="text-xs text-slate-500 mb-5 leading-relaxed"></p>
+      <div class="flex items-center gap-3">
+        <button id="confirmBtnCancel" class="flex-1 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs">Batal</button>
+        <button id="confirmBtnOk" class="flex-1 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs">Ya, Lanjutkan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
+
+  <script>
+    // Expose Google Drive helpers globally to window immediately
+    window.convertGoogleDriveUrl = function(url) {
+      if (!url || typeof url !== 'string') return '';
+      const cleanUrl = url.trim();
+      const match = cleanUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || 
+                    cleanUrl.match(/id=([a-zA-Z0-9_-]+)/) ||
+                    cleanUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      if (match && match[1]) {
+        return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w1000`;
+      }
+      return cleanUrl;
+    };
+
+    window.handleDriveImageError = function(imgEl, originalUrl) {
+      if (!imgEl) return;
+      imgEl.onerror = null; // Prevent infinite error loop
+
+      const target = (originalUrl || imgEl.src || '').toString();
+      const driveMatch = target.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || 
+                         target.match(/id=([a-zA-Z0-9_-]+)/) ||
+                         target.match(/\/d\/([a-zA-Z0-9_-]+)/);
+
+      if (driveMatch && driveMatch[1] && !imgEl.dataset.fallbackAttempted) {
+        imgEl.dataset.fallbackAttempted = 'true';
+        imgEl.src = `https://lh3.googleusercontent.com/d/${driveMatch[1]}`;
+        return;
+      }
+
+      // Elegant Buddhist-themed fallback image (reliable Unsplash) instead of gray "Foto"
+      imgEl.src = 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80';
+    };
+
+    // Site Branding & CMS Configuration
+    let siteConfig = {
+      logoType: 'icon',
+      logoImageUrl: '',
+      logoTitle: 'KATHINA',
+      logoSubtitle: 'Sanghadana 2568',
+      showHero: true,
+      heroBadge: 'Perayaan Masa Vassa &bull; Kathina Sanghadana 2568 TB',
+      heroTitle: 'Sempurnakan Vassa.<br><span class="text-brand-600 font-extrabold">Berdana</span> Penuh Sukacita.',
+      heroDescription: 'Wadah resmi pemesanan paket persembahan Jubah Civara, Kebutuhan Medis, dan Keperluan Pokok Sangha Monastik dengan kuota terkelola secara langsung.',
+      heroImageUrl: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80',
+      heroCircleBadgeYear: '2568',
+      heroCircleBadgeTop: 'Perayaan Masa',
+      heroCircleBadgeBot: 'Kathina Agung',
+      showPromoBanner: true,
+      promoBadgeImageUrl: '',
+      promoBadge: 'AGUNG',
+      promoTitle: 'Sanghadana Kathina. Berkah Berlimpah.',
+      promoDescription: 'Pahala berdana pada masa Kathina merupakan kebajikan luar biasa bagi kemajuan batin Anda dan keluarga tercinta.'
+    };
+
+    // Initial Packages
+    let packages = [
+      {
+        id: 'pkg-1',
+        nama_paket: 'Paket Jubah Civara Utama',
+        harga: 500000,
+        kuota_awal: 50,
+        kuota_tersisa: 38,
+        status_aktif: true,
+        gambar_url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'pkg-2',
+        nama_paket: 'Paket Perlengkapan Medis Sangha',
+        harga: 350000,
+        kuota_awal: 40,
+        kuota_tersisa: 22,
+        status_aktif: true,
+        gambar_url: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'pkg-3',
+        nama_paket: 'Paket Kebutuhan Harian Vihara',
+        harga: 250000,
+        kuota_awal: 60,
+        kuota_tersisa: 45,
+        status_aktif: true,
+        gambar_url: 'https://images.unsplash.com/photo-1577937927133-66ef06acdf18?w=600&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'pkg-4',
+        nama_paket: 'Paket Sanghadana Khusus Masa Vassa',
+        harga: 1000000,
+        kuota_awal: 15,
+        kuota_tersisa: 0,
+        status_aktif: true,
+        gambar_url: 'https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=600&auto=format&fit=crop&q=80'
+      }
+    ];
+
+    // Bank Accounts Data
+    let bankAccounts = [
+      {
+        id: 'bank-1',
+        bank_name: 'BANK MANDIRI',
+        account_number: '108-00-9821733-1',
+        account_holder: 'YAYASAN SASANA DHARMA KATHINA',
+        logo_url: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg'
+      }
+    ];
+
+    // Orders Data Store
+    let orders = [];
+    let cart = {};
+    let isAdminLoggedIn = false;
+    let selectedFileBuffer = null;
+
+    // Toast Notification System
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+      const toast = document.createElement('div');
+      const colors = {
+        success: 'bg-emerald-600 text-white',
+        error: 'bg-rose-600 text-white',
+        info: 'bg-slate-900 text-white'
+      };
+      toast.className = `px-4 py-3 rounded-2xl shadow-xl text-xs font-semibold flex items-center justify-between gap-3 pointer-events-auto transition-all transform translate-y-2 opacity-0 ${colors[type] || colors.info}`;
+      toast.innerHTML = `<span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 10);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // Modal Confirmation Dialog (Replaces browser confirm)
+    function openConfirmModal(title, message, onConfirm) {
+      const modal = document.getElementById('modalConfirm');
+      const t = document.getElementById('confirmModalTitle');
+      const m = document.getElementById('confirmModalMessage');
+      const btnOk = document.getElementById('confirmBtnOk');
+      const btnCancel = document.getElementById('confirmBtnCancel');
+
+      if (t) t.innerText = title;
+      if (m) m.innerText = message;
+
+      const handleOk = () => {
+        modal.classList.add('hidden');
+        btnOk.removeEventListener('click', handleOk);
+        btnCancel.removeEventListener('click', handleCancel);
+        if (typeof onConfirm === 'function') onConfirm();
+      };
+      const handleCancel = () => {
+        modal.classList.add('hidden');
+        btnOk.removeEventListener('click', handleOk);
+        btnCancel.removeEventListener('click', handleCancel);
+      };
+
+      btnOk.addEventListener('click', handleOk);
+      btnCancel.addEventListener('click', handleCancel);
+      modal.classList.remove('hidden');
+    }
+
+    function formatRupiah(number) {
+      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
+    }
+
+    function renderPublicPackages() {
+      const container = document.getElementById('packageGrid');
+      if (!container) return;
+      container.innerHTML = '';
+
+      packages.forEach(pkg => {
+        if (!pkg.status_aktif) return;
+        const currentQty = cart[pkg.id] || 0;
+        const isSoldOut = pkg.kuota_tersisa <= 0;
+        const directImg = window.convertGoogleDriveUrl(pkg.gambar_url);
+
+        const card = document.createElement('div');
+        card.className = 'group bg-white rounded-3xl p-4 border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between';
+        card.innerHTML = `
+          <div>
+            <div class="relative w-full h-48 rounded-2xl overflow-hidden bg-slate-50 mb-4 border border-slate-100 flex items-center justify-center">
+              <img referrerpolicy="no-referrer" src="${directImg}" alt="${pkg.nama_paket}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="window.handleDriveImageError(this, '${pkg.gambar_url}')">
+              ${isSoldOut ? `
+                <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px] flex items-center justify-center">
+                  <span class="px-3.5 py-1.5 rounded-full bg-rose-600 text-white font-bold text-xs uppercase tracking-wider shadow">Kuota Habis</span>
+                </div>
+              ` : `
+                <div class="absolute top-3 left-3">
+                  <span class="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[11px] font-bold text-slate-700 shadow-sm">
+                    Sisa: ${pkg.kuota_tersisa} unit
+                  </span>
+                </div>
+              `}
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-sm sm:text-base leading-snug">${pkg.nama_paket}</h3>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+            <div>
+              <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Nilai Dana</p>
+              <p class="text-sm sm:text-base font-black text-brand-700">${formatRupiah(pkg.harga)}</p>
+            </div>
+
+            ${isSoldOut ? `
+              <button disabled class="px-3 py-2 rounded-xl bg-slate-100 text-slate-400 font-bold text-xs cursor-not-allowed">Habis</button>
+            ` : `
+              <div class="flex items-center gap-1.5">
+                ${currentQty > 0 ? `
+                  <button onclick="updateCartItemQuantity('${pkg.id}', -1)" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-sm flex items-center justify-center transition-all">-</button>
+                  <span class="w-6 text-center font-bold text-xs text-slate-800">${currentQty}</span>
+                ` : ''}
+                <button onclick="updateCartItemQuantity('${pkg.id}', 1)" class="w-9 h-9 rounded-full ${currentQty > 0 ? 'bg-brand-600 text-white' : 'bg-amber-100 text-brand-700 hover:bg-brand-600 hover:text-white'} font-bold flex items-center justify-center transition-all shadow-sm" title="Tambah ke Pemesanan">
+                  ${currentQty > 0 ? '+' : `
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                  `}
+                </button>
+              </div>
+            `}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function updateCartItemQuantity(pkgId, change) {
+      const pkg = packages.find(p => p.id === pkgId);
+      if (!pkg) return;
+      const current = cart[pkgId] || 0;
+      const next = current + change;
+
+      if (next > pkg.kuota_tersisa) {
+        showToast(`Maksimum kuota yang dapat dipilih untuk paket ini adalah ${pkg.kuota_tersisa} unit.`, 'error');
+        return;
+      }
+
+      if (next <= 0) {
+        delete cart[pkgId];
+      } else {
+        cart[pkgId] = next;
+      }
+
+      renderPublicPackages();
+      updateStickyBar();
+    }
+
+    function calculateCartSummary() {
+      let totalQty = 0;
+      let totalAmount = 0;
+      for (const [id, qty] of Object.entries(cart)) {
+        const pkg = packages.find(p => p.id === id);
+        if (pkg) {
+          totalQty += qty;
+          totalAmount += (pkg.harga * qty);
+        }
+      }
+      return { totalQty, totalAmount };
+    }
+
+    function updateStickyBar() {
+      const bar = document.getElementById('stickyCartBar');
+      const badge = document.getElementById('headerCartBadge');
+      const countEl = document.getElementById('cartCountTotal');
+      const priceEl = document.getElementById('cartPriceTotal');
+
+      const { totalQty, totalAmount } = calculateCartSummary();
+
+      if (badge) {
+        badge.innerText = totalQty;
+        if (totalQty > 0) badge.classList.remove('hidden');
+        else badge.classList.add('hidden');
+      }
+
+      if (bar) {
+        if (totalQty > 0) {
+          bar.classList.remove('hidden');
+          if (countEl) countEl.innerText = totalQty;
+          if (priceEl) priceEl.innerText = formatRupiah(totalAmount);
+        } else {
+          bar.classList.add('hidden');
+        }
+      }
+    }
+
+    function scrollToCatalog() {
+      const el = document.getElementById('katalog');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function renderBankAccounts() {
+      const container = document.getElementById('publicBankAccountsContainer');
+      const guide = document.getElementById('checkoutBankGuide');
+      const adminContainer = document.getElementById('adminBanksContainer');
+
+      if (container) {
+        container.innerHTML = '';
+        bankAccounts.forEach(b => {
+          const directLogo = window.convertGoogleDriveUrl(b.logo_url);
+          const card = document.createElement('div');
+          card.className = 'w-full max-w-md bg-white rounded-3xl p-6 sm:p-7 border border-amber-100 shadow-md shadow-amber-900/5 relative flex flex-col justify-between';
+          card.innerHTML = `
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <div>
+                  <h4 class="text-base font-extrabold text-slate-900 tracking-tight">${b.bank_name}</h4>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-600">Rekening Resmi</span>
+                </div>
+                ${b.logo_url ? `
+                  <div class="h-10 px-2 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+                    <img referrerpolicy="no-referrer" src="${directLogo}" alt="${b.bank_name}" class="h-7 max-w-[100px] object-contain" onerror="window.handleDriveImageError(this, '${b.logo_url}')">
+                  </div>
+                ` : ''}
+              </div>
+
+              <div class="bg-amber-50/70 p-3.5 rounded-2xl border border-amber-200/80 flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-base sm:text-lg font-black text-slate-900 tracking-wider">${b.account_number}</span>
+                <button onclick="copyToClipboard('${b.account_number}', 'Nomor rekening disalin!')" class="px-3 py-1.5 rounded-xl bg-white hover:bg-amber-100 text-brand-800 text-xs font-bold border border-amber-200 transition-all flex items-center gap-1 shadow-sm">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                  Salin
+                </button>
+              </div>
+
+              <p class="text-xs text-slate-500">Atas Nama: <span class="font-bold text-slate-800 uppercase">${b.account_holder}</span></p>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      if (guide) {
+        if (bankAccounts.length > 0) {
+          const main = bankAccounts[0];
+          guide.innerHTML = `
+            <p class="font-bold text-slate-800 mb-1">Transfer ke Rekening Resmi Panitia:</p>
+            <div class="flex items-center justify-between font-mono font-bold text-brand-700 bg-white p-2 rounded-xl border border-slate-200">
+              <span>${main.bank_name} - ${main.account_number}</span>
+              <button type="button" onclick="copyToClipboard('${main.account_number}', 'Nomor rekening disalin!')" class="text-[11px] px-2 py-1 rounded bg-amber-100 text-brand-800 hover:bg-amber-200">Salin</button>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">a.n. ${main.account_holder}</p>
+          `;
+        } else {
+          guide.innerHTML = '<p class="text-slate-400 italic">Belum ada rekening tujuan yang ditambahkan.</p>';
+        }
+      }
+
+      if (adminContainer) {
+        adminContainer.innerHTML = '';
+        bankAccounts.forEach(b => {
+          const directLogo = window.convertGoogleDriveUrl(b.logo_url);
+          const card = document.createElement('div');
+          card.className = 'bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between gap-4';
+          card.innerHTML = `
+            <div class="flex items-center gap-3">
+              ${b.logo_url ? `
+                <img referrerpolicy="no-referrer" src="${directLogo}" alt="${b.bank_name}" class="w-12 h-8 object-contain p-1 border border-slate-200 rounded-lg bg-slate-50" onerror="window.handleDriveImageError(this, '${b.logo_url}')">
+              ` : `
+                <div class="w-10 h-10 rounded-xl bg-amber-100 text-brand-700 font-bold flex items-center justify-center text-xs">BANK</div>
+              `}
+              <div>
+                <h4 class="font-extrabold text-slate-800 text-xs">${b.bank_name}</h4>
+                <p class="font-mono text-slate-600 text-xs font-bold">${b.account_number}</p>
+                <p class="text-[10px] text-slate-400">a.n. ${b.account_holder}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="openModalEditBank('${b.id}')" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs">Edit</button>
+              <button onclick="deleteBank('${b.id}')" class="p-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-600"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button>
+            </div>
+          `;
+          adminContainer.appendChild(card);
+        });
+      }
+    }
+
+    function copyToClipboard(text, successMsg) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast(successMsg, 'success')).catch(() => fallbackCopyText(text, successMsg));
+      } else {
+        fallbackCopyText(text, successMsg);
+      }
+    }
+
+    function fallbackCopyText(text, successMsg) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg, 'success');
+      } catch (err) {
+        showToast('Gagal menyalin otomatis', 'error');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function openCheckoutModal() {
+      const { totalQty, totalAmount } = calculateCartSummary();
+      if (totalQty === 0) {
+        showToast('Silakan pilih minimal 1 paket terlebih dahulu.', 'error');
+        return;
+      }
+
+      const list = document.getElementById('checkoutSummaryList');
+      const totalAmountEl = document.getElementById('checkoutTotalAmount');
+      if (list) {
+        list.innerHTML = '';
+        for (const [id, qty] of Object.entries(cart)) {
+          const pkg = packages.find(p => p.id === id);
+          if (pkg) {
+            const item = document.createElement('div');
+            item.className = 'flex justify-between';
+            item.innerHTML = `<span>${pkg.nama_paket} (${qty}x)</span> <span class="font-bold">${formatRupiah(pkg.harga * qty)}</span>`;
+            list.appendChild(item);
+          }
+        }
+      }
+      if (totalAmountEl) totalAmountEl.innerText = formatRupiah(totalAmount);
+      document.getElementById('modalCheckout').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('modalCheckout').classList.add('hidden');
+    }
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      const previewBox = document.getElementById('proofPreviewBox');
+      const previewImg = document.getElementById('proofPreviewImg');
+      const nameEl = document.getElementById('proofFileName');
+
+      if (!file) {
+        selectedFileBuffer = null;
+        if (previewBox) previewBox.classList.add('hidden');
+        return;
+      }
+
+      if (file.size > 5 * 1024 * 1024) {
+        showToast('Ukuran berkas melebihi 5 MB. Harap unggah berkas yang lebih kecil.', 'error');
+        event.target.value = '';
+        selectedFileBuffer = null;
+        if (previewBox) previewBox.classList.add('hidden');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        selectedFileBuffer = {
+          name: file.name,
+          type: file.type,
+          dataUrl: e.target.result
+        };
+        if (previewBox && nameEl) {
+          nameEl.innerText = file.name;
+          if (file.type.startsWith('image/')) {
+            if (previewImg) {
+              previewImg.src = e.target.result;
+              previewImg.classList.remove('hidden');
+            }
+          } else {
+            if (previewImg) previewImg.classList.add('hidden');
+          }
+          previewBox.classList.remove('hidden');
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleCheckoutSubmit(event) {
+      event.preventDefault();
+      const buyerName = document.getElementById('orderBuyerName').value.trim();
+      const buyerPhone = document.getElementById('orderBuyerPhone').value.trim();
+
+      if (!buyerName || !buyerPhone) {
+        showToast('Harap melengkapi nama dan nomor telepon Anda.', 'error');
+        return;
+      }
+
+      if (!selectedFileBuffer) {
+        showToast('Harap unggah berkas bukti transfer pembayaran Anda.', 'error');
+        return;
+      }
+
+      const { totalAmount } = calculateCartSummary();
+      const items = [];
+
+      for (const [id, qty] of Object.entries(cart)) {
+        const pkg = packages.find(p => p.id === id);
+        if (pkg) {
+          if (qty > pkg.kuota_tersisa) {
+            showToast(`Maaf, kuota untuk ${pkg.nama_paket} tidak mencukupi.`, 'error');
+            return;
+          }
+          items.push({
+            paket_id: pkg.id,
+            nama_paket: pkg.nama_paket,
+            jumlah: qty,
+            harga_satuan: pkg.harga,
+            subtotal: pkg.harga * qty
+          });
+        }
+      }
+
+      // Deduct quotas
+      items.forEach(it => {
+        const pkg = packages.find(p => p.id === it.paket_id);
+        if (pkg) pkg.kuota_tersisa -= it.jumlah;
+      });
+
+      const orderCode = 'KTN-' + Math.floor(100000 + Math.random() * 900000);
+      const newOrder = {
+        id: 'ord-' + Date.now(),
+        kode_transaksi: orderCode,
+        nama_pemesan: buyerName,
+        nomor_kontak: buyerPhone,
+        total_dana: totalAmount,
+        bukti_transaksi_url: selectedFileBuffer.dataUrl,
+        bukti_file_name: selectedFileBuffer.name,
+        bukti_file_type: selectedFileBuffer.type,
+        status_pesanan: 'Menunggu Verifikasi',
+        items: items,
+        created_at: new Date()
+      };
+
+      orders.unshift(newOrder);
+
+      // Reset cart and fields
+      cart = {};
+      selectedFileBuffer = null;
+      document.getElementById('formCheckout').reset();
+      document.getElementById('proofPreviewBox').classList.add('hidden');
+      closeCheckoutModal();
+
+      renderPublicPackages();
+      updateStickyBar();
+
+      // Show Success Modal
+      document.getElementById('receiptOrderCode').innerText = newOrder.kode_transaksi;
+      document.getElementById('receiptBuyerName').innerText = newOrder.nama_pemesan;
+      document.getElementById('receiptTotalAmount').innerText = formatRupiah(newOrder.total_dana);
+      document.getElementById('modalSuccessReceipt').classList.remove('hidden');
+    }
+
+    function closeSuccessReceiptModal() {
+      document.getElementById('modalSuccessReceipt').classList.add('hidden');
+    }
+
+    function renderSiteConfig() {
+      // Brand Logo
+      const logoTitleEl = document.getElementById('siteLogoTitle');
+      const logoSubEl = document.getElementById('siteLogoSubtitle');
+      const logoContainer = document.getElementById('brandLogoContainer');
+
+      if (logoTitleEl) logoTitleEl.innerText = siteConfig.logoTitle || 'KATHINA';
+      if (logoSubEl) logoSubEl.innerText = siteConfig.logoSubtitle || 'Sanghadana 2568';
+
+      if (logoContainer) {
+        if (siteConfig.logoType === 'image' && siteConfig.logoImageUrl) {
+          const directImg = window.convertGoogleDriveUrl(siteConfig.logoImageUrl);
+          logoContainer.innerHTML = `
+            <img referrerpolicy="no-referrer" src="${directImg}" alt="${siteConfig.logoTitle}" class="h-10 max-w-[120px] object-contain rounded-xl" onerror="window.handleDriveImageError(this, '${siteConfig.logoImageUrl}')">
+            <div class="flex flex-col">
+              <span class="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">${siteConfig.logoTitle}</span>
+              <span class="text-[11px] font-semibold text-brand-600 tracking-wider uppercase">${siteConfig.logoSubtitle}</span>
+            </div>
+          `;
+        } else {
+          logoContainer.innerHTML = `
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">${siteConfig.logoTitle}</span>
+              <span class="text-[11px] font-semibold text-brand-600 tracking-wider uppercase">${siteConfig.logoSubtitle}</span>
+            </div>
+          `;
+        }
+      }
+
+      // Hero Elements
+      const heroSection = document.getElementById('heroSection');
+      if (heroSection) {
+        if (!siteConfig.showHero) heroSection.classList.add('hidden');
+        else heroSection.classList.remove('hidden');
+      }
+
+      const heroImgEl = document.getElementById('heroImageEl');
+      if (heroImgEl) {
+        const directHeroImg = window.convertGoogleDriveUrl(siteConfig.heroImageUrl);
+        heroImgEl.src = directHeroImg || 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80';
+      }
+      const heroBadgeEl = document.getElementById('heroBadgeEl');
+      if (heroBadgeEl) heroBadgeEl.innerHTML = siteConfig.heroBadge;
+
+      const heroTitleEl = document.getElementById('heroTitleEl');
+      if (heroTitleEl) heroTitleEl.innerHTML = siteConfig.heroTitle;
+
+      const heroDescEl = document.getElementById('heroDescEl');
+      if (heroDescEl) heroDescEl.innerText = siteConfig.heroDescription;
+
+      const heroBadgeMid = document.getElementById('heroBadgeMidText');
+      if (heroBadgeMid) heroBadgeMid.innerText = siteConfig.heroCircleBadgeTop;
+
+      const heroBadgeBot = document.getElementById('heroBadgeBotText');
+      if (heroBadgeBot) heroBadgeBot.innerText = siteConfig.heroCircleBadgeBot;
+
+      // Promo Banner & Circular Badge Image
+      const promoSection = document.getElementById('promoBannerSection');
+      if (promoSection) {
+        if (!siteConfig.showPromoBanner) promoSection.classList.add('hidden');
+        else promoSection.classList.remove('hidden');
+
+        const titleEl = document.getElementById('promoTitleText');
+        const descEl = document.getElementById('promoDescText');
+        if (titleEl) titleEl.innerText = siteConfig.promoTitle;
+        if (descEl) descEl.innerText = siteConfig.promoDescription;
+
+        const badgeContainer = document.getElementById('promoBadgeContainer');
+        if (badgeContainer) {
+          if (siteConfig.promoBadgeImageUrl) {
+            const directBadgeImg = window.convertGoogleDriveUrl(siteConfig.promoBadgeImageUrl);
+            badgeContainer.innerHTML = '';
+            const img = document.createElement('img');
+            img.referrerPolicy = 'no-referrer';
+            img.src = directBadgeImg;
+            img.alt = 'Lencana Promo';
+            img.className = 'w-full h-full object-cover rounded-full';
+            img.onerror = function() {
+              window.handleDriveImageError(this, siteConfig.promoBadgeImageUrl);
+            };
+            badgeContainer.appendChild(img);
+          } else {
+            badgeContainer.innerHTML = `
+              <span class="text-[9px] uppercase tracking-wider font-semibold">Masa</span>
+              <span class="text-sm sm:text-base font-black leading-tight">${siteConfig.promoBadge || 'AGUNG'}</span>
+            `;
+          }
+        }
+      }
+
+      populateCMSFields();
+    }
+
+    function populateCMSFields() {
+      // Logo CMS
+      const logoType = document.getElementById('cmsLogoType');
+      const logoTitle = document.getElementById('cmsLogoTitle');
+      const logoSub = document.getElementById('cmsLogoSubtitle');
+      const logoUrl = document.getElementById('cmsLogoImageUrl');
+      const logoPreview = document.getElementById('cmsLogoPreview');
+
+      if (logoType) {
+        logoType.value = siteConfig.logoType;
+        toggleLogoTypeInput(siteConfig.logoType);
+      }
+      if (logoTitle) logoTitle.value = siteConfig.logoTitle;
+      if (logoSub) logoSub.value = siteConfig.logoSubtitle;
+      if (logoUrl) logoUrl.value = siteConfig.logoImageUrl || '';
+      if (logoPreview) {
+        logoPreview.src = siteConfig.logoImageUrl ? window.convertGoogleDriveUrl(siteConfig.logoImageUrl) : 'https://placehold.co/100x100/f8fafc/94a3b8?text=Logo';
+      }
+
+      // Hero Banner CMS
+      const heroUrl = document.getElementById('cmsHeroImageUrl');
+      const heroPreview = document.getElementById('cmsHeroImagePreview');
+      const heroBadge = document.getElementById('cmsHeroBadge');
+      const heroTitle = document.getElementById('cmsHeroTitle');
+      const heroDesc = document.getElementById('cmsHeroDesc');
+      const heroBadgeMid = document.getElementById('cmsHeroBadgeMid');
+      const heroBadgeBot = document.getElementById('cmsHeroBadgeBot');
+
+      if (heroUrl) heroUrl.value = siteConfig.heroImageUrl || '';
+      if (heroPreview) {
+        heroPreview.src = siteConfig.heroImageUrl ? window.convertGoogleDriveUrl(siteConfig.heroImageUrl) : 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80';
+      }
+      if (heroBadge) heroBadge.value = siteConfig.heroBadge;
+      if (heroTitle) heroTitle.value = siteConfig.heroTitle;
+      if (heroDesc) heroDesc.value = siteConfig.heroDescription;
+      if (heroBadgeMid) heroBadgeMid.value = siteConfig.heroCircleBadgeTop;
+      if (heroBadgeBot) heroBadgeBot.value = siteConfig.heroCircleBadgeBot;
+
+      // Promo CMS
+      const promoBadge = document.getElementById('cmsPromoBadge');
+      const promoTitle = document.getElementById('cmsPromoTitle');
+      const promoDesc = document.getElementById('cmsPromoDesc');
+      const promoUrl = document.getElementById('cmsPromoImageUrl');
+      const promoPreview = document.getElementById('cmsPromoImagePreview');
+      const btnTogglePromo = document.getElementById('btnTogglePromoVis');
+
+      if (promoBadge) promoBadge.value = siteConfig.promoBadge;
+      if (promoTitle) promoTitle.value = siteConfig.promoTitle;
+      if (promoDesc) promoDesc.value = siteConfig.promoDescription;
+      if (promoUrl) promoUrl.value = siteConfig.promoBadgeImageUrl || '';
+      if (promoPreview) {
+        promoPreview.src = siteConfig.promoBadgeImageUrl ? window.convertGoogleDriveUrl(siteConfig.promoBadgeImageUrl) : 'https://placehold.co/100x100/f8fafc/94a3b8?text=Foto';
+      }
+      if (btnTogglePromo) {
+        btnTogglePromo.innerText = siteConfig.showPromoBanner ? 'Sembunyikan Banner' : 'Tampilkan Banner';
+      }
+    }
+
+    function handleHeroImageFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const url = e.target.result;
+        const urlInput = document.getElementById('cmsHeroImageUrl');
+        const preview = document.getElementById('cmsHeroImagePreview');
+        if (urlInput) urlInput.value = url;
+        if (preview) preview.src = url;
+        showToast('Foto hero berhasil diunggah! Klik "Simpan Perubahan Hero Banner".', 'success');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function setHeroPreset(url) {
+      const urlInput = document.getElementById('cmsHeroImageUrl');
+      const preview = document.getElementById('cmsHeroImagePreview');
+      if (urlInput) urlInput.value = url;
+      if (preview) preview.src = url;
+      showToast('Foto preset dipilih! Klik "Simpan Perubahan Hero Banner".', 'info');
+    }
+
+    function resetHeroImageToDefault() {
+      const defaultImg = 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80';
+      const urlInput = document.getElementById('cmsHeroImageUrl');
+      const fileInput = document.getElementById('cmsHeroImageFileInput');
+      const preview = document.getElementById('cmsHeroImagePreview');
+      if (urlInput) urlInput.value = defaultImg;
+      if (fileInput) fileInput.value = '';
+      if (preview) preview.src = defaultImg;
+      showToast('Foto dikembalikan ke foto contoh Jubah Sangha.', 'info');
+    }
+
+    function previewHeroImageInput(url) {
+      const preview = document.getElementById('cmsHeroImagePreview');
+      if (preview) {
+        const direct = window.convertGoogleDriveUrl(url);
+        preview.src = direct || 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80';
+      }
+    }
+
+    function handleSaveCMSHero(event) {
+      event.preventDefault();
+      const inputVal = (document.getElementById('cmsHeroImageUrl')?.value || '').trim();
+      if (inputVal) {
+        siteConfig.heroImageUrl = inputVal;
+      }
+      siteConfig.heroBadge = document.getElementById('cmsHeroBadge').value.trim();
+      siteConfig.heroTitle = document.getElementById('cmsHeroTitle').value.trim();
+      siteConfig.heroDescription = document.getElementById('cmsHeroDesc').value.trim();
+      siteConfig.heroCircleBadgeTop = document.getElementById('cmsHeroBadgeMid').value.trim();
+      siteConfig.heroCircleBadgeBot = document.getElementById('cmsHeroBadgeBot').value.trim();
+      
+      renderSiteConfig();
+      showToast('Hero Banner berhasil diperbarui!', 'success');
+    }
+
+    function toggleLogoTypeInput(val) {
+      const wrap = document.getElementById('cmsLogoImageWrapper');
+      if (wrap) {
+        if (val === 'image') wrap.classList.remove('hidden');
+        else wrap.classList.add('hidden');
+      }
+    }
+
+    function handleLogoFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const url = e.target.result;
+        document.getElementById('cmsLogoImageUrl').value = url;
+        document.getElementById('cmsLogoPreview').src = url;
+        showToast('Logo berhasil diunggah! Klik Simpan Branding Logo.', 'success');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearCMSLogoImage() {
+      document.getElementById('cmsLogoImageUrl').value = '';
+      document.getElementById('cmsLogoPreview').src = 'https://placehold.co/100x100/f8fafc/94a3b8?text=Logo';
+      showToast('Gambar logo dibersihkan.', 'info');
+    }
+
+    function previewLogoInput(url) {
+      const preview = document.getElementById('cmsLogoPreview');
+      if (preview) {
+        const direct = window.convertGoogleDriveUrl(url);
+        preview.src = direct || 'https://placehold.co/100x100/f8fafc/94a3b8?text=Logo';
+      }
+    }
+
+    function handleSaveCMSBranding(event) {
+      event.preventDefault();
+      siteConfig.logoType = document.getElementById('cmsLogoType').value;
+      siteConfig.logoImageUrl = (document.getElementById('cmsLogoImageUrl').value || '').trim();
+      siteConfig.logoTitle = document.getElementById('cmsLogoTitle').value.trim();
+      siteConfig.logoSubtitle = document.getElementById('cmsLogoSubtitle').value.trim();
+      renderSiteConfig();
+      showToast('Pengaturan branding logo disimpan!', 'success');
+    }
+
+    function handlePromoImageFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const url = e.target.result;
+        document.getElementById('cmsPromoImageUrl').value = url;
+        document.getElementById('cmsPromoImagePreview').src = url;
+        showToast('Gambar lencana banner berhasil diunggah! Klik Simpan Banner Penawaran.', 'success');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function previewPromoImageInput(url) {
+      const preview = document.getElementById('cmsPromoImagePreview');
+      if (preview) {
+        const direct = window.convertGoogleDriveUrl(url);
+        preview.src = direct || 'https://placehold.co/100x100/f8fafc/94a3b8?text=Foto';
+      }
+    }
+
+    function clearCMSPromoImage() {
+      document.getElementById('cmsPromoImageUrl').value = '';
+      const f = document.getElementById('cmsPromoImageFileInput');
+      if (f) f.value = '';
+      document.getElementById('cmsPromoImagePreview').src = 'https://placehold.co/100x100/f8fafc/94a3b8?text=Foto';
+      showToast('Gambar lencana banner dibersihkan.', 'info');
+    }
+
+    function handleSaveCMSPromo(event) {
+      event.preventDefault();
+      siteConfig.promoBadgeImageUrl = (document.getElementById('cmsPromoImageUrl').value || '').trim();
+      siteConfig.promoBadge = document.getElementById('cmsPromoBadge').value.trim() || 'AGUNG';
+      siteConfig.promoTitle = document.getElementById('cmsPromoTitle').value.trim();
+      siteConfig.promoDescription = document.getElementById('cmsPromoDesc').value.trim();
+      renderSiteConfig();
+      showToast('Banner penawaran berhasil diperbarui!', 'success');
+    }
+
+    function togglePromoBannerVisibility() {
+      siteConfig.showPromoBanner = !siteConfig.showPromoBanner;
+      renderSiteConfig();
+      showToast(siteConfig.showPromoBanner ? 'Banner penawaran ditampilkan.' : 'Banner penawaran disembunyikan.', 'info');
+    }
+
+    function handleAdminBtnClick() {
+      if (isAdminLoggedIn) {
+        document.getElementById('publicContent')?.classList.add('hidden');
+        document.getElementById('adminView')?.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        document.getElementById('modalAdminAuth')?.classList.remove('hidden');
+      }
+    }
+
+    function closeAdminAuthModal() {
+      document.getElementById('modalAdminAuth')?.classList.add('hidden');
+    }
+
+    function handleAdminLogin(event) {
+      event.preventDefault();
+      const u = document.getElementById('adminUser').value.trim();
+      const p = document.getElementById('adminPass').value.trim();
+
+      if (u === 'admin' && p === 'kathina2024') {
+        isAdminLoggedIn = true;
+        closeAdminAuthModal();
+        document.getElementById('adminBtnText').innerText = 'Dasbor Admin';
+        // Hide public content completely so admin panel is directly at the top of the viewport
+        document.getElementById('publicContent')?.classList.add('hidden');
+        document.getElementById('adminView')?.classList.remove('hidden');
+        renderAdminOrders();
+        renderAdminPackages();
+        renderBankAccounts();
+        renderSiteConfig();
+        showToast('Berhasil masuk ke Panel Panitia!', 'success');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        showToast('Username atau password panitia salah.', 'error');
+      }
+    }
+
+    function handleAdminLogout() {
+      isAdminLoggedIn = false;
+      document.getElementById('adminBtnText').innerText = 'Panel Panitia';
+      document.getElementById('adminView')?.classList.add('hidden');
+      document.getElementById('publicContent')?.classList.remove('hidden');
+      showToast('Anda telah keluar dari Panel Panitia.', 'info');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function exitAdminView() {
+      document.getElementById('adminView')?.classList.add('hidden');
+      document.getElementById('publicContent')?.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function switchAdminTab(tabId) {
+      const tabs = ['tabOrders', 'tabPackages', 'tabBanks', 'tabHero', 'tabCMS'];
+      const panels = {
+        tabOrders: 'panelOrders',
+        tabPackages: 'panelPackages',
+        tabBanks: 'panelBanks',
+        tabHero: 'panelHero',
+        tabCMS: 'panelCMS'
+      };
+
+      tabs.forEach(t => {
+        const btn = document.getElementById('btn' + t.charAt(0).toUpperCase() + t.slice(1));
+        const panel = document.getElementById(panels[t]);
+        if (t === tabId) {
+          if (btn) btn.className = 'px-4 py-2.5 border-b-2 border-brand-600 text-brand-600 whitespace-nowrap flex items-center gap-1.5';
+          if (panel) panel.classList.remove('hidden');
+        } else {
+          if (btn) btn.className = 'px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap flex items-center gap-1.5';
+          if (panel) panel.classList.add('hidden');
+        }
+      });
+    }
+
+    function renderAdminOrders() {
+      const tbody = document.getElementById('adminOrdersTbody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      if (orders.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-400">Belum ada pesanan yang masuk.</td></tr>';
+        return;
+      }
+
+      orders.forEach(ord => {
+        const tr = document.createElement('tr');
+        const itemsSummary = ord.items.map(i => `${i.nama_paket} (${i.jumlah}x)`).join(', ');
+        const dateStr = new Date(ord.created_at).toLocaleString('id-ID', { dateStyle: 'short', timeStyle: 'short' });
+
+        tr.innerHTML = `
+          <td class="py-3 px-4">
+            <span class="font-mono font-bold text-slate-900">${ord.kode_transaksi}</span>
+            <div class="text-[10px] text-slate-400">${dateStr}</div>
+          </td>
+          <td class="py-3 px-4">
+            <div class="font-bold text-slate-900">${ord.nama_pemesan}</div>
+            <div class="text-slate-500">${ord.nomor_kontak}</div>
+          </td>
+          <td class="py-3 px-4 max-w-xs truncate">${itemsSummary}</td>
+          <td class="py-3 px-4 font-bold text-brand-700">${formatRupiah(ord.total_dana)}</td>
+          <td class="py-3 px-4">
+            <button onclick="openLightbox('${ord.bukti_transaksi_url}', '${ord.bukti_file_type || ''}')" class="px-2.5 py-1 rounded bg-amber-100 text-brand-800 hover:bg-amber-200 font-bold text-[11px]">
+              Lihat Bukti
+            </button>
+          </td>
+          <td class="py-3 px-4">
+            <span class="px-2 py-1 rounded-full text-[10px] font-bold ${
+              ord.status_pesanan === 'Terverifikasi' ? 'bg-emerald-100 text-emerald-700' :
+              ord.status_pesanan === 'Ditolak' ? 'bg-rose-100 text-rose-700' : 'bg-amber-100 text-brand-800'
+            }">
+              ${ord.status_pesanan}
+            </span>
+          </td>
+          <td class="py-3 px-4 text-center">
+            <div class="flex items-center justify-center gap-1.5">
+              ${ord.status_pesanan === 'Menunggu Verifikasi' ? `
+                <button onclick="updateOrderStatus('${ord.id}', 'Terverifikasi')" class="p-1.5 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 rounded" title="Verifikasi Transaksi"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></button>
+                <button onclick="updateOrderStatus('${ord.id}', 'Ditolak')" class="p-1.5 bg-rose-50 text-rose-600 hover:bg-rose-100 rounded" title="Tolak Transaksi"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+              ` : `
+                <button onclick="updateOrderStatus('${ord.id}', 'Menunggu Verifikasi')" class="text-[10px] text-slate-400 hover:underline">Reset</button>
+              `}
+              <button onclick="deleteOrder('${ord.id}')" class="p-1.5 bg-slate-100 text-slate-400 hover:text-rose-600 rounded" title="Hapus Riwayat"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function updateOrderStatus(orderId, newStatus) {
+      const ord = orders.find(o => o.id === orderId);
+      if (ord) {
+        ord.status_pesanan = newStatus;
+        renderAdminOrders();
+        showToast(`Status transaksi ${ord.kode_transaksi} diperbarui menjadi: ${newStatus}`, 'success');
+      }
+    }
+
+    function deleteOrder(orderId) {
+      openConfirmModal('Hapus Pesanan', 'Apakah Anda yakin ingin menghapus catatan pesanan ini?', () => {
+        orders = orders.filter(o => o.id !== orderId);
+        renderAdminOrders();
+        showToast('Pesanan berhasil dihapus.', 'info');
+      });
+    }
+
+    function openLightbox(url, type) {
+      const content = document.getElementById('lightboxContent');
+      if (type === 'application/pdf') {
+        content.innerHTML = `<iframe src="${url}" class="w-[80vw] max-w-2xl h-[70vh] rounded-xl border-0"></iframe>`;
+      } else {
+        content.innerHTML = `<img src="${url}" alt="Bukti Transfer" class="max-w-full max-h-[80vh] object-contain rounded-xl">`;
+      }
+      document.getElementById('modalLightbox').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('modalLightbox').classList.add('hidden');
+    }
+
+    function exportOrdersToCSV() {
+      if (orders.length === 0) {
+        showToast('Belum ada data pesanan untuk diekspor.', 'error');
+        return;
+      }
+      let csv = 'Kode Transaksi,Waktu,Nama Pemesan,Nomor Kontak,Total Dana,Status,Rincian Paket\n';
+      orders.forEach(o => {
+        const items = o.items.map(i => `${i.nama_paket} (${i.jumlah}x)`).join('; ');
+        const dateStr = new Date(o.created_at).toISOString();
+        csv += `"${o.kode_transaksi}","${dateStr}","${o.nama_pemesan}","${o.nomor_kontak}",${o.total_dana},"${o.status_pesanan}","${items}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', `rekap-pesanan-kathina-${Date.now()}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast('Rekap pesanan berhasil diunduh (CSV).', 'success');
+    }
+
+    function renderAdminPackages() {
+      const tbody = document.getElementById('adminPackagesTbody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      packages.forEach(pkg => {
+        const directImg = window.convertGoogleDriveUrl(pkg.gambar_url);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="py-3 px-4">
+            <img referrerpolicy="no-referrer" src="${directImg}" alt="${pkg.nama_paket}" class="w-12 h-12 object-cover rounded-xl border border-slate-200 bg-slate-50" onerror="window.handleDriveImageError(this, '${pkg.gambar_url}')">
+          </td>
+          <td class="py-3 px-4">
+            <div class="font-extrabold text-slate-800">${pkg.nama_paket}</div>
+          </td>
+          <td class="py-3 px-4 font-bold text-slate-900">${formatRupiah(pkg.harga)}</td>
+          <td class="py-3 px-4">
+            <span class="font-bold ${pkg.kuota_tersisa <= 0 ? 'text-rose-600' : 'text-slate-800'}">${pkg.kuota_tersisa}</span>
+            <span class="text-slate-400">/ ${pkg.kuota_awal}</span>
+          </td>
+          <td class="py-3 px-4">
+            <span class="px-2 py-1 rounded-full text-[10px] font-bold ${pkg.status_aktif ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-500'}">
+              ${pkg.status_aktif ? 'Aktif' : 'Nonaktif'}
+            </span>
+          </td>
+          <td class="py-3 px-4 text-center">
+            <div class="flex items-center justify-center gap-1.5">
+              <button onclick="openModalEditPackage('${pkg.id}')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px]">Edit</button>
+              <button onclick="deletePackage('${pkg.id}')" class="p-1 rounded bg-rose-50 hover:bg-rose-100 text-rose-600"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openModalAddPackage() {
+      document.getElementById('modalPackageTitle').innerText = 'Tambah Paket Kathina Baru';
+      document.getElementById('pkgEditId').value = '';
+      document.getElementById('formPackageEditor').reset();
+      document.getElementById('pkgImagePreview').src = 'https://placehold.co/100x100/f8fafc/94a3b8?text=Foto';
+      document.getElementById('modalPackageEditor').classList.remove('hidden');
+    }
+
+    function openModalEditPackage(id) {
+      const pkg = packages.find(p => p.id === id);
+      if (!pkg) return;
+      document.getElementById('modalPackageTitle').innerText = 'Sunting Paket Kathina';
+      document.getElementById('pkgEditId').value = pkg.id;
+      document.getElementById('pkgName').value = pkg.nama_paket;
+      document.getElementById('pkgImageUrl').value = pkg.gambar_url;
+      document.getElementById('pkgPrice').value = pkg.harga;
+      document.getElementById('pkgQuota').value = pkg.kuota_tersisa;
+      document.getElementById('pkgActive').checked = pkg.status_aktif;
+      document.getElementById('pkgImagePreview').src = pkg.gambar_url ? window.convertGoogleDriveUrl(pkg.gambar_url) : 'https://placehold.co/100x100/f8fafc/94a3b8?text=Foto';
+      document.getElementById('modalPackageEditor').classList.remove('hidden');
+    }
+
+    function closeModalPackageEditor() {
+      document.getElementById('modalPackageEditor').classList.add('hidden');
+    }
+
+    function handlePackageFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('pkgImageUrl').value = e.target.result;
+        document.getElementById('pkgImagePreview').src = e.target.result;
+        showToast('Foto paket berhasil diunggah dari perangkat!', 'success');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function previewPkgImageInput(url) {
+      const preview = document.getElementById('pkgImagePreview');
+      if (preview) {
+        const direct = window.convertGoogleDriveUrl(url);
+        preview.src = direct || 'https://placehold.co/100x100/f8fafc/94a3b8?text=Foto';
+      }
+    }
+
+    function handleSavePackage(event) {
+      event.preventDefault();
+      const editId = document.getElementById('pkgEditId').value;
+      const name = document.getElementById('pkgName').value.trim();
+      const imgUrl = (document.getElementById('pkgImageUrl').value || '').trim();
+      const price = parseInt(document.getElementById('pkgPrice').value, 10);
+      const quota = parseInt(document.getElementById('pkgQuota').value, 10);
+      const active = document.getElementById('pkgActive').checked;
+
+      if (editId) {
+        const pkg = packages.find(p => p.id === editId);
+        if (pkg) {
+          pkg.nama_paket = name;
+          pkg.gambar_url = imgUrl || pkg.gambar_url;
+          pkg.harga = price;
+          pkg.kuota_tersisa = quota;
+          pkg.status_aktif = active;
+          showToast('Data paket berhasil diperbarui.', 'success');
+        }
+      } else {
+        const newPkg = {
+          id: 'pkg-' + Date.now(),
+          nama_paket: name,
+          gambar_url: imgUrl || 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80',
+          harga: price,
+          kuota_awal: quota,
+          kuota_tersisa: quota,
+          status_aktif: active
+        };
+        packages.push(newPkg);
+        showToast('Paket baru berhasil ditambahkan.', 'success');
+      }
+
+      closeModalPackageEditor();
+      renderPublicPackages();
+      renderAdminPackages();
+    }
+
+    function deletePackage(id) {
+      openConfirmModal('Hapus Paket', 'Apakah Anda yakin ingin menghapus paket persembahan ini dari katalog?', () => {
+        packages = packages.filter(p => p.id !== id);
+        delete cart[id];
+        renderPublicPackages();
+        renderAdminPackages();
+        updateStickyBar();
+        showToast('Paket berhasil dihapus.', 'info');
+      });
+    }
+
+    function openModalAddBank() {
+      document.getElementById('modalBankTitle').innerText = 'Tambah Rekening Bank';
+      document.getElementById('bankEditId').value = '';
+      document.getElementById('formBankEditor').reset();
+      document.getElementById('bankLogoPreview').src = 'https://placehold.co/100x100/f8fafc/94a3b8?text=Logo';
+      document.getElementById('modalBankEditor').classList.remove('hidden');
+    }
+
+    function openModalEditBank(id) {
+      const b = bankAccounts.find(x => x.id === id);
+      if (!b) return;
+      document.getElementById('modalBankTitle').innerText = 'Sunting Rekening Bank';
+      document.getElementById('bankEditId').value = b.id;
+      document.getElementById('bankName').value = b.bank_name;
+      document.getElementById('bankNumber').value = b.account_number;
+      document.getElementById('bankHolder').value = b.account_holder;
+      document.getElementById('bankLogoUrl').value = b.logo_url || '';
+      document.getElementById('bankLogoPreview').src = b.logo_url ? window.convertGoogleDriveUrl(b.logo_url) : 'https://placehold.co/100x100/f8fafc/94a3b8?text=Logo';
+      document.getElementById('modalBankEditor').classList.remove('hidden');
+    }
+
+    function closeModalBankEditor() {
+      document.getElementById('modalBankEditor').classList.add('hidden');
+    }
+
+    function handleBankLogoFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('bankLogoUrl').value = e.target.result;
+        document.getElementById('bankLogoPreview').src = e.target.result;
+        showToast('Logo bank berhasil diunggah dari perangkat!', 'success');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function previewBankLogoInput(url) {
+      const preview = document.getElementById('bankLogoPreview');
+      if (preview) {
+        const direct = window.convertGoogleDriveUrl(url);
+        preview.src = direct || 'https://placehold.co/100x100/f8fafc/94a3b8?text=Logo';
+      }
+    }
+
+    function clearBankLogoInput() {
+      document.getElementById('bankLogoUrl').value = '';
+      const f = document.getElementById('bankLogoFileInput');
+      if (f) f.value = '';
+      document.getElementById('bankLogoPreview').src = 'https://placehold.co/100x100/f8fafc/94a3b8?text=Logo';
+      showToast('Logo rekening dibersihkan.', 'info');
+    }
+
+    function handleSaveBank(event) {
+      event.preventDefault();
+      const editId = document.getElementById('bankEditId').value;
+      const name = document.getElementById('bankName').value.trim();
+      const number = document.getElementById('bankNumber').value.trim();
+      const holder = document.getElementById('bankHolder').value.trim();
+      const logo = (document.getElementById('bankLogoUrl').value || '').trim();
+
+      if (editId) {
+        const b = bankAccounts.find(x => x.id === editId);
+        if (b) {
+          b.bank_name = name;
+          b.account_number = number;
+          b.account_holder = holder;
+          b.logo_url = logo;
+          showToast('Data rekening berhasil diperbarui.', 'success');
+        }
+      } else {
+        const newBank = {
+          id: 'bank-' + Date.now(),
+          bank_name: name,
+          account_number: number,
+          account_holder: holder,
+          logo_url: logo
+        };
+        bankAccounts.push(newBank);
+        showToast('Rekening bank baru berhasil ditambahkan.', 'success');
+      }
+
+      closeModalBankEditor();
+      renderBankAccounts();
+    }
+
+    function deleteBank(id) {
+      openConfirmModal('Hapus Rekening', 'Apakah Anda yakin ingin menghapus rekening tujuan transfer ini?', () => {
+        bankAccounts = bankAccounts.filter(x => x.id !== id);
+        renderBankAccounts();
+        showToast('Rekening bank berhasil dihapus.', 'info');
+      });
+    }
+
+    // Application Lifecycle Initialization
+    function initializeApplication() {
+      renderSiteConfig();
+      renderPublicPackages();
+      renderBankAccounts();
+      renderAdminOrders();
+      renderAdminPackages();
+      updateStickyBar();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeApplication);
+    } else {
+      initializeApplication();
+    }
+  </script>
+</body>
+</html>
