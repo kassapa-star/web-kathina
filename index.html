@@ -2056,7 +2056,7 @@
       let proofPublicUrl = selectedFileBuffer.dataUrl;
 
       if (btnSubmit) btnSubmit.disabled = true;
-      if (btnText) btnText.innerText = 'Mengunggah & Menyimpan ke Cloud...';
+      if (btnText) btnText.innerText = 'Mengunggah & Menyimpan...';
 
       try {
         if (isConnectedToSupabase && supabaseClient && selectedFileBuffer.file) {
@@ -2150,7 +2150,7 @@
         const itemsTextList = items.map(it => `  - ${it.nama_paket} (${it.jumlah}x) = ${formatRupiah(it.subtotal)}`).join('\n');
         
         const waMessageTemplate = 
-`*KONFIRMASI PEMESANAN PAKET KATHINA *
+`*KONFIRMASI PEMESANAN PAKET KATHINA*
 Namo Buddhaya, Halo Panitia Kathina,
 
 Saya hendak mengkonfirmasi pemesanan paket Kathina melalui website dengan rincian berikut:
