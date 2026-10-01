@@ -2058,10 +2058,10 @@
         const itemsTextList = items.map(it => `• ${it.nama_paket} (${it.jumlah}x) = ${formatRupiah(it.subtotal)}`).join('\n');
         
         const waMessageTemplate = 
-`*KONFIRMASI PEMESANAN KATHINA SANGHADANA 2568*
-Namatthu Buddhassa / Halo Panitia Kathina,
+`*KONFIRMASI PEMESANAN PAKET KATHINA 2570 TB/2026*
+Namo Buddhaya / Halo Panitia Kathina,
 
-Saya hendak mengonfirmasi pemesanan paket persembahan Kathina melalui website dengan rincian berikut:
+Saya hendak mengkonfirmasi pemesanan paket Kathina melalui website dengan rincian berikut:
 
 📌 *Kode Transaksi:* ${orderCode}
 👤 *Nama Pemesan:* ${buyerName}
@@ -2073,7 +2073,7 @@ ${itemsTextList}
 
 Bukti transfer telah saya lampirkan saat mengisi formulir di website.
 Mohon bantuannya untuk dilakukan verifikasi. 
-Sadhu... Sadhu... Sadhu... 🙏`;
+Terimakasih 🙏`;
 
         const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waMessageTemplate)}`;
         
