@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kathina YKCK-YMHW</title>
+  <title>Pemesanan Paket Kathina Sanghadana 2568</title>
   
   <!-- Supabase JS Client v2 CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -80,10 +80,8 @@
           <span id="headerCartBadge" class="hidden absolute -top-1 -right-1 w-5 h-5 rounded-full bg-brand-600 text-white text-[11px] font-bold flex items-center justify-center shadow-sm">0</span>
         </button>
 
-        <button onclick="handleAdminBtnClick()" id="btnAdminAccess" class="text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-all shadow-sm flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
+        <!-- Tombol Panel Panitia Disembunyikan Total dari Pengunjung -->
+        <button onclick="handleAdminBtnClick()" id="btnAdminAccess" class="hidden" style="display: none !important;" aria-hidden="true">
           <span id="adminBtnText">Panel Panitia</span>
         </button>
       </div>
@@ -299,7 +297,7 @@
           <span>&bull; Sabbe Satta Bhavantu Sukhitatta</span>
         </div>
         <div>
-          &copy; 2024 Panitia Perayaan Kathina. Terkelola Mandiri & Transparan.
+          &copy; 2024 Panitia Perayaan Kathina. <span onclick="handleAdminBtnClick()" class="cursor-pointer select-none hover:text-slate-300 transition-colors">Terkelola Mandiri & Transparan.</span>
         </div>
       </div>
     </footer>
@@ -2055,25 +2053,25 @@
           targetWa = '62' + targetWa.substring(1);
         }
 
-        const itemsTextList = items.map(it => `• ${it.nama_paket} (${it.jumlah}x) = ${formatRupiah(it.subtotal)}`).join('\n');
+        const itemsTextList = items.map(it => `  - ${it.nama_paket} (${it.jumlah}x) = ${formatRupiah(it.subtotal)}`).join('\n');
         
         const waMessageTemplate = 
-`*KONFIRMASI PEMESANAN PAKET KATHINA 2570 TB/2026*
-Namo Buddhaya / Halo Panitia Kathina,
+`*KONFIRMASI PEMESANAN KATHINA SANGHADANA 2568*
+Namatthu Buddhassa / Halo Panitia Kathina,
 
-Saya hendak mengkonfirmasi pemesanan paket Kathina melalui website dengan rincian berikut:
+Saya hendak mengonfirmasi pemesanan paket persembahan Kathina melalui website dengan rincian berikut:
 
-📌 *Kode Transaksi:* ${orderCode}
-👤 *Nama Pemesan:* ${buyerName}
-📞 *Nomor WhatsApp:* ${buyerPhone}
-💰 *Total Dana:* ${formatRupiah(totalAmount)}
+- *Kode Transaksi:* ${orderCode}
+- *Nama Pemesan:* ${buyerName}
+- *Nomor WhatsApp:* ${buyerPhone}
+- *Total Dana:* ${formatRupiah(totalAmount)}
 
-📦 *Rincian Paket Dipesan:*
+*Rincian Paket Dipesan:*
 ${itemsTextList}
 
 Bukti transfer telah saya lampirkan saat mengisi formulir di website.
 Mohon bantuannya untuk dilakukan verifikasi. 
-Terimakasih 🙏`;
+Sadhu... Sadhu... Sadhu...`;
 
         const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waMessageTemplate)}`;
         
@@ -2400,27 +2398,39 @@ Terimakasih 🙏`;
           updated_at: new Date().toISOString()
         };
 
-        if (siteConfig.id) {
-          const { error } = await supabaseClient.from('site_config').update(payload).eq('id', siteConfig.id);
-          if (error) throw error;
-        } else {
-          const { data: existing } = await supabaseClient.from('site_config').select('id').limit(1).maybeSingle();
-          if (existing && existing.id) {
-            siteConfig.id = existing.id;
-            const { error } = await supabaseClient.from('site_config').update(payload).eq('id', existing.id);
-            if (error) throw error;
+        const tryUpdate = async (dataPayload) => {
+          if (siteConfig.id) {
+            return await supabaseClient.from('site_config').update(dataPayload).eq('id', siteConfig.id);
           } else {
-            const { data: newRow, error } = await supabaseClient.from('site_config').insert([payload]).select().single();
-            if (error) throw error;
-            if (newRow) siteConfig.id = newRow.id;
+            const { data: existing } = await supabaseClient.from('site_config').select('id').limit(1).maybeSingle();
+            if (existing && existing.id) {
+              siteConfig.id = existing.id;
+              return await supabaseClient.from('site_config').update(dataPayload).eq('id', existing.id);
+            } else {
+              const res = await supabaseClient.from('site_config').insert([dataPayload]).select().single();
+              if (res.data) siteConfig.id = res.data.id;
+              return res;
+            }
           }
+        };
+
+        let result = await tryUpdate(payload);
+
+        // Jika tabel Supabase belum memiliki kolom admin_whatsapp_number, simpan data lainnya tanpa error
+        if (result.error && result.error.message && result.error.message.includes('admin_whatsapp_number')) {
+          console.warn('Kolom admin_whatsapp_number belum ada di Supabase, menyimpan kolom lainnya...');
+          delete payload.admin_whatsapp_number;
+          result = await tryUpdate(payload);
         }
+
+        if (result.error) throw result.error;
         console.log('✅ Berhasil menyinkronkan data konfigurasi ke Supabase');
       } catch (err) {
         console.error('Gagal sync site_config ke Supabase:', err);
         throw err;
       }
     }
+
     function handleAdminBtnClick() {
       if (isAdminLoggedIn) {
         document.getElementById('publicContent')?.classList.add('hidden');
@@ -2938,6 +2948,24 @@ Terimakasih 🙏`;
       renderAdminOrders();
       renderAdminPackages();
       updateStickyBar();
+
+      // Pengecekan akses rahasia via URL hash #admin
+      if (window.location.hash === '#admin') {
+        handleAdminBtnClick();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#admin') {
+          handleAdminBtnClick();
+        }
+      });
+
+      // Shortcut rahasia keyboard Ctrl + Shift + A
+      window.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+          e.preventDefault();
+          handleAdminBtnClick();
+        }
+      });
 
       // Connect to Supabase Cloud
       await initSupabase();
