@@ -1013,6 +1013,83 @@
     let cart = {};
     let isAdminLoggedIn = false;
     let selectedFileBuffer = null;
+
+    function loadCachedData() {
+      try {
+        const cachedConfig = localStorage.getItem('kathina_cached_config');
+        const cachedSlides = localStorage.getItem('kathina_cached_slides');
+        const cachedPackages = localStorage.getItem('kathina_cached_packages');
+        const cachedBanks = localStorage.getItem('kathina_cached_banks');
+
+        let hasData = false;
+        if (cachedConfig) {
+          siteConfig = { ...siteConfig, ...JSON.parse(cachedConfig) };
+          hasData = true;
+        }
+        if (cachedSlides) {
+          const parsed = JSON.parse(cachedSlides);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            heroSlides = parsed;
+            hasData = true;
+          }
+        }
+        if (cachedPackages) {
+          const parsedPkgs = JSON.parse(cachedPackages);
+          if (Array.isArray(parsedPkgs) && parsedPkgs.length > 0) {
+            packages = parsedPkgs;
+            hasData = true;
+          }
+        }
+        if (cachedBanks) {
+          const parsedBanks = JSON.parse(cachedBanks);
+          if (Array.isArray(parsedBanks) && parsedBanks.length > 0) {
+            bankAccounts = parsedBanks;
+          }
+        }
+        return hasData;
+      } catch (e) {
+        console.warn('Gagal membaca cache lokal:', e);
+        return false;
+      }
+    }
+
+    function renderHeroSkeleton() {
+      const track = document.getElementById('heroSlideTrack');
+      if (!track) return;
+      track.innerHTML = `
+        <div class="w-full h-full flex-shrink-0 bg-amber-50 animate-pulse flex items-center justify-center">
+          <div class="w-12 h-12 rounded-2xl bg-amber-200/60 flex items-center justify-center text-brand-600/40">
+            <svg class="w-6 h-6 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPackageSkeleton() {
+      const container = document.getElementById('packageGrid');
+      if (!container) return;
+      container.innerHTML = `
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm w-full max-w-xs sm:w-72 animate-pulse space-y-4">
+          <div class="w-full h-48 rounded-2xl bg-slate-100"></div>
+          <div class="h-4 bg-slate-100 rounded w-3/4"></div>
+          <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+            <div class="h-5 bg-slate-100 rounded w-1/2"></div>
+            <div class="w-9 h-9 rounded-full bg-slate-100"></div>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm w-full max-w-xs sm:w-72 animate-pulse space-y-4 hidden sm:block">
+          <div class="w-full h-48 rounded-2xl bg-slate-100"></div>
+          <div class="h-4 bg-slate-100 rounded w-3/4"></div>
+          <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+            <div class="h-5 bg-slate-100 rounded w-1/2"></div>
+            <div class="w-9 h-9 rounded-full bg-slate-100"></div>
+          </div>
+        </div>
+      `;
+    }
+
     // Toast Notification System
     function showToast(message, type = 'info') {
       const container = document.getElementById('toastContainer');
@@ -1253,6 +1330,7 @@
       });
 
       siteConfig.heroImageUrl = JSON.stringify(heroSlides);
+      localStorage.setItem('kathina_cached_slides', JSON.stringify(heroSlides));
       if (input) input.value = '';
 
       renderHeroSlider();
@@ -1291,6 +1369,7 @@
             if (urlData && urlData.publicUrl) {
               heroSlides.push({ id: 'slide_' + Date.now(), url: urlData.publicUrl });
               siteConfig.heroImageUrl = JSON.stringify(heroSlides);
+              localStorage.setItem('kathina_cached_slides', JSON.stringify(heroSlides));
               renderHeroSlider();
               fileInput.value = '';
               await syncSiteConfigToDB();
@@ -1308,6 +1387,7 @@
       reader.onload = async function(e) {
         heroSlides.push({ id: 'slide_' + Date.now(), url: e.target.result });
         siteConfig.heroImageUrl = JSON.stringify(heroSlides);
+        localStorage.setItem('kathina_cached_slides', JSON.stringify(heroSlides));
         renderHeroSlider();
         fileInput.value = '';
         showToast('Foto berhasil ditambahkan!', 'success');
@@ -1321,6 +1401,7 @@
     async function addPresetHeroSlide(presetUrl) {
       heroSlides.push({ id: 'preset_' + Date.now(), url: presetUrl });
       siteConfig.heroImageUrl = JSON.stringify(heroSlides);
+      localStorage.setItem('kathina_cached_slides', JSON.stringify(heroSlides));
       renderHeroSlider();
       showToast('Foto preset berhasil ditambahkan!', 'success');
       if (isConnectedToSupabase) {
@@ -1336,6 +1417,7 @@
       heroSlides.splice(index, 1);
       if (currentHeroIndex >= heroSlides.length) currentHeroIndex = 0;
       siteConfig.heroImageUrl = JSON.stringify(heroSlides);
+      localStorage.setItem('kathina_cached_slides', JSON.stringify(heroSlides));
       renderHeroSlider();
       showToast('Foto dokumentasi telah dihapus.', 'info');
       if (isConnectedToSupabase) {
@@ -1352,6 +1434,7 @@
       siteConfig.heroCircleBadgeTop = document.getElementById('cmsHeroBadgeMid').value.trim();
       siteConfig.heroCircleBadgeBot = document.getElementById('cmsHeroBadgeBot').value.trim();
 
+      localStorage.setItem('kathina_cached_config', JSON.stringify(siteConfig));
       renderSiteConfig();
 
       if (isConnectedToSupabase) {
@@ -1543,6 +1626,11 @@
             }
           }
 
+          try {
+            localStorage.setItem('kathina_cached_config', JSON.stringify(siteConfig));
+            localStorage.setItem('kathina_cached_slides', JSON.stringify(heroSlides));
+          } catch (e) {}
+
           renderSiteConfig();
           renderHeroSlider();
         }
@@ -1561,6 +1649,9 @@
         
         if (data && !error && data.length > 0) {
           packages = data;
+          try {
+            localStorage.setItem('kathina_cached_packages', JSON.stringify(packages));
+          } catch (e) {}
           renderPublicPackages();
           renderAdminPackages();
         }
@@ -1580,6 +1671,9 @@
         
         if (data && !error && data.length > 0) {
           bankAccounts = data;
+          try {
+            localStorage.setItem('kathina_cached_banks', JSON.stringify(bankAccounts));
+          } catch (e) {}
           renderBankAccounts();
         }
       } catch (e) {
@@ -1962,7 +2056,7 @@
       let proofPublicUrl = selectedFileBuffer.dataUrl;
 
       if (btnSubmit) btnSubmit.disabled = true;
-      if (btnText) btnText.innerText = 'Mengunggah & Menyimpan...';
+      if (btnText) btnText.innerText = 'Mengunggah & Menyimpan ke Cloud...';
 
       try {
         if (isConnectedToSupabase && supabaseClient && selectedFileBuffer.file) {
@@ -2056,10 +2150,10 @@
         const itemsTextList = items.map(it => `  - ${it.nama_paket} (${it.jumlah}x) = ${formatRupiah(it.subtotal)}`).join('\n');
         
         const waMessageTemplate = 
-`*KONFIRMASI PEMESANAN PAKET KATHINA 2570 TB/2026*
+`*KONFIRMASI PEMESANAN PAKET KATHINA *
 Namo Buddhaya, Halo Panitia Kathina,
 
-Saya hendak mengonfirmasi pemesanan paket Kathina melalui website dengan rincian berikut:
+Saya hendak mengkonfirmasi pemesanan paket Kathina melalui website dengan rincian berikut:
 
 - *Kode Transaksi:* ${orderCode}
 - *Nama Pemesan:* ${buyerName}
@@ -2071,6 +2165,7 @@ ${itemsTextList}
 
 Bukti transfer telah saya lampirkan saat mengisi formulir di website.
 Mohon bantuannya untuk dilakukan verifikasi. 
+
 Terima Kasih.`;
 
         const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waMessageTemplate)}`;
@@ -2777,6 +2872,10 @@ Terima Kasih.`;
           renderAdminPackages();
         }
 
+        try {
+          localStorage.setItem('kathina_cached_packages', JSON.stringify(packages));
+        } catch (e) {}
+
         showToast('Data paket berhasil disimpan!', 'success');
         closeModalPackageEditor();
       } catch (err) {
@@ -2802,6 +2901,9 @@ Terima Kasih.`;
           renderPublicPackages();
           renderAdminPackages();
         }
+        try {
+          localStorage.setItem('kathina_cached_packages', JSON.stringify(packages));
+        } catch (e) {}
         delete cart[id];
         updateStickyBar();
         showToast('Paket berhasil dihapus.', 'info');
@@ -2910,6 +3012,10 @@ Terima Kasih.`;
           renderBankAccounts();
         }
 
+        try {
+          localStorage.setItem('kathina_cached_banks', JSON.stringify(bankAccounts));
+        } catch (e) {}
+
         showToast('Data rekening berhasil disimpan!', 'success');
         closeModalBankEditor();
       } catch (err) {
@@ -2934,17 +3040,31 @@ Terima Kasih.`;
           bankAccounts = bankAccounts.filter(x => x.id !== id);
           renderBankAccounts();
         }
+        try {
+          localStorage.setItem('kathina_cached_banks', JSON.stringify(bankAccounts));
+        } catch (e) {}
         showToast('Rekening bank berhasil dihapus.', 'info');
       });
     }
 
     async function initializeApplication() {
-      renderSiteConfig();
-      renderHeroSlider();
+      // 1. Cek apakah ada data tersimpan di cache lokal peramban
+      const hasLocalCache = loadCachedData();
+
+      if (hasLocalCache) {
+        // Tampilkan langsung data dan foto asli secara instan (0 milidetik!)
+        renderSiteConfig();
+        renderHeroSlider();
+        renderPublicPackages();
+        renderBankAccounts();
+      } else {
+        // Untuk pengunjung baru (pertama kali), tampilkan kerangka skeleton shimmer
+        renderHeroSkeleton();
+        renderPackageSkeleton();
+      }
+
       startHeroSliderAutoplay();
       setupSliderGestures();
-      renderPublicPackages();
-      renderBankAccounts();
       renderAdminOrders();
       renderAdminPackages();
       updateStickyBar();
@@ -2967,7 +3087,7 @@ Terima Kasih.`;
         }
       });
 
-      // Connect to Supabase Cloud
+      // Hubungkan ke Supabase Cloud di latar belakang dan mutakhirkan data
       await initSupabase();
     }
 
