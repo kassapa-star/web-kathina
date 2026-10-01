@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pemesanan Paket Kathina Sanghadana 2568</title>
+  <title>Kathina YKCK-YMHW</title>
   
   <!-- Supabase JS Client v2 CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -47,6 +47,7 @@
 </head>
 <body class="bg-[#faf9f6] text-slate-800 font-sans antialiased min-h-screen flex flex-col">
 
+  <!-- Header & Navigation Bar -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100 shadow-sm transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
       
@@ -70,7 +71,6 @@
         <a href="#rekening" class="hover:text-brand-600 transition-colors">Rekening Donasi</a>
         <a href="#panduan" class="hover:text-brand-600 transition-colors">Panduan</a>
       </nav>
-
       <!-- Action Buttons -->
       <div class="flex items-center gap-3">
         <button onclick="scrollToCatalog()" class="relative p-2.5 rounded-full bg-amber-50 text-brand-700 hover:bg-amber-100 transition-all flex items-center justify-center" title="Keranjang Pemesanan">
@@ -194,8 +194,7 @@
         </div>
       </div>
     </section>
-
-    <!-- Catalog Packages Section -->
+    <!-- Catalog Packages Section (Centered) -->
     <section id="katalog" class="py-14 sm:py-18 bg-white border-t border-amber-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -235,7 +234,6 @@
 
       </div>
     </section>
-
     <!-- Official Bank Accounts Section (Centered Layout) -->
     <section id="rekening" class="py-14 sm:py-18 bg-amber-50/50 border-t border-b border-amber-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -307,7 +305,6 @@
     </footer>
 
   </div> <!-- End of #publicContent -->
-
   <main id="adminView" class="hidden flex-1 bg-slate-100 py-8 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -316,7 +313,7 @@
         <div>
           <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-brand-800 text-[11px] font-bold uppercase tracking-wider mb-1">Panel Administrasi</span>
           <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Dasbor Manajemen Kathina 2568</h2>
-          <p class="text-xs text-slate-500 mt-0.5">Kelola galeri slider hero, paket persembahan, verifikasi transfer, dan database Supabase.</p>
+          <p class="text-xs text-slate-500 mt-0.5">Kelola galeri slider hero, paket persembahan, verifikasi transfer, kontak WhatsApp, dan basis data Supabase.</p>
         </div>
         <div class="flex items-center gap-3">
           <button onclick="exitAdminView()" class="px-5 py-2.5 rounded-full bg-brand-50 text-brand-700 hover:bg-brand-100 font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm">
@@ -338,13 +335,12 @@
           <span class="w-2 h-2 rounded-full bg-brand-500"></span>
           <span>Foto & Dokumentasi Hero (Kotak)</span>
         </button>
-        <button onclick="switchAdminTab('tabCMS')" id="btnTabCMS" class="px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap flex items-center gap-1.5">Logo & Banner Promo</button>
+        <button onclick="switchAdminTab('tabCMS')" id="btnTabCMS" class="px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap flex items-center gap-1.5">Kontak WA, Logo & Banner</button>
         <button onclick="switchAdminTab('tabDatabase')" id="btnTabDatabase" class="px-4 py-2.5 border-b-2 border-transparent text-slate-500 hover:text-slate-800 whitespace-nowrap flex items-center gap-1.5">
           <span id="tabDbIndicator" class="w-2 h-2 rounded-full bg-amber-500"></span>
           <span>Status & Koneksi Database</span>
         </button>
       </div>
-
       <!-- TAB 1: ORDERS -->
       <div id="panelOrders" class="space-y-4">
         <div class="flex justify-between items-center">
@@ -402,7 +398,6 @@
           </table>
         </div>
       </div>
-
       <!-- TAB 3: BANKS -->
       <div id="panelBanks" class="hidden space-y-4">
         <div class="flex justify-between items-center">
@@ -465,7 +460,6 @@
               </button>
             </div>
           </div>
-
           <!-- Daftar Foto Dokumentasi Aktif -->
           <div>
             <div class="flex items-center justify-between mb-3">
@@ -518,13 +512,23 @@
 
         </div>
       </div>
-
-      <!-- TAB 5: CMS CONTENT (LOGO & PROMO BANNER) -->
+      <!-- TAB 5: CMS CONTENT (LOGO, WA CONTACT & PROMO BANNER) -->
       <div id="panelCMS" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Logo Branding CMS -->
+        <!-- Logo Branding & WhatsApp CMS -->
         <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
-          <h4 class="font-bold text-slate-900 text-sm mb-4">Pengaturan Logo & Branding Website</h4>
+          <h4 class="font-bold text-slate-900 text-sm mb-4">Pengaturan Kontak WhatsApp & Branding Logo</h4>
           <form onsubmit="handleSaveCMSBranding(event)" class="space-y-4 text-xs">
+            
+            <!-- Admin WhatsApp Field for Instant Donor Confirmation -->
+            <div class="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200 space-y-1.5">
+              <label class="block font-bold text-emerald-900 text-xs flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-emerald-600 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.772.82 2.791.82 3.181 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm9.969 5.766c0 5.518-4.482 10-10 10-1.748 0-3.385-.45-4.815-1.238l-4.185 1.096 1.115-4.08c-.854-1.479-1.346-3.197-1.346-5.028 0-5.518 4.482-10 10-10s10 4.482 10 10z"/></svg>
+                <span>Nomor WhatsApp Panitia (Tujuan Konfirmasi Donatur) *</span>
+              </label>
+              <input type="text" id="cmsAdminWhatsapp" required placeholder="Contoh: 6281234567890 (Gunakan kode 62)" class="w-full px-3.5 py-2.5 rounded-xl border border-emerald-300 bg-white font-mono font-bold text-emerald-950 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+              <p class="text-[11px] text-emerald-700">Nomor ini otomatis digunakan saat donatur menekan tombol <strong>"Konfirmasi ke WhatsApp Panitia"</strong> pada tanda terima.</p>
+            </div>
+
             <div>
               <label class="block font-bold text-slate-700 mb-1">Tipe Logo</label>
               <select id="cmsLogoType" onchange="toggleLogoTypeInput(this.value)" class="w-full px-3 py-2 rounded-xl border border-slate-200">
@@ -550,7 +554,7 @@
               <label class="block font-bold text-slate-700 mb-1">Teks Subtitle Logo</label>
               <input type="text" id="cmsLogoSubtitle" value="Sanghadana 2568" required class="w-full px-3 py-2 rounded-xl border border-slate-200">
             </div>
-            <button type="submit" class="px-5 py-2.5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800">Simpan Branding Logo</button>
+            <button type="submit" class="px-5 py-2.5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800">Simpan Kontak WA & Logo</button>
           </form>
         </div>
 
@@ -587,7 +591,6 @@
           </form>
         </div>
       </div>
-
       <!-- TAB 6: DATABASE DIAGNOSTICS & SETUP -->
       <div id="panelDatabase" class="hidden space-y-6">
         <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
@@ -627,7 +630,7 @@
                 </div>
                 <div>
                   <label class="block font-bold text-slate-700 mb-1">Anon / Public Key Supabase *</label>
-                  <textarea id="manualSupabaseKey" rows="2" required placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-brand-500 font-mono"></textarea>
+                  <textarea id="manualSupabaseKey" rows="2" required placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-brand-500 font-mono"></textarea>
                 </div>
                 <div class="flex items-center gap-3 pt-1">
                   <button type="submit" class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-md shadow-emerald-600/20">
@@ -667,7 +670,6 @@
       </button>
     </div>
   </div>
-
   <!-- Modal Checkout / Pemesanan Umat -->
   <div id="modalCheckout" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-amber-100 my-8">
@@ -724,28 +726,39 @@
       </form>
     </div>
   </div>
-
-  <!-- Modal Tanda Terima Berhasil -->
+  <!-- Modal Tanda Terima Berhasil + Fitur Send WhatsApp Konfirmasi -->
   <div id="modalSuccessReceipt" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-amber-100">
-      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-amber-100 animate-in fade-in zoom-in duration-300">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 shadow-sm">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
       </div>
       <h3 class="text-xl font-extrabold text-slate-900">Anumodana! Pesanan Terkirim</h3>
-      <p class="text-xs text-slate-500 mt-1">Pesanan Anda telah berhasil tersimpan di sistem dengan status "Menunggu Verifikasi" oleh panitia.</p>
+      <p class="text-xs text-slate-500 mt-1">Pesanan Anda telah berhasil tersimpan dengan status <strong>"Menunggu Verifikasi"</strong> oleh panitia.</p>
 
-      <div class="my-5 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-left text-xs space-y-1.5">
-        <div class="flex justify-between"><span class="text-slate-500">Kode Transaksi:</span><span id="receiptOrderCode" class="font-mono font-bold text-brand-700"></span></div>
+      <div class="my-5 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-left text-xs space-y-2">
+        <div class="flex justify-between items-center"><span class="text-slate-500">Kode Transaksi:</span><span id="receiptOrderCode" class="font-mono font-bold text-brand-700 text-sm bg-amber-100/80 px-2 py-0.5 rounded-md"></span></div>
         <div class="flex justify-between"><span class="text-slate-500">Nama Donatur:</span><span id="receiptBuyerName" class="font-bold text-slate-800"></span></div>
-        <div class="flex justify-between"><span class="text-slate-500">Total Nominal:</span><span id="receiptTotalAmount" class="font-bold text-slate-900"></span></div>
+        <div class="flex justify-between"><span class="text-slate-500">Total Nominal:</span><span id="receiptTotalAmount" class="font-black text-slate-900"></span></div>
+        <div class="pt-2 border-t border-amber-200 text-[11px] text-slate-500 flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Bukti transfer telah tersimpan di sistem.</span>
+        </div>
       </div>
 
-      <button onclick="closeSuccessReceiptModal()" class="w-full py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs">
-        Tutup & Selesai
-      </button>
+      <!-- Action Buttons in Receipt -->
+      <div class="space-y-2.5">
+        <!-- Direct 1-Click WhatsApp Confirmation Button -->
+        <a id="receiptBtnWa" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition-all">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>Konfirmasi ke WhatsApp Panitia</span>
+        </a>
+
+        <button onclick="closeSuccessReceiptModal()" class="w-full py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all">
+          Selesai & Tutup Tanda Terima
+        </button>
+      </div>
     </div>
   </div>
-
   <!-- Admin Auth Modal -->
   <div id="modalAdminAuth" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200">
@@ -809,7 +822,6 @@
       </form>
     </div>
   </div>
-
   <!-- Modal Bank Editor -->
   <div id="modalBankEditor" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200">
@@ -871,13 +883,12 @@
 
   <!-- Toast Notification Container -->
   <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
-
   <script>
     // ============================================================================
     // ⚙️ KONFIGURASI SUPABASE UTAMA (PRAKTIS & OTOMATIS AKTIF DI SEMUA PERANGKAT)
     // ============================================================================
     const SUPABASE_CONFIG = {
-      url: 'https://vompitfsakasjlaowgyk.supabase.co', // Ganti dengan Project URL Supabase Anda
+      url: 'https://vompitfsakasjlaowgyk.supabase.co',
       anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvbXBpdGZzYWthc2psYW93Z3lrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA3NzYyNjcsImV4cCI6MjEwNjM1MjI2N30.-xQLR2ObZUUpxYLtF51FWecrSLcYX9b1S8suApD_1vo'
     };
 
@@ -914,7 +925,6 @@
     // Client Supabase Instance
     let supabaseClient = null;
     let isConnectedToSupabase = false;
-
     // State Foto Hero Slider (Kotak Dokumentasi)
     const DEFAULT_HERO_SLIDES = [
       { id: '1', url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80' },
@@ -933,6 +943,7 @@
       logoImageUrl: '',
       logoTitle: 'KATHINA',
       logoSubtitle: 'Sanghadana 2568',
+      adminWhatsappNumber: '6281234567890', // Nomor kontak WhatsApp admin panitia
       showHero: true,
       heroBadge: 'Perayaan Masa Vassa &bull; Kathina Sanghadana 2568 TB',
       heroTitle: 'Sempurnakan Vassa.<br><span class="text-brand-600 font-extrabold">Berdana</span> Penuh Sukacita.',
@@ -1004,7 +1015,6 @@
     let cart = {};
     let isAdminLoggedIn = false;
     let selectedFileBuffer = null;
-
     // Toast Notification System
     function showToast(message, type = 'info') {
       const container = document.getElementById('toastContainer');
@@ -1058,7 +1068,6 @@
     function formatRupiah(number) {
       return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
     }
-
     // ============================================================================
     // 📸 HERO DOCUMENTATION SLIDER ENGINE (KOTAK DOKUMENTASI)
     // ============================================================================
@@ -1183,7 +1192,6 @@
       card.addEventListener('mouseenter', stopHeroSliderAutoplay);
       card.addEventListener('mouseleave', startHeroSliderAutoplay);
     }
-
     // ============================================================================
     // 🛠️ ADMIN HERO SLIDER GALLERY MANAGEMENT
     // ============================================================================
@@ -1359,7 +1367,6 @@
         showToast('Teks hero disimpan di penyimpanan browser!', 'info');
       }
     }
-
     // ============================================================================
     // ⚡ SUPABASE INITIALIZATION & DATA FETCHING
     // ============================================================================
@@ -1495,7 +1502,6 @@
       showToast('Kunci lokal dibersihkan.', 'info');
       initSupabase();
     }
-
     async function fetchSiteConfigFromDB() {
       if (!supabaseClient) return;
       try {
@@ -1507,6 +1513,7 @@
             logoImageUrl: data.logo_image_url || '',
             logoTitle: data.logo_title || 'KATHINA',
             logoSubtitle: data.logo_subtitle || 'Sanghadana 2568',
+            adminWhatsappNumber: data.admin_whatsapp_number || siteConfig.adminWhatsappNumber || '6281234567890',
             showHero: data.show_hero ?? true,
             heroBadge: data.hero_badge || siteConfig.heroBadge,
             heroTitle: data.hero_title || siteConfig.heroTitle,
@@ -1612,7 +1619,6 @@
         console.error('Error fetching orders:', e);
       }
     }
-
     function renderPublicPackages() {
       const container = document.getElementById('packageGrid');
       if (!container) return;
@@ -1735,7 +1741,6 @@
       const el = document.getElementById('katalog');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
-
     function renderBankAccounts() {
       const container = document.getElementById('publicBankAccountsContainer');
       const guide = document.getElementById('checkoutBankGuide');
@@ -1844,7 +1849,6 @@
       }
       document.body.removeChild(textarea);
     }
-
     function openCheckoutModal() {
       const { totalQty, totalAmount } = calculateCartSummary();
       if (totalQty === 0) {
@@ -2043,6 +2047,42 @@
           renderAdminOrders();
         }
 
+        // =========================================================================
+        // 💬 PREPARASI FITUR SEND WA KONFIRMASI OTOMATIS
+        // =========================================================================
+        let targetWa = (siteConfig.adminWhatsappNumber || '6281234567890').replace(/[^0-9]/g, '');
+        if (targetWa.startsWith('0')) {
+          targetWa = '62' + targetWa.substring(1);
+        }
+
+        const itemsTextList = items.map(it => `• ${it.nama_paket} (${it.jumlah}x) = ${formatRupiah(it.subtotal)}`).join('\n');
+        
+        const waMessageTemplate = 
+`*KONFIRMASI PEMESANAN KATHINA SANGHADANA 2568*
+Namatthu Buddhassa / Halo Panitia Kathina,
+
+Saya hendak mengonfirmasi pemesanan paket persembahan Kathina melalui website dengan rincian berikut:
+
+📌 *Kode Transaksi:* ${orderCode}
+👤 *Nama Pemesan:* ${buyerName}
+📞 *Nomor WhatsApp:* ${buyerPhone}
+💰 *Total Dana:* ${formatRupiah(totalAmount)}
+
+📦 *Rincian Paket Dipesan:*
+${itemsTextList}
+
+Bukti transfer telah saya lampirkan saat mengisi formulir di website.
+Mohon bantuannya untuk dilakukan verifikasi. 
+Sadhu... Sadhu... Sadhu... 🙏`;
+
+        const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waMessageTemplate)}`;
+        
+        const btnWa = document.getElementById('receiptBtnWa');
+        if (btnWa) {
+          btnWa.href = waUrl;
+        }
+
+        // Reset cart and UI
         cart = {};
         selectedFileBuffer = null;
         document.getElementById('formCheckout').reset();
@@ -2050,10 +2090,13 @@
         closeCheckoutModal();
         updateStickyBar();
 
+        // Populate receipt modal
         document.getElementById('receiptOrderCode').innerText = orderCode;
         document.getElementById('receiptBuyerName').innerText = buyerName;
         document.getElementById('receiptTotalAmount').innerText = formatRupiah(totalAmount);
         document.getElementById('modalSuccessReceipt').classList.remove('hidden');
+
+        showToast('Pesanan berhasil dikirim! Silakan konfirmasi ke WhatsApp panitia.', 'success');
 
       } catch (err) {
         console.error('Error saat membuat pesanan:', err);
@@ -2067,7 +2110,6 @@
     function closeSuccessReceiptModal() {
       document.getElementById('modalSuccessReceipt').classList.add('hidden');
     }
-
     function renderSiteConfig() {
       const logoTitleEl = document.getElementById('siteLogoTitle');
       const logoSubEl = document.getElementById('siteLogoSubtitle');
@@ -2160,15 +2202,16 @@
 
       populateCMSFields();
     }
-
     function populateCMSFields() {
-      // Logo CMS
+      // Logo CMS & WhatsApp
       const logoType = document.getElementById('cmsLogoType');
       const logoTitle = document.getElementById('cmsLogoTitle');
       const logoSub = document.getElementById('cmsLogoSubtitle');
       const logoUrl = document.getElementById('cmsLogoImageUrl');
       const logoPreview = document.getElementById('cmsLogoPreview');
+      const waInput = document.getElementById('cmsAdminWhatsapp');
 
+      if (waInput) waInput.value = siteConfig.adminWhatsappNumber || '6281234567890';
       if (logoType) {
         logoType.value = siteConfig.logoType;
         toggleLogoTypeInput(siteConfig.logoType);
@@ -2231,7 +2274,7 @@
         const url = e.target.result;
         document.getElementById('cmsLogoImageUrl').value = url;
         document.getElementById('cmsLogoPreview').src = url;
-        showToast('Logo berhasil diunggah! Klik Simpan Branding Logo.', 'success');
+        showToast('Logo berhasil diunggah! Klik Simpan Kontak WA & Logo.', 'success');
       };
       reader.readAsDataURL(file);
     }
@@ -2256,20 +2299,20 @@
       siteConfig.logoImageUrl = (document.getElementById('cmsLogoImageUrl').value || '').trim();
       siteConfig.logoTitle = document.getElementById('cmsLogoTitle').value.trim();
       siteConfig.logoSubtitle = document.getElementById('cmsLogoSubtitle').value.trim();
+      siteConfig.adminWhatsappNumber = (document.getElementById('cmsAdminWhatsapp')?.value || '6281234567890').trim();
       renderSiteConfig();
 
       if (isConnectedToSupabase) {
         try {
           await syncSiteConfigToDB();
-          showToast('Pengaturan branding logo disimpan permanen ke Supabase!', 'success');
+          showToast('Pengaturan branding logo & WhatsApp disimpan ke Supabase!', 'success');
         } catch (err) {
           showToast('Gagal menyimpan ke Supabase: ' + err.message, 'error');
         }
       } else {
-        showToast('Pengaturan branding logo disimpan lokal!', 'info');
+        showToast('Pengaturan branding logo & WhatsApp disimpan lokal!', 'info');
       }
     }
-
     function handlePromoImageFileUpload(event) {
       const file = event.target.files[0];
       if (!file) return;
@@ -2340,6 +2383,7 @@
           logo_image_url: siteConfig.logoImageUrl,
           logo_title: siteConfig.logoTitle,
           logo_subtitle: siteConfig.logoSubtitle,
+          admin_whatsapp_number: siteConfig.adminWhatsappNumber,
           show_hero: siteConfig.showHero,
           hero_badge: siteConfig.heroBadge,
           hero_title: siteConfig.heroTitle,
@@ -2377,7 +2421,6 @@
         throw err;
       }
     }
-
     function handleAdminBtnClick() {
       if (isAdminLoggedIn) {
         document.getElementById('publicContent')?.classList.add('hidden');
@@ -2508,7 +2551,6 @@
         tbody.appendChild(tr);
       });
     }
-
     async function updateOrderStatus(orderId, newStatus) {
       if (isConnectedToSupabase && supabaseClient) {
         try {
@@ -2755,7 +2797,6 @@
         showToast('Paket berhasil dihapus.', 'info');
       });
     }
-
     function openModalAddBank() {
       document.getElementById('modalBankTitle').innerText = 'Tambah Rekening Bank';
       document.getElementById('bankEditId').value = '';
