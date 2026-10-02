@@ -853,11 +853,13 @@
     </div>
   </div>
 
-  <!-- Lightbox Modal Bukti Transfer & Foto Paket Membesar -->
+  <!-- Lightbox Modal Bukti Transfer & Foto Paket Membesar (Diperbarui dengan Smart Fallback & Direct Link) -->
   <div id="modalLightbox" class="hidden fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4" onclick="closeLightbox()">
-    <div class="max-w-2xl max-h-[85vh] bg-white p-3 rounded-2xl overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
-      <button onclick="closeLightbox()" class="absolute top-3 right-3 bg-slate-900 text-white p-2 rounded-full hover:bg-slate-700"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-      <div id="lightboxContent" class="flex justify-center items-center"></div>
+    <div class="max-w-2xl w-full max-h-[90vh] bg-white p-4 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl relative flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" class="absolute top-3.5 right-3.5 bg-slate-900 text-white p-2 rounded-full hover:bg-slate-700 transition-colors z-20">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div id="lightboxContent" class="w-full flex flex-col justify-center items-center py-2"></div>
     </div>
   </div>
 
@@ -889,7 +891,6 @@
       anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvbXBpdGZzYWthc2psYW93Z3lrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA3NzYyNjcsImV4cCI6MjEwNjM1MjI2N30.-xQLR2ObZUUpxYLtF51FWecrSLcYX9b1S8suApD_1vo'
     };
 
-    // Global Google Drive URL Converter (Format WebP Ringan & Responsif)
     window.convertGoogleDriveUrl = function(url, width = 600) {
       if (!url || typeof url !== 'string') return '';
       const cleanUrl = url.trim();
@@ -1930,7 +1931,6 @@
             let width = img.width;
             let height = img.height;
 
-            // Pertahankan rasio aspek dengan dimensi terpanjang maksimal 900px
             if (width > height && width > maxDimension) {
               height = Math.round((height * maxDimension) / width);
               width = maxDimension;
@@ -1976,16 +1976,14 @@
         return;
       }
 
-      // Kompresi cepat di browser
       showToast('Mengoptimalkan ukuran gambar...', 'info');
       const file = await compressImageFile(rawFile, 900, 0.68);
 
-      // Simpan object File/Blob yang ringan untuk diunggah langsung ke storage
       selectedFileBuffer = {
         file: file,
         name: file.name,
         type: file.type,
-        previewUrl: URL.createObjectURL(file) // Menggunakan URL Blob lokal (jauh lebih ringan dari Base64)
+        previewUrl: URL.createObjectURL(file)
       };
 
       if (previewBox && nameEl) {
@@ -2050,25 +2048,33 @@
 
       try {
         if (isConnectedToSupabase && supabaseClient && selectedFileBuffer.file) {
-          const fileExt = selectedFileBuffer.name.split('.').pop();
+          const fileExt = (selectedFileBuffer.name.split('.').pop() || 'jpg').toLowerCase();
           const cleanFileName = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
           const filePath = `transaksi/${cleanFileName}`;
 
-          // Unggah binary blob ringan (hanya puluhan KB)
+          // Unggah binary blob ringan
           const { error: uploadError } = await supabaseClient.storage
             .from('bukti-transfer')
             .upload(filePath, selectedFileBuffer.file, {
               cacheControl: '3600',
-              upsert: false
+              upsert: true
             });
 
-          if (!uploadError) {
+          if (uploadError) {
+            console.error('Error saat upload bukti ke storage:', uploadError);
+          } else {
             const { data: urlData } = supabaseClient.storage
               .from('bukti-transfer')
               .getPublicUrl(filePath);
+
             if (urlData && urlData.publicUrl) {
               proofPublicUrl = urlData.publicUrl;
             }
+          }
+
+          // Fallback URL jika getPublicUrl kosong
+          if (!proofPublicUrl) {
+            proofPublicUrl = `${SUPABASE_CONFIG.url}/storage/v1/object/public/bukti-transfer/${filePath}`;
           }
 
           // Simpan data order
@@ -2079,7 +2085,7 @@
               nama_pemesan: buyerName,
               nomor_kontak: buyerPhone,
               total_dana: totalAmount,
-              bukti_transaksi_url: proofPublicUrl || 'bukti-tersimpan',
+              bukti_transaksi_url: proofPublicUrl,
               bukti_file_name: selectedFileBuffer.name,
               status_pesanan: 'Menunggu Verifikasi'
             }])
@@ -2103,7 +2109,7 @@
 
           if (itemsError) throw itemsError;
 
-          // Hanya refresh kuota paket untuk pengunjung (tidak memuat ulang orders admin agar instan)
+          // Perbarui kuota paket
           fetchPackagesFromDB();
         } else {
           items.forEach(it => {
@@ -2350,7 +2356,6 @@ Terima Kasih.`;
       if (!file) return;
       const reader = new FileReader();
       reader.onload = function(e) {
-        const url = e.target.result;
         document.getElementById('cmsLogoImageUrl').value = url;
         document.getElementById('cmsLogoPreview').src = url;
         showToast('Logo berhasil diunggah! Klik Simpan Kontak WA & Logo.', 'success');
@@ -2678,7 +2683,7 @@ Terima Kasih.`;
           <td class="py-3 px-4 max-w-xs truncate">${itemsSummary || '-'}</td>
           <td class="py-3 px-4 font-bold text-brand-700">${formatRupiah(ord.total_dana)}</td>
           <td class="py-3 px-4">
-            <button onclick="openLightbox('${ord.bukti_transaksi_url}', '${ord.bukti_file_type || ''}')" class="px-2.5 py-1 rounded bg-amber-100 text-brand-800 hover:bg-amber-200 font-bold text-[11px]">
+            <button onclick="openLightbox('${ord.bukti_transaksi_url}', '${ord.bukti_file_type || ''}')" class="px-2.5 py-1 rounded bg-amber-100 text-brand-800 hover:bg-amber-200 font-bold text-[11px] transition-all">
               Lihat Bukti
             </button>
           </td>
@@ -2747,13 +2752,55 @@ Terima Kasih.`;
       });
     }
 
+    // ============================================================================
+    // 🔍 LIGHTBOX BUKTI TRANSFER (SMART FALLBACK & BUKA TAB BARU)
+    // ============================================================================
     function openLightbox(url, type) {
       const content = document.getElementById('lightboxContent');
-      if (type === 'application/pdf' || (url && url.endsWith('.pdf'))) {
-        content.innerHTML = `<iframe src="${url}" class="w-[85vw] max-w-2xl h-[70vh] rounded-xl border-0"></iframe>`;
+      if (!content) return;
+      
+      const cleanUrl = (url || '').trim();
+
+      if (!cleanUrl || cleanUrl === 'bukti-tersimpan') {
+        content.innerHTML = `
+          <div class="py-8 px-4 text-center">
+            <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 flex items-center justify-center mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+            <h4 class="font-bold text-slate-800 text-sm mb-1">Bukti Transfer Belum Tersedia</h4>
+            <p class="text-xs text-slate-500">Tautan bukti transfer belum terunggah ke penyimpanan cloud.</p>
+          </div>
+        `;
+      } else if (type === 'application/pdf' || cleanUrl.endsWith('.pdf')) {
+        content.innerHTML = `
+          <div class="w-full flex flex-col items-center">
+            <iframe src="${cleanUrl}" class="w-full h-[65vh] rounded-xl border border-slate-200"></iframe>
+            <a href="${cleanUrl}" target="_blank" rel="noopener noreferrer" class="mt-3 px-4 py-2 rounded-full bg-brand-600 text-white font-bold text-xs hover:bg-brand-700">
+              Buka PDF di Tab Baru &rarr;
+            </a>
+          </div>
+        `;
       } else {
-        content.innerHTML = `<img src="${url}" alt="Bukti Transfer" class="max-w-full max-h-[80vh] object-contain rounded-xl">`;
+        content.innerHTML = `
+          <div class="w-full flex flex-col items-center">
+            <div class="max-h-[68vh] overflow-hidden rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-center">
+              <img 
+                src="${cleanUrl}" 
+                alt="Bukti Transfer" 
+                class="max-w-full max-h-[68vh] object-contain rounded-xl"
+                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'p-8 text-center text-slate-500 text-xs\\'><p class=\\'font-bold text-slate-800 mb-2\\'>Gambar tidak dapat dimuat langsung</p><p class=\\'mb-4 text-slate-400\\'>Kemungkinan akses bucket Supabase masih berstatus Private.</p><a href=\\'${cleanUrl}\\' target=\\'_blank\\' rel=\\'noopener noreferrer\\' class=\\'px-4 py-2 rounded-full bg-brand-600 text-white font-bold inline-block hover:bg-brand-700\\'>Buka Bukti di Tab Baru &rarr;</a></div>';"
+              />
+            </div>
+            <div class="mt-3 flex items-center gap-2">
+              <a href="${cleanUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                <span>Buka Ukuran Asli</span>
+              </a>
+            </div>
+          </div>
+        `;
       }
+
       document.getElementById('modalLightbox').classList.remove('hidden');
     }
 
