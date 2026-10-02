@@ -71,6 +71,7 @@
         <a href="#rekening" class="hover:text-brand-600 transition-colors">Rekening Donasi</a>
         <a href="#panduan" class="hover:text-brand-600 transition-colors">Panduan</a>
       </nav>
+
       <!-- Action Buttons -->
       <div class="flex items-center gap-3">
         <button onclick="scrollToCatalog()" class="relative p-2.5 rounded-full bg-amber-50 text-brand-700 hover:bg-amber-100 transition-all flex items-center justify-center" title="Keranjang Pemesanan">
@@ -153,10 +154,8 @@
               <!-- Main Rectangular Slider Card (Kotak Rounded) -->
               <div id="heroSliderCard" class="relative bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-200/90 aspect-[4/3] w-full select-none group">
                 
-                <!-- Sliding Image Track (Hanya foto dokumentasi murni tanpa overlay judul) -->
-                <div id="heroSlideTrack" class="flex h-full w-full transition-transform duration-500 ease-out">
-                  <!-- Rendered dynamically via JavaScript -->
-                </div>
+                <!-- Sliding Image Track -->
+                <div id="heroSlideTrack" class="flex h-full w-full transition-transform duration-500 ease-out"></div>
 
                 <!-- Nav Button Left -->
                 <button type="button" onclick="prevHeroSlide()" aria-label="Foto Sebelumnya" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 shadow-md backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 hover:scale-110 z-10">
@@ -169,9 +168,7 @@
                 </button>
 
                 <!-- Dots Indicator Container -->
-                <div id="heroSliderDots" class="absolute bottom-4 right-4 flex items-center gap-1.5 z-10 px-2.5 py-1 rounded-full bg-slate-900/40 backdrop-blur-md">
-                  <!-- Dots generated via JS -->
-                </div>
+                <div id="heroSliderDots" class="absolute bottom-4 right-4 flex items-center gap-1.5 z-10 px-2.5 py-1 rounded-full bg-slate-900/40 backdrop-blur-md"></div>
 
                 <!-- Floating Celebration Badge (Sudut Kiri Bawah) -->
                 <div class="absolute bottom-4 left-4 z-10 bg-white/95 backdrop-blur-md text-slate-800 rounded-2xl p-2.5 sm:p-3 shadow-xl border border-amber-100 flex items-center gap-2.5">
@@ -192,6 +189,7 @@
         </div>
       </div>
     </section>
+
     <!-- Catalog Packages Section (Centered) -->
     <section id="katalog" class="py-14 sm:py-18 bg-white border-t border-amber-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -202,9 +200,7 @@
         </div>
 
         <!-- Packages Grid Container (Centered) -->
-        <div id="packageGrid" class="flex flex-wrap justify-center gap-6">
-          <!-- Rendered dynamically -->
-        </div>
+        <div id="packageGrid" class="flex flex-wrap justify-center gap-6"></div>
 
       </div>
     </section>
@@ -214,9 +210,7 @@
       <div class="bg-gradient-to-r from-amber-700 via-brand-600 to-amber-500 rounded-3xl p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-brand-900/10">
         
         <div class="flex items-center gap-6">
-          <div id="promoBadgeContainer" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white text-brand-900 font-extrabold flex flex-col items-center justify-center text-center p-1 shrink-0 shadow-md overflow-hidden border-2 border-white/80">
-            <!-- Populated dynamically -->
-          </div>
+          <div id="promoBadgeContainer" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white text-brand-900 font-extrabold flex flex-col items-center justify-center text-center p-1 shrink-0 shadow-md overflow-hidden border-2 border-white/80"></div>
 
           <div>
             <h3 id="promoTitleText" class="text-xl sm:text-2xl font-extrabold tracking-tight">Sanghadana Kathina. Berkah Berlimpah.</h3>
@@ -232,6 +226,7 @@
 
       </div>
     </section>
+
     <!-- Official Bank Accounts Section (Centered Layout) -->
     <section id="rekening" class="py-14 sm:py-18 bg-amber-50/50 border-t border-b border-amber-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -247,9 +242,7 @@
         </div>
 
         <!-- Bank Accounts Container (Centered) -->
-        <div id="publicBankAccountsContainer" class="flex flex-wrap justify-center items-center gap-6 max-w-xl mx-auto">
-          <!-- Rendered dynamically -->
-        </div>
+        <div id="publicBankAccountsContainer" class="flex flex-wrap justify-center items-center gap-6 max-w-xl mx-auto"></div>
 
       </div>
     </section>
@@ -303,6 +296,7 @@
     </footer>
 
   </div> <!-- End of #publicContent -->
+
   <main id="adminView" class="hidden flex-1 bg-slate-100 py-8 min-h-screen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -339,6 +333,7 @@
           <span>Status & Koneksi Database</span>
         </button>
       </div>
+
       <!-- TAB 1: ORDERS -->
       <div id="panelOrders" class="space-y-4">
         <div class="flex justify-between items-center">
@@ -396,6 +391,7 @@
           </table>
         </div>
       </div>
+
       <!-- TAB 3: BANKS -->
       <div id="panelBanks" class="hidden space-y-4">
         <div class="flex justify-between items-center">
@@ -458,15 +454,14 @@
               </button>
             </div>
           </div>
+
           <!-- Daftar Foto Dokumentasi Aktif -->
           <div>
             <div class="flex items-center justify-between mb-3">
               <h4 class="font-bold text-slate-800 text-xs sm:text-sm">Daftar Foto Dokumentasi yang Tampil di Slider</h4>
               <span id="heroSlideCountLabel" class="text-xs text-slate-400">3 foto aktif</span>
             </div>
-            <div id="adminHeroSlideList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <!-- Rendered via JS -->
-            </div>
+            <div id="adminHeroSlideList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
           </div>
 
           <!-- Hero Copy Text Settings Form -->
@@ -510,6 +505,7 @@
 
         </div>
       </div>
+
       <!-- TAB 5: CMS CONTENT (LOGO, WA CONTACT & PROMO BANNER) -->
       <div id="panelCMS" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Logo Branding & WhatsApp CMS -->
@@ -589,6 +585,7 @@
           </form>
         </div>
       </div>
+
       <!-- TAB 6: DATABASE DIAGNOSTICS & SETUP -->
       <div id="panelDatabase" class="hidden space-y-6">
         <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
@@ -628,7 +625,7 @@
                 </div>
                 <div>
                   <label class="block font-bold text-slate-700 mb-1">Anon / Public Key Supabase *</label>
-                  <textarea id="manualSupabaseKey" rows="2" required placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-brand-500 font-mono"></textarea>
+                  <textarea id="manualSupabaseKey" rows="2" required placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-brand-500 font-mono"></textarea>
                 </div>
                 <div class="flex items-center gap-3 pt-1">
                   <button type="submit" class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-md shadow-emerald-600/20">
@@ -668,6 +665,7 @@
       </button>
     </div>
   </div>
+
   <!-- Modal Checkout / Pemesanan Umat -->
   <div id="modalCheckout" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-amber-100 my-8">
@@ -724,6 +722,7 @@
       </form>
     </div>
   </div>
+
   <!-- Modal Tanda Terima Berhasil + Fitur Send WhatsApp Konfirmasi -->
   <div id="modalSuccessReceipt" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center shadow-2xl border border-amber-100 animate-in fade-in zoom-in duration-300">
@@ -757,6 +756,7 @@
       </div>
     </div>
   </div>
+
   <!-- Admin Auth Modal -->
   <div id="modalAdminAuth" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200">
@@ -767,13 +767,12 @@
       <form onsubmit="handleAdminLogin(event)" class="mt-4 space-y-3 text-xs">
         <div>
           <label class="block font-bold text-slate-700 mb-1">Username</label>
-          <input type="text" id="adminUser" required value="admin" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
+          <input type="text" id="adminUser" required placeholder="Masukkan username panitia" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
         </div>
         <div>
           <label class="block font-bold text-slate-700 mb-1">Password</label>
-          <input type="password" id="adminPass" required value="kathina2024" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
+          <input type="password" id="adminPass" required placeholder="••••••••" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
         </div>
-        <p class="text-[11px] text-slate-400 italic">Kredensial bawaan: admin / kathina2024</p>
         <button type="submit" class="w-full py-2.5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800">Masuk</button>
       </form>
     </div>
@@ -791,6 +790,10 @@
         <div>
           <label class="block font-bold text-slate-700 mb-1">Nama Paket *</label>
           <input type="text" id="pkgName" required class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500">
+        </div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Deskripsi Singkat Paket</label>
+          <textarea id="pkgDesc" rows="2" placeholder="Contoh: Jubah lengkap persembahan masa Vassa" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500"></textarea>
         </div>
         <div>
           <label class="block font-bold text-slate-700 mb-1">Upload Foto Paket dari Galeri / Laptop</label>
@@ -820,6 +823,7 @@
       </form>
     </div>
   </div>
+
   <!-- Modal Bank Editor -->
   <div id="modalBankEditor" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm overflow-y-auto flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl border border-slate-200">
@@ -856,7 +860,7 @@
     </div>
   </div>
 
-  <!-- Lightbox Modal Bukti Transfer -->
+  <!-- Lightbox Modal Bukti Transfer & Foto Paket Membesar -->
   <div id="modalLightbox" class="hidden fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeLightbox()">
     <div class="max-w-2xl max-h-[85vh] bg-white p-3 rounded-2xl overflow-hidden shadow-2xl relative" onclick="event.stopPropagation()">
       <button onclick="closeLightbox()" class="absolute top-4 right-4 bg-slate-900 text-white p-2 rounded-full hover:bg-slate-700"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
@@ -881,9 +885,10 @@
 
   <!-- Toast Notification Container -->
   <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
+
   <script>
     // ============================================================================
-    // ⚙️ KONFIGURASI SUPABASE UTAMA (PRAKTIS & OTOMATIS AKTIF DI SEMUA PERANGKAT)
+    // ⚙️ KONFIGURASI SUPABASE UTAMA
     // ============================================================================
     const SUPABASE_CONFIG = {
       url: 'https://vompitfsakasjlaowgyk.supabase.co',
@@ -895,7 +900,7 @@
       if (!url || typeof url !== 'string') return '';
       const cleanUrl = url.trim();
       const match = cleanUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || 
-                    cleanUrl.match(/id=([a-zA-Z0-9_-]+)/) ||
+                    cleanUrl.match(/id=([a-zA-Z0-9_-]+)/) || 
                     cleanUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
         return `https://lh3.googleusercontent.com/d/${match[1]}`;
@@ -909,7 +914,7 @@
 
       const target = (originalUrl || imgEl.src || '').toString();
       const driveMatch = target.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || 
-                         target.match(/id=([a-zA-Z0-9_-]+)/) ||
+                         target.match(/id=([a-zA-Z0-9_-]+)/) || 
                          target.match(/\/d\/([a-zA-Z0-9_-]+)/);
 
       if (driveMatch && driveMatch[1] && !imgEl.dataset.fallbackAttempted) {
@@ -923,6 +928,7 @@
     // Client Supabase Instance
     let supabaseClient = null;
     let isConnectedToSupabase = false;
+
     // State Foto Hero Slider (Kotak Dokumentasi)
     const DEFAULT_HERO_SLIDES = [
       { id: '1', url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80' },
@@ -934,14 +940,16 @@
     let currentHeroIndex = 0;
     let heroSliderTimer = null;
 
-    // Site Branding & CMS Configuration (Default Fallback)
+    // Site Branding & CMS Configuration
     let siteConfig = {
       id: null,
       logoType: 'icon',
       logoImageUrl: '',
       logoTitle: 'KATHINA',
       logoSubtitle: 'Sanghadana 2568',
-      adminWhatsappNumber: '6281234567890', // Nomor kontak WhatsApp admin panitia
+      adminWhatsappNumber: '6281234567890',
+      adminUsername: '',
+      adminPassword: '',
       showHero: true,
       heroBadge: 'Perayaan Masa Vassa &bull; Kathina Sanghadana 2568 TB',
       heroTitle: 'Sempurnakan Vassa.<br><span class="text-brand-600 font-extrabold">Berdana</span> Penuh Sukacita.',
@@ -1147,6 +1155,7 @@
     function formatRupiah(number) {
       return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(number);
     }
+
     // ============================================================================
     // 📸 HERO DOCUMENTATION SLIDER ENGINE (KOTAK DOKUMENTASI)
     // ============================================================================
@@ -1163,7 +1172,6 @@
         currentHeroIndex = 0;
       }
 
-      // Render track foto tanpa judul overlay
       track.innerHTML = heroSlides.map((slide, idx) => {
         const clean = window.convertGoogleDriveUrl(slide.url);
         return `
@@ -1179,7 +1187,6 @@
         `;
       }).join('');
 
-      // Render dots indicator
       if (dotsContainer) {
         dotsContainer.innerHTML = heroSlides.map((_, idx) => `
           <button 
@@ -1271,8 +1278,9 @@
       card.addEventListener('mouseenter', stopHeroSliderAutoplay);
       card.addEventListener('mouseleave', startHeroSliderAutoplay);
     }
+
     // ============================================================================
-    // 🛠️ ADMIN HERO SLIDER GALLERY MANAGEMENT
+    // 🛠️️ ADMIN HERO SLIDER GALLERY MANAGEMENT
     // ============================================================================
     function renderAdminHeroSlideList() {
       const container = document.getElementById('adminHeroSlideList');
@@ -1353,7 +1361,6 @@
       if (!fileInput.files || !fileInput.files[0]) return;
       const file = fileInput.files[0];
 
-      // Upload ke storage Supabase jika terhubung
       if (isConnectedToSupabase && supabaseClient) {
         try {
           showToast('Mengunggah foto ke Supabase Storage...', 'info');
@@ -1386,7 +1393,6 @@
         }
       }
 
-      // Fallback base64
       const reader = new FileReader();
       reader.onload = async function(e) {
         heroSlides.push({ id: 'slide_' + Date.now(), url: e.target.result });
@@ -1452,6 +1458,7 @@
         showToast('Teks hero disimpan di penyimpanan browser!', 'info');
       }
     }
+
     // ============================================================================
     // ⚡ SUPABASE INITIALIZATION & DATA FETCHING
     // ============================================================================
@@ -1587,6 +1594,7 @@
       showToast('Kunci lokal dibersihkan.', 'info');
       initSupabase();
     }
+
     async function fetchSiteConfigFromDB() {
       if (!supabaseClient) return;
       try {
@@ -1599,6 +1607,8 @@
             logoTitle: data.logo_title || 'KATHINA',
             logoSubtitle: data.logo_subtitle || 'Sanghadana 2568',
             adminWhatsappNumber: data.admin_whatsapp_number || siteConfig.adminWhatsappNumber || '6281234567890',
+            adminUsername: data.admin_username || '',
+            adminPassword: data.admin_password || '',
             showHero: data.show_hero ?? true,
             heroBadge: data.hero_badge || siteConfig.heroBadge,
             heroTitle: data.hero_title || siteConfig.heroTitle,
@@ -1614,7 +1624,6 @@
             promoDescription: data.promo_description || siteConfig.promoDescription
           };
 
-          // Parse Hero Slides jika tersimpan dalam format JSON array
           if (siteConfig.heroImageUrl) {
             try {
               const parsed = JSON.parse(siteConfig.heroImageUrl);
@@ -1715,6 +1724,7 @@
         console.error('Error fetching orders:', e);
       }
     }
+
     function renderPublicPackages() {
       const container = document.getElementById('packageGrid');
       if (!container) return;
@@ -1731,11 +1741,9 @@
         card.className = 'group bg-white rounded-3xl p-4 border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between w-full max-w-xs sm:w-72';
         card.innerHTML = `
           <div>
-            <!-- Clickable Package Image with Zoom-in Cursor & Indicator -->
             <div onclick="openPackageImageModal('${directImg}', '${safeTitle}')" class="cursor-zoom-in relative w-full h-48 rounded-2xl overflow-hidden bg-slate-50 mb-3 border border-slate-100 flex items-center justify-center group/img" title="Klik untuk memperbesar foto">
               <img referrerpolicy="no-referrer" src="${directImg}" alt="${pkg.nama_paket}" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300" onerror="window.handleDriveImageError(this, '${pkg.gambar_url}')">
               
-              <!-- Hover Zoom Hint Badge -->
               <div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-slate-900/60 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity shadow-sm pointer-events-none">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
               </div>
@@ -1753,7 +1761,6 @@
               `}
             </div>
 
-            <!-- Title & Short Description -->
             <h3 class="font-extrabold text-slate-900 text-sm sm:text-base leading-snug">${pkg.nama_paket}</h3>
             ${pkg.deskripsi ? `
               <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">${pkg.deskripsi}</p>
@@ -1850,6 +1857,7 @@
       const el = document.getElementById('katalog');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
+
     function renderBankAccounts() {
       const container = document.getElementById('publicBankAccountsContainer');
       const guide = document.getElementById('checkoutBankGuide');
@@ -1958,6 +1966,7 @@
       }
       document.body.removeChild(textarea);
     }
+
     function openCheckoutModal() {
       const { totalQty, totalAmount } = calculateCartSummary();
       if (totalQty === 0) {
@@ -2220,6 +2229,7 @@ Terima Kasih`;
     function closeSuccessReceiptModal() {
       document.getElementById('modalSuccessReceipt').classList.add('hidden');
     }
+
     function renderSiteConfig() {
       const logoTitleEl = document.getElementById('siteLogoTitle');
       const logoSubEl = document.getElementById('siteLogoSubtitle');
@@ -2312,6 +2322,7 @@ Terima Kasih`;
 
       populateCMSFields();
     }
+
     function populateCMSFields() {
       // Logo CMS & WhatsApp
       const logoType = document.getElementById('cmsLogoType');
@@ -2423,6 +2434,7 @@ Terima Kasih`;
         showToast('Pengaturan branding logo & WhatsApp disimpan lokal!', 'info');
       }
     }
+
     function handlePromoImageFileUpload(event) {
       const file = event.target.files[0];
       if (!file) return;
@@ -2528,7 +2540,6 @@ Terima Kasih`;
 
         let result = await tryUpdate(payload);
 
-        // Jika tabel Supabase belum memiliki kolom admin_whatsapp_number, simpan data lainnya tanpa error
         if (result.error && result.error.message && result.error.message.includes('admin_whatsapp_number')) {
           console.warn('Kolom admin_whatsapp_number belum ada di Supabase, menyimpan kolom lainnya...');
           delete payload.admin_whatsapp_number;
@@ -2557,26 +2568,65 @@ Terima Kasih`;
       document.getElementById('modalAdminAuth')?.classList.add('hidden');
     }
 
-    function handleAdminLogin(event) {
+    // ============================================================================
+    // 🔐 AUTENTIKASI PANITIA LANGSUNG DARI SUPABASE (site_config)
+    // ============================================================================
+    async function handleAdminLogin(event) {
       event.preventDefault();
       const u = document.getElementById('adminUser').value.trim();
       const p = document.getElementById('adminPass').value.trim();
 
-      if (u === 'admin' && p === 'kathina2024') {
-        isAdminLoggedIn = true;
-        closeAdminAuthModal();
-        document.getElementById('adminBtnText').innerText = 'Dasbor Admin';
-        document.getElementById('publicContent')?.classList.add('hidden');
-        document.getElementById('adminView')?.classList.remove('hidden');
-        renderAdminOrders();
-        renderAdminPackages();
-        renderBankAccounts();
-        renderSiteConfig();
-        renderAdminHeroSlideList();
-        showToast('Berhasil masuk ke Panel Panitia!', 'success');
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      } else {
-        showToast('Username atau password panitia salah.', 'error');
+      if (!u || !p) {
+        showToast('Harap masukkan username dan password.', 'error');
+        return;
+      }
+
+      showToast('Memverifikasi kredensial...', 'info');
+
+      try {
+        let validUser = '';
+        let validPass = '';
+
+        // Ambil data username & password terbaru langsung dari tabel site_config di Supabase
+        if (isConnectedToSupabase && supabaseClient) {
+          const { data, error } = await supabaseClient
+            .from('site_config')
+            .select('admin_username, admin_password')
+            .limit(1)
+            .maybeSingle();
+
+          if (!error && data) {
+            validUser = data.admin_username;
+            validPass = data.admin_password;
+          }
+        }
+
+        // Jika Supabase belum merespons, gunakan data dari memori/cache konfigurasi
+        if (!validUser && siteConfig.adminUsername) {
+          validUser = siteConfig.adminUsername;
+          validPass = siteConfig.adminPassword;
+        }
+
+        // Verifikasi keabsahan kredensial
+        if (validUser && validPass && u === validUser && p === validPass) {
+          isAdminLoggedIn = true;
+          closeAdminAuthModal();
+          document.getElementById('adminBtnText').innerText = 'Dasbor Admin';
+          document.getElementById('publicContent')?.classList.add('hidden');
+          document.getElementById('adminView')?.classList.remove('hidden');
+          renderAdminOrders();
+          renderAdminPackages();
+          renderBankAccounts();
+          renderSiteConfig();
+          renderAdminHeroSlideList();
+          showToast('Berhasil masuk ke Panel Panitia!', 'success');
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        } else {
+          showToast('Username atau password panitia salah.', 'error');
+        }
+      } catch (err) {
+        console.error('Error saat login admin:', err);
+        showToast('Terjadi kesalahan saat memverifikasi login.', 'error');
       }
     }
 
@@ -2619,60 +2669,6 @@ Terima Kasih`;
       });
     }
 
-    function renderAdminOrders() {
-      const tbody = document.getElementById('adminOrdersTbody');
-      if (!tbody) return;
-      tbody.innerHTML = '';
-
-      if (orders.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" class="py-8 text-center text-slate-400">Belum ada pesanan yang masuk.</td></tr>';
-        return;
-      }
-
-      orders.forEach(ord => {
-        const tr = document.createElement('tr');
-        const itemsSummary = (ord.items || []).map(i => `${i.nama_paket} (${i.jumlah}x)`).join(', ');
-        const dateStr = new Date(ord.created_at).toLocaleString('id-ID', { dateStyle: 'short', timeStyle: 'short' });
-
-        tr.innerHTML = `
-          <td class="py-3 px-4">
-            <span class="font-mono font-bold text-slate-900">${ord.kode_transaksi}</span>
-            <div class="text-[10px] text-slate-400">${dateStr}</div>
-          </td>
-          <td class="py-3 px-4">
-            <div class="font-bold text-slate-900">${ord.nama_pemesan}</div>
-            <div class="text-slate-500">${ord.nomor_kontak}</div>
-          </td>
-          <td class="py-3 px-4 max-w-xs truncate">${itemsSummary || '-'}</td>
-          <td class="py-3 px-4 font-bold text-brand-700">${formatRupiah(ord.total_dana)}</td>
-          <td class="py-3 px-4">
-            <button onclick="openLightbox('${ord.bukti_transaksi_url}', '${ord.bukti_file_type || ''}')" class="px-2.5 py-1 rounded bg-amber-100 text-brand-800 hover:bg-amber-200 font-bold text-[11px]">
-              Lihat Bukti
-            </button>
-          </td>
-          <td class="py-3 px-4">
-            <span class="px-2 py-1 rounded-full text-[10px] font-bold ${
-              ord.status_pesanan === 'Terverifikasi' ? 'bg-emerald-100 text-emerald-700' :
-              ord.status_pesanan === 'Ditolak' ? 'bg-rose-100 text-rose-700' : 'bg-amber-100 text-brand-800'
-            }">
-              ${ord.status_pesanan}
-            </span>
-          </td>
-          <td class="py-3 px-4 text-center">
-            <div class="flex items-center justify-center gap-1.5">
-              ${ord.status_pesanan === 'Menunggu Verifikasi' ? `
-                <button onclick="updateOrderStatus('${ord.id}', 'Terverifikasi')" class="p-1.5 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 rounded" title="Verifikasi Transaksi"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></button>
-                <button onclick="updateOrderStatus('${ord.id}', 'Ditolak')" class="p-1.5 bg-rose-50 text-rose-600 hover:bg-rose-100 rounded" title="Tolak Transaksi"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-              ` : `
-                <button onclick="updateOrderStatus('${ord.id}', 'Menunggu Verifikasi')" class="text-[10px] text-slate-400 hover:underline">Reset</button>
-              `}
-              <button onclick="deleteOrder('${ord.id}')" class="p-1.5 bg-slate-100 text-slate-400 hover:text-rose-600 rounded" title="Hapus Riwayat"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button>
-            </div>
-          </td>
-        `;
-        tbody.appendChild(tr);
-      });
-    }
     async function updateOrderStatus(orderId, newStatus) {
       if (isConnectedToSupabase && supabaseClient) {
         try {
@@ -2724,7 +2720,6 @@ Terima Kasih`;
       document.getElementById('modalLightbox').classList.remove('hidden');
     }
 
-    // Modal Pratinjau Foto Paket Membesar & Lengkap
     function openPackageImageModal(url, title) {
       const content = document.getElementById('lightboxContent');
       if (!content) return;
@@ -2891,7 +2886,6 @@ Terima Kasih`;
 
           let res = await executeSave(payload);
 
-          // Jika kolom deskripsi belum ada di tabel Supabase, simpan tanpa kolom deskripsi agar tidak gagal
           if (res.error && res.error.message && res.error.message.includes('deskripsi')) {
             console.warn('Kolom deskripsi belum ada di Supabase, menyimpan kolom lainnya...');
             delete payload.deskripsi;
@@ -2964,6 +2958,7 @@ Terima Kasih`;
         showToast('Paket berhasil dihapus.', 'info');
       });
     }
+
     function openModalAddBank() {
       document.getElementById('modalBankTitle').innerText = 'Tambah Rekening Bank';
       document.getElementById('bankEditId').value = '';
@@ -3103,17 +3098,14 @@ Terima Kasih`;
     }
 
     async function initializeApplication() {
-      // 1. Cek apakah ada data tersimpan di cache lokal peramban
       const hasLocalCache = loadCachedData();
 
       if (hasLocalCache) {
-        // Tampilkan langsung data dan foto asli secara instan (0 milidetik!)
         renderSiteConfig();
         renderHeroSlider();
         renderPublicPackages();
         renderBankAccounts();
       } else {
-        // Untuk pengunjung baru (pertama kali), tampilkan kerangka skeleton shimmer
         renderHeroSkeleton();
         renderPackageSkeleton();
       }
@@ -3124,7 +3116,6 @@ Terima Kasih`;
       renderAdminPackages();
       updateStickyBar();
 
-      // Pengecekan akses rahasia via URL hash #admin
       if (window.location.hash === '#admin') {
         handleAdminBtnClick();
       }
@@ -3134,7 +3125,6 @@ Terima Kasih`;
         }
       });
 
-      // Shortcut rahasia keyboard Ctrl + Shift + A
       window.addEventListener('keydown', (e) => {
         if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
           e.preventDefault();
@@ -3142,7 +3132,6 @@ Terima Kasih`;
         }
       });
 
-      // Hubungkan ke Supabase Cloud di latar belakang dan mutakhirkan data
       await initSupabase();
     }
 
