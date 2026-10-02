@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kathina YKCK-YMHW</title>
+  <title>Pemesanan Paket Kathina</title>
   
   <!-- Supabase JS Client v2 CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -49,18 +49,18 @@
 
   <!-- Header & Navigation Bar -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100 shadow-sm transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 sm:h-28 flex items-center justify-between gap-4">
       
       <!-- Brand Logo Container -->
-      <a href="#heroSection" id="brandLogoContainer" class="flex items-center gap-3 shrink-0 group">
-        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <a href="#heroSection" id="brandLogoContainer" class="flex items-center gap-3.5 sm:gap-4 shrink-0 group py-1">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
         </div>
-        <div class="flex flex-col">
-          <span id="siteLogoTitle" class="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">KATHINA</span>
-          <span id="siteLogoSubtitle" class="text-[11px] font-semibold text-brand-600 tracking-wider uppercase">Sanghadana 2568</span>
+        <div class="flex flex-col justify-center">
+          <span id="siteLogoTitle" class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-tight">KATHINA</span>
+          <span id="siteLogoSubtitle" class="text-xs sm:text-sm font-bold text-brand-600 tracking-wider uppercase">Sanghadana 2568</span>
         </div>
       </a>
 
@@ -126,13 +126,13 @@
                 <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <span class="text-xs font-semibold text-slate-700">Tepat Sasaran</span>
+                <span class="text-xs font-semibold text-slate-700">Tepat Sasaran Sangha</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <span class="text-xs font-semibold text-slate-700">Kuota Real-Time</span>
+                <span class="text-xs font-semibold text-slate-700">Kuota Real-Time Cloud</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <div class="w-9 h-9 rounded-xl bg-amber-100 text-brand-700 flex items-center justify-center shrink-0">
@@ -267,7 +267,7 @@
           <div class="p-6 rounded-2xl bg-[#faf9f6] border border-amber-100 text-center">
             <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 font-black text-lg flex items-center justify-center mx-auto mb-4">1</div>
             <h4 class="font-bold text-slate-900 text-sm mb-1">Pilih Paket</h4>
-            <p class="text-xs text-slate-500 leading-relaxed">Tentukan jumlah paket yang hendak didanakan.</p>
+            <p class="text-xs text-slate-500 leading-relaxed">Tentukan jumlah paket dana yang hendak didanakan.</p>
           </div>
           <div class="p-6 rounded-2xl bg-[#faf9f6] border border-amber-100 text-center">
             <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 font-black text-lg flex items-center justify-center mx-auto mb-4">2</div>
@@ -281,7 +281,7 @@
           </div>
           <div class="p-6 rounded-2xl bg-[#faf9f6] border border-amber-100 text-center">
             <div class="w-12 h-12 rounded-full bg-amber-100 text-brand-700 font-black text-lg flex items-center justify-center mx-auto mb-4">4</div>
-            <h4 class="font-bold text-slate-900 text-sm mb-1">Verifikasi</h4>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Verifikasi & Resi</h4>
             <p class="text-xs text-slate-500 leading-relaxed">Panitia memverifikasi mutasi dan Anda mendapatkan nomor kode transaksi resmi.</p>
           </div>
         </div>
@@ -293,11 +293,11 @@
     <footer class="mt-auto bg-slate-900 text-slate-400 py-10 border-t border-slate-800 text-xs">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2">
-          <span class="font-bold text-white tracking-wider">KATHINA SANGHADANA 2568</span>
+          <span class="font-bold text-white tracking-wider">KATHINA 2570 TB</span>
           <span>&bull; Sabbe Satta Bhavantu Sukhitatta</span>
         </div>
         <div>
-          &copy; 2024 Panitia Perayaan Kathina. <span onclick="handleAdminBtnClick()" class="cursor-pointer select-none hover:text-slate-300 transition-colors">Terkelola Mandiri & Transparan.</span>
+          &copy; 2026 Panitia Perayaan Kathina. <span onclick="handleAdminBtnClick()" class="cursor-pointer select-none hover:text-slate-300 transition-colors">Terkelola Mandiri & Transparan.</span>
         </div>
       </div>
     </footer>
@@ -310,7 +310,7 @@
       <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
         <div>
           <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-brand-800 text-[11px] font-bold uppercase tracking-wider mb-1">Panel Administrasi</span>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Dasbor Manajemen Kathina 2568</h2>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Dasbor Manajemen Kathina</h2>
           <p class="text-xs text-slate-500 mt-0.5">Kelola galeri slider hero, paket persembahan, verifikasi transfer, kontak WhatsApp, dan basis data Supabase.</p>
         </div>
         <div class="flex items-center gap-3">
@@ -962,6 +962,7 @@
       {
         id: 'pkg-1',
         nama_paket: 'Paket Jubah Civara Utama',
+        deskripsi: 'Jubah lengkap (jubah luar, sarung, sanghati) persembahan masa Vassa.',
         harga: 500000,
         kuota_awal: 50,
         kuota_tersisa: 50,
@@ -971,6 +972,7 @@
       {
         id: 'pkg-2',
         nama_paket: 'Paket Perlengkapan Medis Sangha',
+        deskripsi: 'Obat-obatan, vitamin, dan suplemen kesehatan pokok Bhikkhu Sangha.',
         harga: 350000,
         kuota_awal: 40,
         kuota_tersisa: 40,
@@ -980,6 +982,7 @@
       {
         id: 'pkg-3',
         nama_paket: 'Paket Kebutuhan Harian Vihara',
+        deskripsi: 'Kebutuhan pokok dan operasional monastik vihara harian.',
         harga: 250000,
         kuota_awal: 60,
         kuota_tersisa: 60,
@@ -989,6 +992,7 @@
       {
         id: 'pkg-4',
         nama_paket: 'Paket Sanghadana Khusus Masa Vassa',
+        deskripsi: 'Paket istimewa persembahan lengkap Sanghadana masa Kathina agung.',
         harga: 1000000,
         kuota_awal: 15,
         kuota_tersisa: 15,
@@ -1721,13 +1725,21 @@
         const currentQty = cart[pkg.id] || 0;
         const isSoldOut = pkg.kuota_tersisa <= 0;
         const directImg = window.convertGoogleDriveUrl(pkg.gambar_url);
+        const safeTitle = (pkg.nama_paket || '').replace(/'/g, "\\'");
 
         const card = document.createElement('div');
         card.className = 'group bg-white rounded-3xl p-4 border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between w-full max-w-xs sm:w-72';
         card.innerHTML = `
           <div>
-            <div class="relative w-full h-48 rounded-2xl overflow-hidden bg-slate-50 mb-4 border border-slate-100 flex items-center justify-center">
-              <img referrerpolicy="no-referrer" src="${directImg}" alt="${pkg.nama_paket}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="window.handleDriveImageError(this, '${pkg.gambar_url}')">
+            <!-- Clickable Package Image with Zoom-in Cursor & Indicator -->
+            <div onclick="openPackageImageModal('${directImg}', '${safeTitle}')" class="cursor-zoom-in relative w-full h-48 rounded-2xl overflow-hidden bg-slate-50 mb-3 border border-slate-100 flex items-center justify-center group/img" title="Klik untuk memperbesar foto">
+              <img referrerpolicy="no-referrer" src="${directImg}" alt="${pkg.nama_paket}" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300" onerror="window.handleDriveImageError(this, '${pkg.gambar_url}')">
+              
+              <!-- Hover Zoom Hint Badge -->
+              <div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-full bg-slate-900/60 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity shadow-sm pointer-events-none">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+              </div>
+
               ${isSoldOut ? `
                 <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px] flex items-center justify-center">
                   <span class="px-3.5 py-1.5 rounded-full bg-rose-600 text-white font-bold text-xs uppercase tracking-wider shadow">Kuota Habis</span>
@@ -1740,7 +1752,12 @@
                 </div>
               `}
             </div>
+
+            <!-- Title & Short Description -->
             <h3 class="font-extrabold text-slate-900 text-sm sm:text-base leading-snug">${pkg.nama_paket}</h3>
+            ${pkg.deskripsi ? `
+              <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">${pkg.deskripsi}</p>
+            ` : ''}
           </div>
 
           <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
@@ -2056,7 +2073,7 @@
       let proofPublicUrl = selectedFileBuffer.dataUrl;
 
       if (btnSubmit) btnSubmit.disabled = true;
-      if (btnText) btnText.innerText = 'Mengunggah & Menyimpan...';
+      if (btnText) btnText.innerText = 'Mengunggah & Menyimpan ke Cloud...';
 
       try {
         if (isConnectedToSupabase && supabaseClient && selectedFileBuffer.file) {
@@ -2153,7 +2170,7 @@
 `*KONFIRMASI PEMESANAN PAKET KATHINA*
 Namo Buddhaya, Halo Panitia Kathina,
 
-Saya hendak mengkonfirmasi pemesanan paket Kathina melalui website dengan rincian berikut:
+Saya hendak mengonfirmasi pemesanan paket dana Kathina melalui website dengan rincian berikut:
 
 - *Kode Transaksi:* ${orderCode}
 - *Nama Pemesan:* ${buyerName}
@@ -2166,7 +2183,7 @@ ${itemsTextList}
 Bukti transfer telah saya lampirkan saat mengisi formulir di website.
 Mohon bantuannya untuk dilakukan verifikasi. 
 
-Terima Kasih.`;
+Terima Kasih`;
 
         const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waMessageTemplate)}`;
         
@@ -2215,20 +2232,20 @@ Terima Kasih.`;
         if (siteConfig.logoType === 'image' && siteConfig.logoImageUrl) {
           const directImg = window.convertGoogleDriveUrl(siteConfig.logoImageUrl);
           logoContainer.innerHTML = `
-            <img referrerpolicy="no-referrer" src="${directImg}" alt="${siteConfig.logoTitle}" class="h-10 max-w-[120px] object-contain rounded-xl" onerror="window.handleDriveImageError(this, '${siteConfig.logoImageUrl}')">
-            <div class="flex flex-col">
-              <span class="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">${siteConfig.logoTitle}</span>
-              <span class="text-[11px] font-semibold text-brand-600 tracking-wider uppercase">${siteConfig.logoSubtitle}</span>
+            <img referrerpolicy="no-referrer" src="${directImg}" alt="${siteConfig.logoTitle}" class="h-16 sm:h-20 md:h-24 w-auto max-w-[280px] sm:max-w-[340px] object-contain shrink-0 drop-shadow-sm transition-all" onerror="window.handleDriveImageError(this, '${siteConfig.logoImageUrl}')">
+            <div class="flex flex-col justify-center">
+              <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-tight">${siteConfig.logoTitle}</span>
+              <span class="text-xs sm:text-sm font-bold text-brand-600 tracking-wider uppercase">${siteConfig.logoSubtitle}</span>
             </div>
           `;
         } else {
           logoContainer.innerHTML = `
-            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 shrink-0">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
             </div>
-            <div class="flex flex-col">
-              <span class="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">${siteConfig.logoTitle}</span>
-              <span class="text-[11px] font-semibold text-brand-600 tracking-wider uppercase">${siteConfig.logoSubtitle}</span>
+            <div class="flex flex-col justify-center">
+              <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-tight">${siteConfig.logoTitle}</span>
+              <span class="text-xs sm:text-sm font-bold text-brand-600 tracking-wider uppercase">${siteConfig.logoSubtitle}</span>
             </div>
           `;
         }
@@ -2707,6 +2724,25 @@ Terima Kasih.`;
       document.getElementById('modalLightbox').classList.remove('hidden');
     }
 
+    // Modal Pratinjau Foto Paket Membesar & Lengkap
+    function openPackageImageModal(url, title) {
+      const content = document.getElementById('lightboxContent');
+      if (!content) return;
+      content.innerHTML = `
+        <div class="flex flex-col items-center w-full">
+          ${title ? `
+            <div class="w-full flex items-center justify-between pb-3 mb-3 border-b border-slate-100 pr-10">
+              <h4 class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug">${title}</h4>
+            </div>
+          ` : ''}
+          <div class="w-full flex items-center justify-center max-h-[72vh] overflow-hidden rounded-2xl bg-slate-50">
+            <img referrerpolicy="no-referrer" src="${url}" alt="${title || 'Foto Paket'}" class="max-w-full max-h-[72vh] object-contain rounded-xl" onerror="window.handleDriveImageError(this, '${url}')">
+          </div>
+        </div>
+      `;
+      document.getElementById('modalLightbox').classList.remove('hidden');
+    }
+
     function closeLightbox() {
       document.getElementById('modalLightbox').classList.add('hidden');
     }
@@ -2773,6 +2809,8 @@ Terima Kasih.`;
       document.getElementById('modalPackageTitle').innerText = 'Tambah Paket Kathina Baru';
       document.getElementById('pkgEditId').value = '';
       document.getElementById('formPackageEditor').reset();
+      const descInput = document.getElementById('pkgDesc');
+      if (descInput) descInput.value = '';
       document.getElementById('pkgImagePreview').src = 'https://placehold.co/100x100/f8fafc/94a3b8?text=Foto';
       document.getElementById('modalPackageEditor').classList.remove('hidden');
     }
@@ -2783,6 +2821,8 @@ Terima Kasih.`;
       document.getElementById('modalPackageTitle').innerText = 'Sunting Paket Kathina';
       document.getElementById('pkgEditId').value = pkg.id;
       document.getElementById('pkgName').value = pkg.nama_paket;
+      const descInput = document.getElementById('pkgDesc');
+      if (descInput) descInput.value = pkg.deskripsi || '';
       document.getElementById('pkgImageUrl').value = pkg.gambar_url;
       document.getElementById('pkgPrice').value = pkg.harga;
       document.getElementById('pkgQuota').value = pkg.kuota_tersisa;
@@ -2819,6 +2859,7 @@ Terima Kasih.`;
       event.preventDefault();
       const editId = document.getElementById('pkgEditId').value;
       const name = document.getElementById('pkgName').value.trim();
+      const desc = (document.getElementById('pkgDesc')?.value || '').trim();
       const imgUrl = (document.getElementById('pkgImageUrl').value || '').trim();
       const price = parseInt(document.getElementById('pkgPrice').value, 10);
       const quota = parseInt(document.getElementById('pkgQuota').value, 10);
@@ -2831,6 +2872,7 @@ Terima Kasih.`;
         if (isConnectedToSupabase && supabaseClient) {
           const payload = {
             nama_paket: name,
+            deskripsi: desc,
             harga: price,
             kuota_awal: quota,
             kuota_tersisa: quota,
@@ -2839,19 +2881,31 @@ Terima Kasih.`;
             updated_at: new Date().toISOString()
           };
 
-          if (editId && !editId.startsWith('pkg-')) {
-            const { error } = await supabaseClient.from('packages').update(payload).eq('id', editId);
-            if (error) throw error;
-          } else {
-            const { error } = await supabaseClient.from('packages').insert([payload]);
-            if (error) throw error;
+          const executeSave = async (dataPayload) => {
+            if (editId && !editId.startsWith('pkg-')) {
+              return await supabaseClient.from('packages').update(dataPayload).eq('id', editId);
+            } else {
+              return await supabaseClient.from('packages').insert([dataPayload]);
+            }
+          };
+
+          let res = await executeSave(payload);
+
+          // Jika kolom deskripsi belum ada di tabel Supabase, simpan tanpa kolom deskripsi agar tidak gagal
+          if (res.error && res.error.message && res.error.message.includes('deskripsi')) {
+            console.warn('Kolom deskripsi belum ada di Supabase, menyimpan kolom lainnya...');
+            delete payload.deskripsi;
+            res = await executeSave(payload);
           }
+
+          if (res.error) throw res.error;
           await fetchPackagesFromDB();
         } else {
           if (editId) {
             const pkg = packages.find(p => p.id === editId);
             if (pkg) {
               pkg.nama_paket = name;
+              pkg.deskripsi = desc;
               pkg.gambar_url = imgUrl || pkg.gambar_url;
               pkg.harga = price;
               pkg.kuota_tersisa = quota;
@@ -2861,6 +2915,7 @@ Terima Kasih.`;
             packages.push({
               id: 'pkg-' + Date.now(),
               nama_paket: name,
+              deskripsi: desc,
               gambar_url: imgUrl || 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&auto=format&fit=crop&q=80',
               harga: price,
               kuota_awal: quota,
