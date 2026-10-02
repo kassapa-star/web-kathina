@@ -625,7 +625,7 @@
                 </div>
                 <div>
                   <label class="block font-bold text-slate-700 mb-1">Anon / Public Key Supabase *</label>
-                  <textarea id="manualSupabaseKey" rows="2" required placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-brand-500 font-mono"></textarea>
+                  <textarea id="manualSupabaseKey" rows="2" required placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-brand-500 font-mono"></textarea>
                 </div>
                 <div class="flex items-center gap-3 pt-1">
                   <button type="submit" class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-md shadow-emerald-600/20">
@@ -744,7 +744,6 @@
 
       <!-- Action Buttons in Receipt -->
       <div class="space-y-2.5">
-        <!-- Direct 1-Click WhatsApp Confirmation Button -->
         <a id="receiptBtnWa" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition-all">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
           <span>Konfirmasi ke WhatsApp Panitia</span>
@@ -948,8 +947,8 @@
       logoTitle: 'KATHINA',
       logoSubtitle: 'Sanghadana 2568',
       adminWhatsappNumber: '6281234567890',
-      adminUsername: '',
-      adminPassword: '',
+      adminUsername: 'Admin Kathina',
+      adminPassword: 'KathinaYMHWYKCK',
       showHero: true,
       heroBadge: 'Perayaan Masa Vassa &bull; Kathina Sanghadana 2568 TB',
       heroTitle: 'Sempurnakan Vassa.<br><span class="text-brand-600 font-extrabold">Berdana</span> Penuh Sukacita.',
@@ -1102,7 +1101,6 @@
       `;
     }
 
-    // Toast Notification System
     function showToast(message, type = 'info') {
       const container = document.getElementById('toastContainer');
       if (!container) return;
@@ -1124,7 +1122,6 @@
       }, 3500);
     }
 
-    // Modal Confirmation Dialog
     function openConfirmModal(title, message, onConfirm) {
       const modal = document.getElementById('modalConfirm');
       const t = document.getElementById('confirmModalTitle');
@@ -1280,7 +1277,7 @@
     }
 
     // ============================================================================
-    // 🛠️️ ADMIN HERO SLIDER GALLERY MANAGEMENT
+    // 🛠 ADMIN HERO SLIDER GALLERY MANAGEMENT
     // ============================================================================
     function renderAdminHeroSlideList() {
       const container = document.getElementById('adminHeroSlideList');
@@ -1607,8 +1604,8 @@
             logoTitle: data.logo_title || 'KATHINA',
             logoSubtitle: data.logo_subtitle || 'Sanghadana 2568',
             adminWhatsappNumber: data.admin_whatsapp_number || siteConfig.adminWhatsappNumber || '6281234567890',
-            adminUsername: data.admin_username || '',
-            adminPassword: data.admin_password || '',
+            adminUsername: (data.admin_username || 'Admin Kathina').trim(),
+            adminPassword: (data.admin_password || 'KathinaYMHWYKCK').trim(),
             showHero: data.show_hero ?? true,
             heroBadge: data.hero_badge || siteConfig.heroBadge,
             heroTitle: data.hero_title || siteConfig.heroTitle,
@@ -1655,12 +1652,18 @@
     async function fetchPackagesFromDB() {
       if (!supabaseClient) return;
       try {
+        console.log('Mengambil data paket dari Supabase...');
         const { data, error } = await supabaseClient
           .from('packages')
           .select('*')
           .order('created_at', { ascending: true });
         
-        if (data && !error && data.length > 0) {
+        if (error) {
+          console.error('Gagal mengambil data packages:', error);
+          return;
+        }
+
+        if (data && data.length > 0) {
           packages = data;
           try {
             localStorage.setItem('kathina_cached_packages', JSON.stringify(packages));
@@ -2165,9 +2168,6 @@
           renderAdminOrders();
         }
 
-        // =========================================================================
-        // 💬 PREPARASI FITUR SEND WA KONFIRMASI OTOMATIS
-        // =========================================================================
         let targetWa = (siteConfig.adminWhatsappNumber || '6281234567890').replace(/[^0-9]/g, '');
         if (targetWa.startsWith('0')) {
           targetWa = '62' + targetWa.substring(1);
@@ -2201,7 +2201,6 @@ Terima Kasih`;
           btnWa.href = waUrl;
         }
 
-        // Reset cart and UI
         cart = {};
         selectedFileBuffer = null;
         document.getElementById('formCheckout').reset();
@@ -2209,7 +2208,6 @@ Terima Kasih`;
         closeCheckoutModal();
         updateStickyBar();
 
-        // Populate receipt modal
         document.getElementById('receiptOrderCode').innerText = orderCode;
         document.getElementById('receiptBuyerName').innerText = buyerName;
         document.getElementById('receiptTotalAmount').innerText = formatRupiah(totalAmount);
@@ -2261,7 +2259,6 @@ Terima Kasih`;
         }
       }
 
-      // Hero Elements
       const heroSection = document.getElementById('heroSection');
       if (heroSection) {
         if (!siteConfig.showHero) heroSection.classList.add('hidden');
@@ -2286,7 +2283,6 @@ Terima Kasih`;
       const heroBadgeBot = document.getElementById('heroBadgeBotText');
       if (heroBadgeBot) heroBadgeBot.innerText = siteConfig.heroCircleBadgeBot;
 
-      // Promo Banner
       const promoSection = document.getElementById('promoBannerSection');
       if (promoSection) {
         if (!siteConfig.showPromoBanner) promoSection.classList.add('hidden');
@@ -2324,7 +2320,6 @@ Terima Kasih`;
     }
 
     function populateCMSFields() {
-      // Logo CMS & WhatsApp
       const logoType = document.getElementById('cmsLogoType');
       const logoTitle = document.getElementById('cmsLogoTitle');
       const logoSub = document.getElementById('cmsLogoSubtitle');
@@ -2344,7 +2339,6 @@ Terima Kasih`;
         logoPreview.src = siteConfig.logoImageUrl ? window.convertGoogleDriveUrl(siteConfig.logoImageUrl) : 'https://placehold.co/100x100/f8fafc/94a3b8?text=Logo';
       }
 
-      // Hero Texts
       const heroBadge = document.getElementById('cmsHeroBadge');
       const heroTitle = document.getElementById('cmsHeroTitle');
       const heroDesc = document.getElementById('cmsHeroDesc');
@@ -2359,7 +2353,6 @@ Terima Kasih`;
       if (heroBadgeMid) heroBadgeMid.value = siteConfig.heroCircleBadgeTop;
       if (heroBadgeBot) heroBadgeBot.value = siteConfig.heroCircleBadgeBot;
 
-      // Promo CMS
       const promoBadge = document.getElementById('cmsPromoBadge');
       const promoTitle = document.getElementById('cmsPromoTitle');
       const promoDesc = document.getElementById('cmsPromoDesc');
@@ -2622,7 +2615,6 @@ Terima Kasih`;
           isAdminLoggedIn = true;
           closeAdminAuthModal();
           
-          // Bersihkan isian formulir modal agar aman
           document.getElementById('adminUser').value = '';
           document.getElementById('adminPass').value = '';
 
@@ -2630,6 +2622,8 @@ Terima Kasih`;
           document.getElementById('publicContent')?.classList.add('hidden');
           document.getElementById('adminView')?.classList.remove('hidden');
           
+          // Muat ulang data terbaru saat admin berhasil login
+          await fetchPackagesFromDB();
           renderAdminOrders();
           renderAdminPackages();
           renderBankAccounts();
@@ -2684,6 +2678,11 @@ Terima Kasih`;
           if (panel) panel.classList.add('hidden');
         }
       });
+
+      // Pemicu otomatis agar paket langsung tampil saat tab diklik
+      if (tabId === 'tabPackages') {
+        renderAdminPackages();
+      }
     }
 
     async function updateOrderStatus(orderId, newStatus) {
@@ -2786,15 +2785,22 @@ Terima Kasih`;
       if (!tbody) return;
       tbody.innerHTML = '';
 
+      if (!packages || packages.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="py-8 text-center text-slate-400">Belum ada paket yang tersimpan di database.</td></tr>';
+        return;
+      }
+
       packages.forEach(pkg => {
         const directImg = window.convertGoogleDriveUrl(pkg.gambar_url);
         const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-50/70 transition-colors';
         tr.innerHTML = `
           <td class="py-3 px-4">
             <img referrerpolicy="no-referrer" src="${directImg}" alt="${pkg.nama_paket}" class="w-12 h-12 object-cover rounded-xl border border-slate-200 bg-slate-50" onerror="window.handleDriveImageError(this, '${pkg.gambar_url}')">
           </td>
           <td class="py-3 px-4">
-            <div class="font-extrabold text-slate-800">${pkg.nama_paket}</div>
+            <div class="font-extrabold text-slate-800 text-xs sm:text-sm">${pkg.nama_paket}</div>
+            ${pkg.deskripsi ? `<div class="text-[11px] text-slate-400 line-clamp-1 max-w-xs">${pkg.deskripsi}</div>` : ''}
           </td>
           <td class="py-3 px-4 font-bold text-slate-900">${formatRupiah(pkg.harga)}</td>
           <td class="py-3 px-4">
@@ -2809,7 +2815,7 @@ Terima Kasih`;
           <td class="py-3 px-4 text-center">
             <div class="flex items-center justify-center gap-1.5">
               <button onclick="openModalEditPackage('${pkg.id}')" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px]">Edit</button>
-              <button onclick="deletePackage('${pkg.id}')" class="p-1 rounded bg-rose-50 hover:bg-rose-100 text-rose-600"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button>
+              <button onclick="deletePackage('${pkg.id}')" class="p-1 rounded bg-rose-50 hover:bg-rose-100 text-rose-600" title="Hapus"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button>
             </div>
           </td>
         `;
