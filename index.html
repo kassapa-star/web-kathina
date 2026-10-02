@@ -732,7 +732,7 @@
         <div class="flex justify-between"><span class="text-slate-500">Total:</span><span id="receiptTotalAmount" class="font-black text-slate-900"></span></div>
         <div class="pt-2 border-t border-amber-200 text-[10px] sm:text-[11px] text-slate-500 flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <span>Bukti transfer tersimpan di cloud.</span>
+          <span>Bukti transfer tersimpan.</span>
         </div>
       </div>
 
@@ -2136,7 +2136,7 @@
         const itemsTextList = items.map(it => `  - ${it.nama_paket} (${it.jumlah}x) = ${formatRupiah(it.subtotal)}`).join('\n');
         
         const waMessageTemplate = 
-`*KONFIRMASI PEMESANAN PAKET KATHINA*
+`*KONFIRMASI PAKET KATHINA*
 Namo Buddhaya, Halo Panitia Kathina,
 
 Saya hendak mengonfirmasi pemesanan paket dana Kathina melalui website dengan rincian berikut:
@@ -2152,7 +2152,7 @@ ${itemsTextList}
 Bukti transfer telah saya lampirkan saat mengisi formulir di website.
 Mohon bantuannya untuk dilakukan verifikasi. 
 
-Terima Kasih`;
+Terima Kasih🙏🏻`;
 
         const waUrl = `https://wa.me/${targetWa}?text=${encodeURIComponent(waMessageTemplate)}`;
         
